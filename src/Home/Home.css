@@ -1,4 +1,274 @@
-.text{
-    color: red;
-    font-family: 'Red Hat Display', sans-serif;
+.home{
+    font-family: 'Red Hat Display', sans-serif !important;
+}
+
+/* Modify the backgorund color */ 
+.homeNavbar_color { 
+	background-color: white !important; 
+} 
+
+/* Modify the Thpec name and color on navbar*/
+.homeNavbar_leftText{
+    color:#43D8C9 !important;
+    font-weight:500;
+    font-size:36px;
+    line-height:48px;
+    position:absolute;
+    width:207px!important;
+    height:48px!important;
+    left:68px;
+    top:5px;
+}
+
+/* Modify navbar login button */
+.homeNavbar_loginButton{
+    position:absolute;
+    width:136px;
+    height:46px;
+    left:1200px;
+    top:15px;
+    font-weight:800 !important;
+    border-radius:0 !important;
+}
+
+.homeNavbar_loginButtonColor{
+    color:#43D8C9 !important;
+    border-color:#43D8C9 !important;
+}
+
+/* Modify navbar signup button */
+.homeNavbar_signupButton{
+    position:absolute;
+    width:136px;
+    height:46px;
+    left:1350px;
+    top:15px;
+    background-color:#43D8C9 !important;
+    font-weight:800 !important;
+    border-radius:0 !important;
+}
+
+.homeNavbar_signupButtonColor{
+    color:#43D8C9 !important;
+    border-color:#43D8C9 !important;
+    color:white!important;
+}
+
+/* Welecome Text */
+.welcomeText{
+    position:absolute;
+    width:422px !important;
+    height:106px !important;
+    top:210px !important;
+    left:171px !important;
+    font-size:80px !important;
+    line-height:106px;
+    color:#2C2C2C;
+}
+
+/* Thepc Text */
+.thepcText{
+    position:absolute;
+    width:561px;
+    height:127px;
+    left:171px;
+    top:316px;
+    font-weight:bold;   
+    font-size:96px;
+    line-height:127px;
+    color:#2C2C2C;
+}
+
+/* one text */
+.oneText{
+    position:absolute;
+    width:561px;
+    height:127px;
+    left:525px;
+    top:316px;
+    font-weight:bold;   
+    font-size:96px;
+    line-height:127px;
+    color:#43D8C9;
+}
+
+/* Div color box */
+.input_boxColor{
+    position: relative;
+}
+
+.colorBox{
+    width: 597px;
+    height: 37px;
+    display: inline-block;
+    background-color: #43D8C9;
+    position: absolute;
+    left: 171px;
+    top: 443px;
+}
+
+/* Description Text */
+.descriptionText{
+    position:absolute;
+    width:462px;
+    height:64px;
+    left:171px;
+    top:510px;
+    font-size:48px;
+    line-height:64px;
+}
+
+/* Home page image */
+.homeImage{
+    position:absolute;
+    width:343px !important;
+    height:343px !important;
+    left:1000px;
+    top:175px;
+}
+
+/* arrowIcon */
+.arrowIcon{
+    position:absolute !important;
+    width:74px !important;
+    height: 74px !important;
+    left:725px;
+    top:660px;
+    font-size:55px;
+    color:#43D8C9;
+    align:center;
+}
+
+/* sidebar login */
+.sidebar_loginActive{
+    position:fixed;
+    left:1200;
+    width:400px;
+    top:0px;
+    background-color:#43D8C9;
+    height:100vh;
+    right: 0;
+    transition: 350ms;
+}
+
+.sidebar_loginNotActive{
+    position:fixed;
+    left:1200;
+    width:400px;
+    top:0px;
+    background-color:#43D8C9;
+    height:100vh;
+    right:-100% !important;
+    transition: 850ms;
+}
+
+.sidebar_loginText{
+    position:relative;
+    left:152px;
+    top:160px;
+    font-size:30px;
+}
+
+/* sidebar signup */
+
+.sidebar_signupActive{
+    position:fixed;
+    left:1200;
+    width:400px;
+    top:0px;
+    background-color:#43D8C9;
+    height:100vh;
+    right: 0;
+    transition: 350ms;
+}
+
+.sidebar_signupNotActive{
+    position:fixed;
+    left:1200;
+    width:400px;
+    top:0px;
+    background-color:#43D8C9;
+    height:100vh;
+    right:-100% !important;
+    transition: 850ms;
+}
+
+.sidebar_signupText{
+    position:relative;
+    left:152px;
+    top:160px;
+    font-size:30px;
+}
+
+/* crossIcon */
+.crossIcon{
+    position:relative;
+    font-size:45px;
+    left:8px !important;
+    top:-50px;
+    cursor:pointer;
+}
+
+/* sidebar form */
+
+.sidebar_form{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #43D8C9;
+  height:65%;  
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.sidebar_formDescription{
+    position:relative;
+    left:93px;
+}
+
+/* home sign in with google */
+.home_google{
+    position:relative;
+    top:50px;
+    left:20%;
+    cursor:pointer;
+    height:auto !important;
+}
+
+.orText{
+    position:relative;
+    font-size:20px;
+    left:140px;
+    top:30px;
 }
