@@ -1,6 +1,8 @@
 import React,{ useState } from 'react';
 import './Home.css';
-import google from './google.png'
+import google from './google.png';
+import axios from 'axios'
+
 
 function Home(){
 
@@ -29,6 +31,54 @@ function Home(){
       setSignupSidebar(!signupSidebar)
     )
   }
+  //   https://accounts.google.com/o/oauth2/v2/auth?
+  //  scope=https%3A//www.googleapis.com/auth/drive.metadata.readonly&
+  //  include_granted_scopes=true&
+  //  response_type=token&
+  //  state=state_parameter_passthrough_value&
+  //  redirect_uri=https%3A//oauth2.example.com/code&
+  //  client_id=client_id
+  // 390060085294-k1l5r25ugf2jpsqorsmns7m8o3ject6f.apps.googleusercontent.com
+  function googleLogin()
+      { console.log('Clicked')
+        axios.get('https://thepc-one.herokuapp.com/api/google?response_type=token&state=state_parameter_passthrough_value&redirect_uri=http://localhost:3000/events&client_id=390060085294-k1l5r25ugf2jpsqorsmns7m8o3ject6f.apps.googleusercontent.com')
+        .then((response) => {
+          console.log(response);
+        }, (error) => {
+          console.log(error);
+        });
+      }
+
+  function oauthSignIn() {
+      // Google's OAuth 2.0 endpoint for requesting an access token
+      var oauth2Endpoint = 'https://thepc-one.herokuapp.com/api/google';
+    
+      // Create <form> element to submit parameters to OAuth 2.0 endpoint.
+      var form = document.createElement('form');
+      form.setAttribute('method', 'GET'); // Send as a GET request.
+      form.setAttribute('action', oauth2Endpoint);
+    
+      // Parameters to pass to OAuth 2.0 endpoint.
+      var params = {'client_id': '390060085294-k1l5r25ugf2jpsqorsmns7m8o3ject6f.apps.googleusercontent.com',
+                    'redirect_uri': 'http://localhost:3000',
+                    'response_type': 'token',
+                    // 'scope': 'https://www.googleapis.com/auth/drive.metadata.readonly',
+                    // 'include_granted_scopes': 'true',
+                    'state': 'pass-through value'};
+    
+      // Add form parameters as hidden input values.
+      for (var p in params) {
+        var input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('name', p);
+        input.setAttribute('value', params[p]);
+        form.appendChild(input);
+         }
+  
+        // Add form to page and submit it to open the OAuth 2.0 endpoint.
+        document.body.appendChild(form);
+        form.submit();
+       }
 
   return(
       <div className="home">
@@ -48,7 +98,7 @@ function Home(){
   
             </div>
           </nav> 
-
+          
           {/* home-page-text */}
           <div className="welcomeText">Welcome to</div>
           
@@ -61,6 +111,7 @@ function Home(){
           </div>
           
           <div className="descriptionText">All events. One Portal</div>
+          
           
           <div className="homeImage"><img src="https://picsum.photos/seed/picsum/350/450" alt=""/></div>
           
@@ -137,9 +188,8 @@ function Home(){
                 <div className="orText">OR</div>
 
                 <div className="home_google">
-                  <img src={google} />
+                  <img src={google} alt="google-login" onClick={()=>oauthSignIn()}  />
                 </div>
-
               </form>
             </div>
 
