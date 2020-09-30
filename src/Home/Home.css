@@ -2,6 +2,7 @@
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+
 /* Modify the backgorund color */ 
 .homeNavbar_color { 
 	background-color: white !important; 
@@ -13,20 +14,20 @@
     font-weight:500;
     font-size:36px;
     line-height:48px;
-    position:absolute;
+    position:relative;
     width:207px!important;
     height:48px!important;
     left:68px;
-    top:5px;
+    top:12px !important;
 }
 
 /* Modify navbar login button */
 .homeNavbar_loginButton{
-    position:absolute;
+    position:relative;
     width:136px;
     height:46px;
-    left:1200px;
-    top:15px;
+    left:-80px;
+    top:7px;
     font-weight:800 !important;
     border-radius:0 !important;
 }
@@ -38,11 +39,11 @@
 
 /* Modify navbar signup button */
 .homeNavbar_signupButton{
-    position:absolute;
+    position:relative;
     width:136px;
     height:46px;
-    left:1350px;
-    top:15px;
+    left:-60px;
+    top:7px;
     background-color:#43D8C9 !important;
     font-weight:800 !important;
     border-radius:0 !important;
@@ -56,10 +57,10 @@
 
 /* Welecome Text */
 .welcomeText{
-    position:absolute;
+    position:relative;
     width:422px !important;
     height:106px !important;
-    top:210px !important;
+    top:195px !important;
     left:171px !important;
     font-size:80px !important;
     line-height:106px;
@@ -68,11 +69,11 @@
 
 /* Thepc Text */
 .thepcText{
-    position:absolute;
+    position:relative;
     width:561px;
     height:127px;
     left:171px;
-    top:316px;
+    top:185px;
     font-weight:bold;   
     font-size:96px;
     line-height:127px;
@@ -81,11 +82,11 @@
 
 /* one text */
 .oneText{
-    position:absolute;
+    position:relative;
     width:561px;
     height:127px;
     left:525px;
-    top:316px;
+    top:60px;
     font-weight:bold;   
     font-size:96px;
     line-height:127px;
@@ -102,39 +103,39 @@
     height: 37px;
     display: inline-block;
     background-color: #43D8C9;
-    position: absolute;
+    position: relative;
     left: 171px;
-    top: 443px;
+    top: 65px;
 }
 
 /* Description Text */
 .descriptionText{
-    position:absolute;
+    position:relative;
     width:462px;
     height:64px;
     left:171px;
-    top:510px;
+    top:75px;
     font-size:48px;
     line-height:64px;
 }
 
 /* Home page image */
 .homeImage{
-    position:absolute;
+    position:relative;
     width:343px !important;
-    height:343px !important;
+    height:70px !important;
     left:1000px;
-    top:175px;
+    top:-350px;
     z-index: -1;
 }
 
 /* arrowIcon */
 .arrowIcon{
-    position:absolute !important;
+    position:relative !important;
     width:74px !important;
-    height: 74px !important;
+    /* height: 4px !important; */
     left:725px;
-    top:660px;
+    top:60px;
     font-size:55px;
     color:#43D8C9;
 }
@@ -212,7 +213,6 @@
 /* sidebar form */
 
 .sidebar_form{
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
   align-items: center;
