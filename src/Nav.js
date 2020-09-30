@@ -2,8 +2,13 @@ import React,{useState} from 'react'
 import axios from 'axios'
 import SignUp from './SignUp'
 import Login from './Login'
-function Nav()
+function Nav(props)
 {   
+    
+  function loginStateHandler(val,data){
+      props.loginStateHandler(val,data)
+      console.log('Pass 1');
+    }
 
     const [loginSidebar,setLoginSidebar] = useState(false);
   const [signupSidebar,setSignupSidebar] = useState(false);
@@ -61,7 +66,7 @@ function Nav()
             <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
         </svg>
     </div>
-    <Login />
+    <Login loginStateHandler={loginStateHandler} />
 
     </div>
 
@@ -72,7 +77,7 @@ function Nav()
             <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
         </svg>
         </div>
-        <SignUp />
+        <SignUp loginStateHandler={loginStateHandler}/>
         </div>
     </div>
     )

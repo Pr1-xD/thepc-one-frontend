@@ -7,9 +7,17 @@ import Nav from '../Nav'
 
 function Home(){
 
+  const [loggedin,setLoggedIn]=useState(false)
+
+  function loginStateHandler(val,data){
+    setLoggedIn(val)
+    console.log(loggedin)
+    console.log(data)
+  }
+
   return(
       <div className="home">
-          <Nav />
+          <Nav loginStateHandler={loginStateHandler}/>
           {/* home-page-text */}
           <div className="welcomeText">Welcome to</div>
           <div className="thepcText">THEPC </div>
@@ -26,6 +34,7 @@ function Home(){
             </svg>
           </div>
       </div>
+      
     ) 
 }
 
