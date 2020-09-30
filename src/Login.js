@@ -4,7 +4,6 @@ import axios from 'axios'
 function Login(props){
     function loginStateHandler(val,data){
         props.loginStateHandler(val,data)
-        console.log('Passed');
       }
         const [email,setEmail]=useState("")
         const [pass,setPass]=useState("")
