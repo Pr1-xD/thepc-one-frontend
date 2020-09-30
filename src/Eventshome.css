@@ -1,0 +1,11 @@
+.eventsHomeCard{
+    position:relative;
+    font-family: 'Red Hat Display', sans-serif !important;
+    top:90px;
+}
+
+.events_title{
+    position:relative;
+    max-width:20vw;
+    left:690px;
+}
