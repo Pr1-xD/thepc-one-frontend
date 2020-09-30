@@ -1,7 +1,11 @@
 import React,{useState} from 'react';
 import axios from 'axios'
 
-function Login(){
+function Login(props){
+    function loginStateHandler(val,data){
+        props.loginStateHandler(val,data)
+        console.log('Passed');
+      }
         const [email,setEmail]=useState("")
         const [pass,setPass]=useState("")
         function handleLogin(e)
@@ -16,6 +20,8 @@ function Login(){
         })
         .then((response) => {
             console.log(response);
+            if(response.status==200)
+            loginStateHandler(true,response.data)
         }, (error) => {
             console.log(error);
         });
