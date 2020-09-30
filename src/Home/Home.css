@@ -125,6 +125,7 @@
     height:343px !important;
     left:1000px;
     top:175px;
+    z-index: -1;
 }
 
 /* arrowIcon */
@@ -136,7 +137,6 @@
     top:660px;
     font-size:55px;
     color:#43D8C9;
-    align:center;
 }
 
 /* sidebar login */

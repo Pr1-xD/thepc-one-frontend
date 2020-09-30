@@ -9,7 +9,7 @@ function Nav(props)
       props.loginStateHandler(val,data)
     }
 
-    const [loginSidebar,setLoginSidebar] = useState(false);
+  const [loginSidebar,setLoginSidebar] = useState(false);
   const [signupSidebar,setSignupSidebar] = useState(false);
 
   const showLoginSidebar = ()=> {

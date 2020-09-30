@@ -3,6 +3,7 @@ import './Home.css';
 import google from './google.png';
 import axios from 'axios'
 import Nav from '../Nav'
+import NavAfter from '../NavAfter'
 
 
 function Home(){
@@ -18,13 +19,13 @@ function Home(){
     setLoggedIn(login)
     setData(data)
   }
-  React.useEffect(()=>{console.log(loggedin)})
+  React.useEffect(()=>{console.log(loggedin)},[])
 
   
 
   return(
       <div className="home">
-          <Nav loginStateHandler={loginStateHandler}/>
+          {loggedin ? <NavAfter/> : <Nav loginStateHandler={loginStateHandler}/>}
           {/* home-page-text */}
           <div className="welcomeText">Welcome to</div>
           <div className="thepcText">THEPC </div>
