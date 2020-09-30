@@ -1,0 +1,53 @@
+.navAfter{
+    font-family: 'Red Hat Display', sans-serif !important;
+}
+
+.homeNavbar_leftText{
+    color:#43D8C9 !important;
+    font-weight:500;
+    font-size:36px;
+    line-height:48px;
+    position:absolute;
+    width:207px!important;
+    height:48px!important;
+    left:68px;
+    top:5px;
+}
+
+.homeNavbar_myEventButton{
+    position:absolute;
+    width:136px;
+    height:46px;
+    left:1200px;
+    top:15px;
+    font-weight:800 !important;
+    border-radius:0 !important;
+    border:0;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+.homeNavbar_myEventButtonColor{
+    color:#43D8C9 !important;
+    border-color:#43D8C9 !important;
+}
+
+.homeNavbar_logoutButton{
+    position:absolute;
+    width:136px;
+    height:46px;
+    left:1350px;
+    top:15px;
+    background-color:#43D8C9 !important;
+    font-weight:800 !important;
+    border-radius:0 !important;
+}
+
+.homeNavbar_logoutButtonColor{
+    color:#43D8C9 !important;
+    border-color:#43D8C9 !important;
+    color:white!important;
+}
