@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,useEffect } from 'react';
 import './Home.css';
 import google from './google.png';
 import axios from 'axios'
@@ -7,13 +7,20 @@ import Nav from '../Nav'
 
 function Home(){
 
-  const [loggedin,setLoggedIn]=useState(false)
+ 
 
+  const [loggedin,setLoggedIn]=useState(false)
+  const [data,setData]=useState({})
+  
   function loginStateHandler(val,data){
-    setLoggedIn(val)
-    console.log(loggedin)
+    const login=val
     console.log(data)
+    setLoggedIn(login)
+    setData(data)
   }
+  React.useEffect(()=>{console.log(loggedin)})
+
+  
 
   return(
       <div className="home">
@@ -34,7 +41,6 @@ function Home(){
             </svg>
           </div>
       </div>
-      
     ) 
 }
 

@@ -7,7 +7,6 @@ function Nav(props)
     
   function loginStateHandler(val,data){
       props.loginStateHandler(val,data)
-      console.log('Pass 1');
     }
 
     const [loginSidebar,setLoginSidebar] = useState(false);
