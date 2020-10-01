@@ -1,6 +1,10 @@
 import React,{useState} from 'react'
 
-function CardButton() {
+function CardButton(props) {
+    function onclick(){
+        props.onClick()
+    }
+
     const [registerText,setRegisterText] = useState("Register")
 
     const handleRegisterText = () => {
@@ -11,7 +15,7 @@ function CardButton() {
 
     return (
         <div>
-            <button type="submit" className="btn btn-primary card_button" onClick={handleRegisterText}>{registerText}</button>
+            <button onClick={onclick} className="btn btn-primary card_button" >{registerText}</button>
         </div>
     )
 };

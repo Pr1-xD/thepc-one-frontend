@@ -2,10 +2,16 @@ import React , {useState,useEffect} from 'react'
 import axios from 'axios'
 import Card from "./Card/Card";
 import "./Eventshome.css"
+import HomeCards from './HomeCards'
 
 function Eventshome(props){
 
-    const [eventsList, setEventsList] = useState([]);
+    const [eventsList, setEventsList] = useState(null);
+
+    function eventsRegister(val){
+        console.log('Passed')
+        props.eventsRegister(val)
+    }
 
     useEffect(() => {
         axios.get('https://thepc-one.herokuapp.com/api/allEvents')
@@ -19,16 +25,12 @@ function Eventshome(props){
 
     useEffect(()=>{console.log(eventsList)})
 
-    function homeCardsMap(obj){
-        return(
-            <Card name={eventsList.obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} />
-        )
-    }
+    
 
     return(
         <div className="eventsHomeCard">
             <div className="events_title"><h1>Events</h1></div>
-            {/* {Object.keys(eventsList).map(homeCardsMap)} */}
+            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister}/>:<br/>}
         </div>
     )
 }
