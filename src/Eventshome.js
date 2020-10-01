@@ -5,43 +5,30 @@ import "./Eventshome.css"
 
 function Eventshome(props){
 
-    
-
     const [eventsList, setEventsList] = useState([]);
-
 
     useEffect(() => {
         axios.get('https://thepc-one.herokuapp.com/api/allEvents')
         .then((response) => {
-            console.log(response.data);
+            console.log(response);
             setEventsList(response.data);
-            console.log(eventsList)
         }, (error) => {
             console.log(error);
         });    
     },[])
 
+    useEffect(()=>{console.log(eventsList)})
 
-    // axios.get('https://thepc-one.herokuapp.com/api/allEvents')
-    // .then((response) => {
-    //     console.log(response.data);
-    //     setEventsList(response.data);
-    // }, (error) => {
-    //     console.log(error);
-    // });
-    
-
+    function homeCardsMap(obj){
+        return(
+            <Card name={eventsList.obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} />
+        )
+    }
 
     return(
         <div className="eventsHomeCard">
             <div className="events_title"><h1>Events</h1></div>
-            {/* {
-                eventsList.map((event) => {
-                    return (
-                        <Card title={event.eventName}/>
-                    )
-                })
-            } */}
+            {/* {Object.keys(eventsList).map(homeCardsMap)} */}
         </div>
     )
 }
