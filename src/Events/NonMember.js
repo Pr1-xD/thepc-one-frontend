@@ -1,23 +1,33 @@
 import React, { useEffect ,useState} from 'react'
-import Card from '../Card/Card'
+// import axios from 'axios'
 import EventsCard from './EventsCard'
+
 function NonMember(props){
-    useEffect(()=>{console.log(props.userData)})
+    useEffect(()=>{console.log(props.userData)},[])
+
     const [data,setData]=useState({})
+
     useEffect(()=>{
         setData(props.userData)
       })
-    function cardsMapper(obj){
-        return(
-            <Card name={obj.name}/>
-        )
-    }  
+
+      const [eventsList,setEventsList] = useState(null)
+
+
+      useEffect(()=>{
+          setEventsList(props.eventsData)
+      })
+
+      const mDate = props.mDate
+
+
+
     return(
         <div>
             Live Events
-            <EventsCard data={data}/>
+            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} />:<br/>}
             Past Events
-            <EventsCard data={data}/>
+            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data}/>: <br/>}
         </div>
     )
 }
