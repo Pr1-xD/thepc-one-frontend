@@ -11,22 +11,22 @@ function Home(props){
 
   function pageSetter(val){
     props.pageSetter(val)
-  }
+  }                         
   function dataSetter(val){
     props.dataSetter(val)
   }
 
   function eventsRegister(val){
     console.log('Reached')
-    data.eventsRegistered.push(val)
-    console.log(data)
+    data.eventsRegistered.push(val) //Event id and Event name is getting pushed into the registered events
+    console.log(data)  //particular user has registered for which event
   }
   
   function loginStateHandler(val,data){
-    const login=val
-    console.log(data)
-    setLoggedIn(login)
-    setData(data)
+    const login=val  //true value getting passed from the login.js
+    console.log(data) 
+    setLoggedIn(login) //putting the state login as true
+    setData(data) //??no use--i think this data is not getting stored
     dataSetter(data)
   }
   React.useEffect(()=>{console.log(loggedin)},[])

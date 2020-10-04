@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from './Card/Card'
+
 function HomeCards(props){
+    
     function eventsRegister(val){
         console.log('Passed')
         props.eventsRegister(val)

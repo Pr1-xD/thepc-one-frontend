@@ -1,18 +1,19 @@
 import React from 'react'
 import Card from '../Card/Card'
+
 function EventsCard(props){
-    let test=['A','B','C']
+
+    const mDate=props.mDate
+
+
     function eventCardsMap(obj){
         return(
-            <Card name={obj} desc={obj.eventDesc} startDate={obj.eventStart} />
+            <Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} />
+            
         )
     }
     return(
-        <div>
-            {/* {props.data.eventsRegistered.map(eventCardsMap)}  */}
-            {test.map(eventCardsMap)} 
-        </div>
-        
+        props.eventsData.map(eventCardsMap)    
     )
 }
 

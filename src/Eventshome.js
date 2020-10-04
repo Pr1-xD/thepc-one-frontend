@@ -1,6 +1,5 @@
 import React , {useState,useEffect} from 'react'
 import axios from 'axios'
-import Card from "./Card/Card";
 import "./Eventshome.css"
 import HomeCards from './HomeCards'
 
@@ -23,7 +22,7 @@ function Eventshome(props){
         });    
     },[])
 
-    useEffect(()=>{console.log(eventsList)})
+    useEffect(()=>{console.log(eventsList)},[])
 
     
 
