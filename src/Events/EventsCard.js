@@ -9,11 +9,10 @@ function EventsCard(props){
     function eventCardsMap(obj){
         return(
             <Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} />
-            
         )
     }
     return(
-        props.eventsData.map(eventCardsMap)    
+        props.eventsData?props.eventsData.map(eventCardsMap):<br />  
     )
 }
 
