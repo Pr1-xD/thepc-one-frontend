@@ -8,7 +8,7 @@ import axios from 'axios'
 
 function Events(props){
         const [data,setData]=useState({})
-        props.userData.tokens.pop()
+        console.log(props.userData.tokens)
         const token=props.userData.tokens.pop()
         console.log(token)
 
@@ -60,7 +60,7 @@ function Events(props){
         return(
             <div>
               <NavAfter pageSetter={pageSetter} />
-              {props.userData.memberType ===-1?<NonMember eventsData={eventsList} mDate={mDate} userData={data}/>:props.userData.memberType ===0?<Member mDate={mDate} userData={data} token={token}/>:props.userData.memberType ===1?<Admin mDate={mDate} userData={data} />:<br/>}
+              {props.userData.memberType ===-1?<NonMember eventsData={eventsList} mDate={mDate} userData={data}/>:props.userData.memberType ===0?<Member mDate={mDate} userData={data} token={token}/>:props.userData.memberType ===1?<Admin mDate={mDate} userData={data} token={token} />:<br/>}
             </div>
         ) 
 }

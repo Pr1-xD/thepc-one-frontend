@@ -20,13 +20,12 @@ function Home(props){
 
   function eventsRegister(val){
       console.log('Reached')
-      // data.eventsRegistered.push(val) //Event id and Event name is getting pushed into the registered events
       
       let link='https://thepc-one.herokuapp.com/api/user/'+val.eventID
       let header='Bearer '+(token.token)
-      // 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcwYzkyMjMwMmEyNDAwMTc2NWNkMDIiLCJtZW1iZXJUeXBlIjoiMSIsImlhdCI6MTYwMTIyNzQxMn0.qQFfNu1NMpwveCwfZa5V1S6QhEZGxTdpjmTJcn-ayt0'
+      
         console.log(header)
-        axios.patch(link,
+        axios.patch(link,{},
         {
             headers: {authorization:header}
         }
@@ -44,14 +43,17 @@ function Home(props){
     setLoggedIn(login) //putting the state login as true
     setData(data) //??no use--i think this data is not getting stored
     dataSetter(data)
-    setToken(data.tokens.pop())
+    setToken(data.tokens[data.tokens.length-1])
   }
   React.useEffect(()=>{console.log(token)},[token])
 
+  function logoutHandler(val){
+    setLoggedIn(val)
+  }
 
   return(
       <div className="home">
-          {loggedin ? <NavAfter pageSetter={pageSetter}/> : <Nav loginStateHandler={loginStateHandler}/>}
+          {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler}/> : <Nav loginStateHandler={loginStateHandler}/>}
           {/* home-page-text */}
           <div className="welcomeText">Welcome to</div>
           <div className="thepcText">THEPC </div>
