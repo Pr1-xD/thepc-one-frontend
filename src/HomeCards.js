@@ -9,7 +9,7 @@ function HomeCards(props){
     }
     function homeCardsMap(obj){
         return(
-            <Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} eventsRegister={eventsRegister}/>
+            obj.approved?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} eventsRegister={eventsRegister} buttonText="Register"/> : <br/>
         )
     }
     return(

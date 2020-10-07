@@ -2,17 +2,23 @@ import React, { useEffect, useState } from 'react';
 import './Events.css'
 import NavAfter from '../NavAfter'
 import NonMember from './NonMember'
+import Admin from './Admin'
 import Member from './Member'
 import axios from 'axios'
 
 function Events(props){
         const [data,setData]=useState({})
+        console.log(props.userData.tokens)
+        const token=props.userData.tokens.pop()
+        console.log(token)
 
         function pageSetter(val){
           props.pageSetter(val)
         }
+
         useEffect(()=>{
           setData(props.userData)
+          console.log(data)
         },[])
         
         const [eventsList,setEventsList] = useState(null)
@@ -54,7 +60,7 @@ function Events(props){
         return(
             <div>
               <NavAfter pageSetter={pageSetter} />
-              {props.userData.memberType ===-1?<NonMember eventsData={eventsList} mDate={mDate} userData={data}/>:props.userData.memberType ===0?<Member mDate={mDate} userData={data}/>:<br/>}
+              {props.userData.memberType ===-1?<NonMember eventsData={eventsList} mDate={mDate} userData={data}/>:props.userData.memberType ===0?<Member mDate={mDate} userData={data} token={token}/>:props.userData.memberType ===1?<Admin mDate={mDate} userData={data} token={token} />:<br/>}
             </div>
         ) 
 }

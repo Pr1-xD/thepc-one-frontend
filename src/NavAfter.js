@@ -8,6 +8,11 @@ function NavAfter(props) {
     function homeSetter(){
         props.pageSetter('Home')
     }
+
+    function logoutHandler(){
+        props.logoutHandler(false)
+    }
+
     return (
         <div className="navAfter">
             <nav className=" homeNavbar_color navbar navbar-expand-lg navbar-dark bg-primary">
@@ -22,7 +27,7 @@ function NavAfter(props) {
                 </ul>
   
                 <button className="homeNavbar_myEventButton homeNavbar_myEventButtonColor btn my-2 my-sm-0" type="submit" name="login" onClick={eventSetter} >My Events</button>
-                <button className="homeNavbar_logoutButton homeNavbar_logoutButtonColor btn my-2 my-sm-0" type="submit" name="signup">Logout</button>
+                <button className="homeNavbar_logoutButton homeNavbar_logoutButtonColor btn my-2 my-sm-0" type="submit" name="signup" onClick={logoutHandler}>Logout</button>
   
             </div>
           </nav>
