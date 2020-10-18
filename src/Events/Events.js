@@ -12,9 +12,8 @@ function Events(props){
         const token=props.userData.tokens.pop()
         console.log(token)
 
-        function pageSetter(val){
-          props.pageSetter(val)
-        }
+        function pageSetter(val){props.pageSetter(val)}
+        function logoutHandler(val){props.logoutHandler(val)}
 
         useEffect(()=>{
           setData(props.userData)
@@ -59,7 +58,7 @@ function Events(props){
 
         return(
             <div>
-              <NavAfter pageSetter={pageSetter} />
+              <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler} />
               {props.userData.memberType ===-1?<NonMember eventsData={eventsList} mDate={mDate} userData={data}/>:props.userData.memberType ===0?<Member mDate={mDate} userData={data} token={token}/>:props.userData.memberType ===1?<Admin mDate={mDate} userData={data} token={token} />:<br/>}
             </div>
         ) 

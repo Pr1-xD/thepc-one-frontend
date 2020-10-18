@@ -19,7 +19,7 @@ function Login(props){
         })
         .then((response) => {
             console.log(response);
-            if(response.status==200)
+            if(response.status===200)
             loginStateHandler(true,response.data)
         }, (error) => {
             console.log(error);

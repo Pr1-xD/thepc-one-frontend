@@ -3,8 +3,8 @@ import axios from 'axios'
 
 function CreateEvent(props){
 
-    console.log(props.token)
-    
+    function handleEventState(val){props.handleEventState(val)}
+
     let defaultEvent={
         eventName:'',
         eventDesc:'',
@@ -22,23 +22,15 @@ function CreateEvent(props){
       let abc=defaultEvent
       let link='https://thepc-one.herokuapp.com/api/newEvent'
       let header='Bearer '+(props.token.token)
-      // 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjcwYzkyMjMwMmEyNDAwMTc2NWNkMDIiLCJtZW1iZXJUeXBlIjoiMSIsImlhdCI6MTYwMTIyNzQxMn0.qQFfNu1NMpwveCwfZa5V1S6QhEZGxTdpjmTJcn-ayt0'
+      
       function handleSubmit()
       {  
         setEventDetails(abc)    
         console.log('Clicked')
         console.log(eventDetails)
         console.log(header)
-        axios.post(link,
-        eventDetails,
-        {
-            headers: {authorization:header}
-        }
-        )
-                .then(res => {
-                console.log(res);
-                console.log(res.data);
-                })
+        axios.post(link,eventDetails,{headers: {authorization:header}})
+                .then(res => {console.log(res.data);})
         setEventDetails(defaultEvent)        
       }
 
@@ -68,10 +60,8 @@ function CreateEvent(props){
                     <input type="radio" id="isFileUpload" name="isFileUpload" value="true" onChange={e=>abc.isFileUpload=e.target.checked}  />
 
                     <button className="btn btn-lg btn-primary btn-block" type="button" onClick={handleSubmit}>Submit</button>
-                    
-                    
-
                 </form>
+                <button className="btn btn-lg btn-primary btn-block" type="button" onClick={()=>handleEventState('cards')}>Back</button>
             
         </div>
     )

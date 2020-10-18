@@ -6,49 +6,23 @@ import Eventshome from '../Eventshome'
 import axios from 'axios'
 
 function Home(props){
-  
-  const [loggedin,setLoggedIn]=useState(false)
-  const [data,setData]=useState({eventsRegistered:[]})
-  const [token,setToken]=useState({})
 
-  function pageSetter(val){
-    props.pageSetter(val)
-  }                         
-  function dataSetter(val){
-    props.dataSetter(val)
-  }
+  let token=props.token
+  let data=props.data
+  let loggedin=props.loggedin
+
+  function pageSetter(val){props.pageSetter(val)}
+  function loginStateHandler(val,data){props.loginStateHandler(val,data)}
+  function logoutHandler(val){props.logoutHandler(val)}                         
 
   function eventsRegister(val){
-      console.log('Reached')
-      
       let link='https://thepc-one.herokuapp.com/api/user/'+val.eventID
       let header='Bearer '+(token.token)
-      
-        console.log(header)
-        axios.patch(link,{},
-        {
-            headers: {authorization:header}
-        }
-        )
+      console.log(header)
+        axios.patch(link,{},{headers: {authorization:header}})
                 .then(res => {
-                console.log(res);
                 console.log(res.data);
-                })    
-        console.log(data)           
-  }
-  
-  function loginStateHandler(val,data){
-    const login=val  //true value getting passed from the login.js
-    console.log(data) 
-    setLoggedIn(login) //putting the state login as true
-    setData(data) //??no use--i think this data is not getting stored
-    dataSetter(data)
-    setToken(data.tokens[data.tokens.length-1])
-  }
-  React.useEffect(()=>{console.log(token)},[token])
-
-  function logoutHandler(val){
-    setLoggedIn(val)
+                })               
   }
 
   return(
