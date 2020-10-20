@@ -8,7 +8,6 @@ function Card(props) {
     const date=props.startDate
     const newDate = date.toString().substring(0,10);
 
-
     function eventsRegister()
     {
         console.log('Passed')

@@ -3,32 +3,18 @@ import React, { useEffect ,useState} from 'react'
 import EventsCard from './EventsCard'
 
 function NonMember(props){
-    useEffect(()=>{console.log(props.userData)},[])
-
-    const [data,setData]=useState({})
-
-    useEffect(()=>{
-        setData(props.userData)
-      })
-
-      const [eventsList,setEventsList] = useState(null)
-
-
-      useEffect(()=>{
-          setEventsList(props.eventsData)
-      })
-
-      const mDate = props.mDate
-
-
+    const userID=props.userID
+    const data=props.userData
+    const eventsList=props.eventsData
+    const mDate = props.mDate
 
     return(
-        <div>
+        <>
             Live Events
-            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} />:<br/>}
+            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} buttonText="Start"/>:<br/>}
             Past Events
-            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data}/>: <br/>}
-        </div>
+            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID}/>: <br/>}
+        </>
     )
 }
 export default NonMember
