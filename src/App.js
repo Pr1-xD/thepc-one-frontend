@@ -12,6 +12,7 @@ function App() {
   const [token,setToken]=useState({})
 
   function pageSetter(val){setPage(val)}
+
   function logoutHandler(val){
     setLoggedIn(val)
     setPage('Home')
@@ -31,10 +32,6 @@ function App() {
     <div className="app">
       {page=='Home'?<Home pageSetter={pageSetter}  data={data} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler}/>:<></>}
       {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} userData={data} logoutHandler={logoutHandler}/>:<></>}
-      {/* <Switch>
-      <Route path = "/home" component = {Home} /
-      <Route path = "/events" component = {Events} />
-      </Switch> */}
     </div>
   );
 }
