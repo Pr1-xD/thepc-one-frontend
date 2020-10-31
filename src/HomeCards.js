@@ -8,8 +8,10 @@ function HomeCards(props){
         props.eventsRegister(val)
     }
     function homeCardsMap(obj){
+        const d1=new Date(obj.eventStart)
+        const d2=new Date()
         return(
-            obj.approved?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} eventsRegister={eventsRegister} buttonText="Register"/> : <br/>
+            ((obj.approved)&&(d1<=d2))?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} eventsRegister={eventsRegister} buttonText="Register"/> : <br/>
         )
     }
     return(

@@ -3,7 +3,7 @@ import './NavAfter.css'
 
 function NavAfter(props) {
     function eventSetter(){
-        props.pageSetter('events')
+        props.pageSetter('Events')
     }
     function homeSetter(){
         props.pageSetter('Home')

@@ -10,10 +10,12 @@ function SignUp(props){
     const [email,setEmail]=useState("")
     const [pass,setPass]=useState("")
     const [cnfpass,setCnfPass]=useState("")
+    const [warning,setWarning]=useState("")
  
     function handleSignIn(e)
       {
         e.preventDefault()
+        if(signupFormValidator()){
         console.log("clicked")
         console.log(name,email,pass,cnfpass)
         axios.post('https://thepc-one.herokuapp.com/api/user/signup',
@@ -27,10 +29,27 @@ function SignUp(props){
           console.log(response);
           if(response.status==200)
             loginStateHandler(true,response.data)
+            setWarning("")
         }, (error) => {
           console.log(error);
+          setWarning("Invalid Details")
         });
-      }
+      }}
+
+      function signupFormValidator(){
+        let flag=true
+        // if((/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email)==false)
+        if(email.length==0)
+        {   setWarning("Email ID Invalid")
+            flag=false  }
+        else if(pass.length==0)
+        {   setWarning("Password Invalid")
+            flag=false  }
+        else if(pass!=cnfpass)
+        {   setWarning("Passwords do not match")
+            flag=false  }
+        return flag 
+    }
 
         return(
             
@@ -44,6 +63,7 @@ function SignUp(props){
                     <input type="password" id="signUpPassword" className="form-control" placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
                     <label for="inputCnfPassword" class="sr-only">Confirm Password</label>
                     <input type="password" id="signUpCnfPassword" className="form-control" placeholder="Confirm Password" onChange={e=>setCnfPass(e.target.value)} required/>
+                    <p>{warning}</p>
                     <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={handleSignIn}>Sign in</button>
 
                     <div className="orText">OR</div>
