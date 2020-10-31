@@ -35,7 +35,7 @@ function Home(props){
           <div className="input_boxColor">
           <div className="colorBox"></div>
           </div>
-          <div className="descriptionText">All events. One Portal</div>
+          <div className="descriptionText">All events. One Portal.</div>
           <div className="homeImage"><img src="https://picsum.photos/seed/picsum/350/450" alt=""/></div>
           
           <div className="arrowIcon">

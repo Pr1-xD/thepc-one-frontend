@@ -1,5 +1,4 @@
-import React, { useEffect ,useState} from 'react'
-// import axios from 'axios'
+import React from 'react'
 import EventsCard from './EventsCard'
 
 function NonMember(props){
@@ -11,9 +10,9 @@ function NonMember(props){
     return(
         <>
             Live Events
-            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} buttonText="Start"/>:<br/>}
+            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} />:<></>}
             Past Events
-            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID}/>: <br/>}
+            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} userType={-1}/> : <></>}
         </>
     )
 }
