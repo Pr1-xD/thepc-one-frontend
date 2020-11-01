@@ -1,0 +1,32 @@
+.container {
+    position: relative;
+  }
+  
+  .button {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 106%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .custom{
+    left: 50%; 
+    top: 112%
+  }
+
+  .radioCustom{
+    margin-top: 4vh;
+    margin-right: 4vw;
+  }
+
+  @media only screen and (max-width:320px){
+    .radioCustom{
+        margin-top: 3vh;
+        margin-right: 3vw;
+    }
+    .radioText{
+        font-size: small;
+    }
+  }

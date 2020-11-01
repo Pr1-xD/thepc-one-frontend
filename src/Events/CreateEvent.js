@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
+import "./CreateEvent.css"
 
 function CreateEvent(props){
 
@@ -36,32 +37,41 @@ function CreateEvent(props){
 
 
     return(
-        <div>
+        <div class="container mt-3">
         <form className="form-event" onSubmit="return false" >
                     <label for="eventName" class="sr-only">Event Name</label>
                     <input type="text" id="eventName" className="form-control" placeholder="Event Name" onChange={e=>abc.eventName=e.target.value} required/>
+                    
                     <label for="eventDesc" class="sr-only">Event Description</label>
-                    <input type="text" id="eventDesc" className="form-control" placeholder="Event Desc" onChange={e=>abc.eventDesc=e.target.value} required/>
+                    <textarea type="text" id="eventDesc" className="form-control mt-3" placeholder="Event Desc" rows="3" cols="100" onChange={e=>abc.eventDesc=e.target.value} required/>
+                    
                     <label for="eventLink" class="sr-only">Event Link</label>
-                    <input type="text" id="eventLink" className="form-control" placeholder="Event Link" onChange={e=>abc.eventLink=e.target.value} required/>
+                    <input type="text" id="eventLink" className="form-control mt-3" placeholder="Event Link" onChange={e=>abc.eventLink=e.target.value} required/>
+                    
                     <label for="numTextBoxes" class="sr-only">Number of text boxes</label>
-                    <input type="text" id="numTextBoxes" className="form-control" placeholder="numTextBoxes" onChange={e=>abc.numTextBoxes=e.target.value} required/>
-                    <label for="numMultiChoice" class="sr-only">Email address</label>
-                    <input type="number" id=" numMultiChoice" className="form-control" placeholder="numMultiChoice" onChange={e=>abc.numMultiChoice=e.target.value} required/>
-                    <label for="nunmOptions" class="sr-only">Email address</label>
-                    <input type="number" id="nunmOptions" className="form-control" placeholder="nunmOptions" onChange={e=>abc.numOptions=e.target.value} required/>
-                    <label for="numFileUploads" class="sr-only">Email address</label>
-                    <input type="number" id="numFileUploads" className="form-control" placeholder="numFileUploads" onChange={e=>abc.numFileUploads=e.target.value} required/>
-                    <label for="isTextBoxes">Text Boxes</label>
-                    <input type="radio" id="isTextBoxes" name="isTextBoxes" value="true" onChange={e=>abc.isTextBoxes=e.target.checked} />
-                    <label for="isMultiChoice">MultiChoice</label>
-                    <input type="radio" id="isMultiChoice" name="isMultiChoice" value="true" onChange={e=>abc.isMultiChoice=e.target.checked} />
-                    <label for="isFileUpload">isFileUpload</label>
-                    <input type="radio" id="isFileUpload" name="isFileUpload" value="true" onChange={e=>abc.isFileUpload=e.target.checked}  />
-
-                    <button className="btn btn-lg btn-primary btn-block" type="button" onClick={handleSubmit}>Submit</button>
+                    <input type="text" id="numTextBoxes" className="form-control mt-3" placeholder="Number of text boxes" onChange={e=>abc.numTextBoxes=e.target.value} required/>
+                    
+                    <label for="numMultiChoice" class="sr-only">Number of Multi Choice</label>
+                    <input type="number" id=" numMultiChoice" className="form-control mt-3" placeholder="Number of Multi Choice" onChange={e=>abc.numMultiChoice=e.target.value} required/>
+                    
+                    <label for="numOptions" class="sr-only">Number of Options</label>
+                    <input type="number" id="numOptions" className="form-control mt-3" placeholder="Number of Options" onChange={e=>abc.numOptions=e.target.value} required/>
+                    
+                    <label for="numFileUploads" class="sr-only">Number of File Uploads</label>
+                    <input type="number" id="numFileUploads" className="form-control mt-3" placeholder="Number of File Uploads" onChange={e=>abc.numFileUploads=e.target.value} required/>
+                    
+                    <label for="isTextBoxes" className="radioText">Text Boxes</label>
+                    <input type="radio" id="isTextBoxes" name="isTextBoxes" className="radioCustom" value="true" onChange={e=>abc.isTextBoxes=e.target.checked} />
+                    
+                    <label for="isMultiChoice" className="radioText">MultiChoice</label>
+                    <input type="radio" id="isMultiChoice" name="isMultiChoice" className="radioCustom" value="true" onChange={e=>abc.isMultiChoice=e.target.checked} />
+                    
+                    <label for="isFileUpload" className="radioText">isFileUpload</label>
+                    <input type="radio" id="isFileUpload" name="isFileUpload" className="radioCustom" value="true" onChange={e=>abc.isFileUpload=e.target.checked}  />
+                    <br></br>
+                    <button className="button btn btn-lg btn-primary mt-2 " type="button" onClick={handleSubmit}>Submit</button>
                 </form>
-                <button className="btn btn-lg btn-primary btn-block" type="button" onClick={()=>handleEventState('cards')}>Back</button>
+                <button className="button btn btn-lg btn-primary mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
             
         </div>
     )
