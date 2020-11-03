@@ -25,7 +25,8 @@ function Card(props) {
                     <h5 className="card_title card-title">{props.name}</h5>
                     <p className="card_bodyText card-text">{props.desc}</p>
                     <div className="card_bodyFooter card-text"><b>DATE: <span className="card_footerColor">{newDate}</span></b>     &emsp;  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; <b>TIME: <span className="card_footerColor">2-6 PM</span></b>
-                      {props.buttonText?<button type="button" onClick={eventsRegister} className="btn btn-primary card_button">{props.buttonText}</button>:<></>}
+                      {(props.buttonText)&&(props.buttonText!='Registered')?<button type="button" onClick={eventsRegister} className="btn btn-primary card_button">{props.buttonText}</button>:<></>}
+                      {props.buttonText=='Registered'?<button type="button" className="btn btn-primary card_button_disabled">{props.buttonText}</button>:<></>}
                     </div>          
                 </div>
             </div>

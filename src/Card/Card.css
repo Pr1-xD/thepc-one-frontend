@@ -74,6 +74,18 @@
     top: -4%;
     cursor:pointer !important;
 }
+.card_button_disabled{
+    position: relative;
+    background-color: white;
+    color: #43D8C9;
+    border:#43D8C9 2px solid;
+    border-radius:0;
+    left:18%;
+    width:180px;
+    height:43px;
+    top: -4%;
+    cursor:pointer !important;
+}
 
 
 /* card  */

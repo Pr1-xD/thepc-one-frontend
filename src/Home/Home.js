@@ -20,9 +20,7 @@ function Home(props){
       let header='Bearer '+(token.token)
       console.log(header)
         axios.patch(link,{},{headers: {authorization:header}})
-                .then(res => {
-                console.log(res.data);
-                })               
+                .then(res => {console.log(res.data)})               
   }
 
   return(
@@ -43,7 +41,7 @@ function Home(props){
               <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
             </svg>
           </div>
-          <Eventshome eventsRegister={eventsRegister}  />
+          <Eventshome eventsRegister={eventsRegister} data={data} />
       </div>
     ) 
 }
