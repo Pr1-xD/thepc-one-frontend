@@ -4,13 +4,10 @@ import "./Eventshome.css"
 import HomeCards from './HomeCards'
 
 function Eventshome(props){
-
+    const userData=props.data
     const [eventsList, setEventsList] = useState(null);
 
-    function eventsRegister(val){
-        console.log('Passed')
-        props.eventsRegister(val)
-    }
+    function eventsRegister(val){props.eventsRegister(val)}
 
     useEffect(() => {
         axios.get('https://thepc-one.herokuapp.com/api/allEvents')
@@ -22,14 +19,10 @@ function Eventshome(props){
         });    
     },[])
 
-    useEffect(()=>{console.log(eventsList)},[])
-
-    
-
     return(
         <div className="eventsHomeCard">
             <div className="events_title"><h1>Events</h1></div>
-            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister}/>:<br/>}
+            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister} userData={userData}/>:<br/>}
         </div>
     )
 }
