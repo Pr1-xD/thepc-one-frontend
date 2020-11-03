@@ -2,58 +2,165 @@
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
-
-/* Modify the backgorund color */ 
-.homeNavbar_color { 
-	background-color: white !important; 
-} 
-
-/* Modify the Thpec name and color on navbar*/
-.homeNavbar_leftText{
+.navAfter_leftText{
     color:#43D8C9 !important;
     font-weight:500;
-    font-size:36px;
-    line-height:48px;
-    position:relative;
-    width:207px!important;
-    height:48px!important;
-    left:68px;
-    top:12px !important;
+    font-size:2.6vw;
+    margin-left: 5vw;
+    margin-top: 0.9vh;
 }
 
-/* Modify navbar login button */
-.homeNavbar_loginButton{
-    position:relative;
-    width:136px;
-    height:46px;
-    left:-80px;
-    top:7px;
+.navAfter_myEventButton{
     font-weight:800 !important;
     border-radius:0 !important;
+    width: 9rem;
+    height: 3rem;
+    padding-top: 1.7vh;
+    margin-right: 1.5vw !important;
 }
 
-.homeNavbar_loginButtonColor{
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+.navAfter_myEventButtonColor{
     color:#43D8C9 !important;
     border-color:#43D8C9 !important;
 }
 
-/* Modify navbar signup button */
-.homeNavbar_signupButton{
-    position:relative;
-    width:136px;
-    height:46px;
-    left:-60px;
-    top:7px;
+
+.navAfter_logoutButton{
+    font-weight:800 !important;
+    border-radius:0 !important;
+    border:0;
+    width: 9rem;
+    height: 3rem;
+    padding-top: 1.7vh;
+    margin-right: 2.8vw !important;
     background-color:#43D8C9 !important;
-    font-weight:800 !important;
-    border-radius:0 !important;
 }
 
-.homeNavbar_signupButtonColor{
+.logoutColor{
+    color: white;
+}
+
+.customIcon{
+    font-size: small;
+}
+
+.navAfter_logoutButtonColor{
     color:#43D8C9 !important;
     border-color:#43D8C9 !important;
-    color:white!important;
 }
+
+
+@media  screen and (max-width: 320px) and (max-width: 375px) {
+    .navAfter_leftText{
+        font-size: large;
+    }
+    .navAfter_myEventButton{
+        border: 0;
+        font-size: small;
+    }
+    .navAfter_logoutButton{
+        font-size: small;
+        background-color: white!important;
+    }
+    .logoutColor{
+        color: #43D8C9;
+    }
+    .customIcon{
+        margin-right: 1vw;
+    }
+}
+
+
+@media only screen and (min-width: 375px)and (max-width: 400px){
+    .navAfter_leftText{
+        font-size: larger;
+    }
+    .navAfter_myEventButton{
+        border: 0;
+        font-size: small;
+    }
+    .navAfter_logoutButton{
+        font-size: small;
+        background-color: white!important;
+    }
+    .logoutColor{
+        color: #43D8C9;
+    }
+    .customIcon{
+        margin-right: 8vw;
+    }
+}
+
+@media only screen and (min-width: 400px)and (max-width: 425px){
+    .navAfter_leftText{
+        font-size: larger;
+    }
+    .navAfter_myEventButton{
+        border: 0;
+        font-size: small;
+    }
+    .navAfter_logoutButton{
+        font-size: small;
+        background-color: white!important;
+    }
+    .logoutColor{
+        color: #43D8C9;
+    }
+    .customIcon{
+        margin-right: 14vw;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 450px){
+    .navAfter_leftText{
+        font-size: larger;
+    }
+    .navAfter_myEventButton{
+        border: 0;
+        font-size: small;
+    }
+    .navAfter_logoutButton{
+        font-size: small;
+        background-color: white!important;
+    }
+    .logoutColor{
+        color: #43D8C9;
+    }
+    .customIcon{
+        margin-right: 20vw;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 830px){
+    .navAfter_leftText{
+        font-size: small;
+        margin-left: 0.5vw;
+        margin-top: 0.35vh;
+    }
+    .navAfter_myEventButton{
+        border: 0;
+        font-size: 0.5rem;
+        padding-right: 10vw;
+    }
+    .navAfter_logoutButton{
+        padding-right: 10vw;
+        font-size: 0.5rem;
+        background-color: white!important;
+    }
+    .logoutColor{
+        color: #43D8C9;
+    }
+    .customIcon{
+        margin-right: 55vw!important;
+        font-size: xx-small;
+    }
+}
+
 
 /* Welecome Text */
 .welcomeText{

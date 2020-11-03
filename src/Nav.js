@@ -38,23 +38,19 @@ function Nav(props)
     return(
 
     <div>
-        <nav className=" homeNavbar_color navbar navbar-expand-lg navbar-dark bg-primary">
-            <a className=" homeNavbar_leftText navbar-brand">THEPC ONE</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
+      <nav class="navbar navbar-expand-lg navbar-light bg-white home">
+            <a class="navbar-brand navAfter_leftText mr-auto" >THEPC ONE</a>
+            <button class="navbar-toggler float-right customIcon" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
             </button>
-
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mr-auto">
-
-              </ul>
-  
-              <button className="homeNavbar_loginButton homeNavbar_loginButtonColor btn my-2 my-sm-0" type="submit" name="login" onClick={showLoginSidebar}>LOGIN</button>
-              <button className="homeNavbar_signupButton homeNavbar_signupButtonColor btn my-2 my-sm-0" type="submit" name="signup" onClick={showSignupSidebar}>SIGN UP</button>
-  
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="navAfter_myEventButton navAfter_myEventButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" name="login" onClick={showLoginSidebar}> LOGIN <span class="sr-only">(current)</span></a>
+                    <a class="navAfter_logoutButton navAfter_logoutButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" name="signup" onClick={showSignupSidebar}><span className="logoutColor">SIGN UP</span></a>
+                </div>
             </div>
-          </nav> 
-
+        </nav>
+        
           <div className={loginSidebar ? 'sidebar_loginActive' : 'sidebar_loginNotActive'}>
 
     <div className="sidebar_loginText">LOGIN</div>
