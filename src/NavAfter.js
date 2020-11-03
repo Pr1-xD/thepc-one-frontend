@@ -14,13 +14,25 @@ function NavAfter(props) {
     }
 
     return (
-        <div className=" container-fluid navAfter">
-                <a className=" homeNavbar_leftText navbar-brand" onClick={homeSetter}>THEPC ONE</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white navAfter">
+            <a class="navbar-brand navAfter_leftText mr-auto" onClick={homeSetter} >THEPC ONE</a>
+            <button class="navbar-toggler float-right customIcon" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="navAfter_myEventButton navAfter_myEventButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" name="login" onClick={eventSetter} > MY EVENTS <span class="sr-only">(current)</span></a>
+                    <a class="navAfter_logoutButton navAfter_logoutButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" name="signup" onClick={logoutHandler}><span className="logoutColor">LOGOUT</span></a>
+                </div>
+            </div>
+        </nav>
+        // <div className=" container-fluid navAfter">
+        //         <a className=" homeNavbar_leftText navbar-brand" onClick={homeSetter}>THEPC ONE</a>
 
                     
-                <button className="homeNavbar_myEventButton homeNavbar_myEventButtonColor btn my-2 my-sm-0" type="submit" name="login" onClick={eventSetter} >My Events</button>
-                <button className="homeNavbar_logoutButton homeNavbar_logoutButtonColor btn my-2 my-sm-0" type="submit" name="signup" onClick={logoutHandler}>Logout</button>
-        </div>
+        //         <button className="homeNavbar_myEventButton homeNavbar_myEventButtonColor btn my-2 my-sm-0" type="submit" name="login" onClick={eventSetter} >My Events</button>
+        //         <button className="homeNavbar_logoutButton homeNavbar_logoutButtonColor btn my-2 my-sm-0" type="submit" name="signup" onClick={logoutHandler}>Logout</button>
+        // </div>
     )
 }
 
