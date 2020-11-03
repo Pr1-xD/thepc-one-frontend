@@ -2,24 +2,27 @@
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+.container-fluid{
+    position: relative;
+}
+
 .homeNavbar_leftText{
     color:#43D8C9 !important;
     font-weight:500;
     font-size:36px;
-    line-height:48px;
-    position:absolute;
-    width:207px!important;
-    height:48px!important;
-    left:68px;
-    top:5px;
+    /* position: absolute; */
+    width:15vw!important;
+    height:8vh!important;
+    /* left:5%; */
+    /* bottom:-5%; */
 }
 
 .homeNavbar_myEventButton{
-    position:absolute;
-    width:136px;
-    height:46px;
-    left:1200px;
-    top:15px;
+    /* position:absolute; */
+    width:11%;
+    height:8vh;
+    margin-left:73vw;
+    margin-top: -8vh !important;
     font-weight:800 !important;
     border-radius:0 !important;
     border:0;
@@ -36,11 +39,11 @@
 }
 
 .homeNavbar_logoutButton{
-    position:absolute;
-    width:136px;
-    height:46px;
-    left:1350px;
-    top:15px;
+    /* position:absolute; */
+    width:11%;
+    height:8vh;
+    margin-left:85vw;
+    margin-top:-15vh !important;
     background-color:#43D8C9 !important;
     font-weight:800 !important;
     border-radius:0 !important;
