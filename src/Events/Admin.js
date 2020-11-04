@@ -28,7 +28,7 @@ function Admin(props){
         <div>
             ADMIN
         <h1>Requests</h1> 
-            {eventsList? eventsList.map(AdminCardsMap):<br />}
+            {eventsList? eventsList.map(AdminCardsMap):<></>}
         <h1>Live events</h1>
             {eventsList ? <EventsCard  eventsData={eventsList} buttonText='Details' userType={1}/> :<></> }
         </div>

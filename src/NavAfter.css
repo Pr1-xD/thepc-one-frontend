@@ -2,6 +2,10 @@
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+.navbar-custom{
+    z-index: 1;
+}
+
 .navAfter_leftText{
     color:#43D8C9 !important;
     font-weight:500;

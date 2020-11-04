@@ -20,6 +20,7 @@ function CreateEvent(props){
       }
 
       const [eventDetails,setEventDetails]=useState(defaultEvent)
+      const [formStatus,setFormStatus]=useState('')
       let abc=defaultEvent
       let link='https://thepc-one.herokuapp.com/api/newEvent'
       let header='Bearer '+(props.token.token)
@@ -27,11 +28,12 @@ function CreateEvent(props){
       function handleSubmit()
       {  
         setEventDetails(abc)    
-        console.log('Clicked')
         console.log(eventDetails)
-        console.log(header)
         axios.post(link,eventDetails,{headers: {authorization:header}})
-                .then(res => {console.log(res.data);})
+                .then(res => {console.log(res.data)
+                  if(res.dateCreated)
+                  setFormStatus('Event Created')
+                  ;})
         setEventDetails(defaultEvent)        
       }
 
@@ -72,7 +74,7 @@ function CreateEvent(props){
                     <button className="button btn btn-lg btn-primary mt-2 " type="button" onClick={handleSubmit}>Submit</button>
                 </form>
                 <button className="button btn btn-lg btn-primary mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
-            
+                <p className="success-message">{formStatus}</p>
         </div>
     )
 }

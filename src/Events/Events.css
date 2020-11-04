@@ -3,3 +3,14 @@
     font-family: 'Red Hat Display';
     font-weight:200 ;
 }
+
+.success-message{
+    color: #43D8C9;
+    font-size: 2rem;
+}
+
+.event-headers{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 4rem;
+}
