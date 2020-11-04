@@ -31,5 +31,5 @@ function EventsCard(props){
         props.eventsData?props.eventsData.map(eventCardsMap):<></>  
     )
 }
-
+// (obj._id==userID)?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={buttonText} />:
 export default EventsCard
