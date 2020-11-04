@@ -3,6 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import Home from './Home/Home'
 import Events from './Events/Events'
 import './App.css';
+import { wait } from '@testing-library/react';
 
 function App() {
 

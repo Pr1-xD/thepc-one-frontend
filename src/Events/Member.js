@@ -22,7 +22,7 @@ function Member(props){
 
     return(
         <>
-        <h1>Live events</h1>
+        <h1 className="event-headers">Live events</h1>
         <button className="btn btn-lg btn-primary btn-block" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>
          {((eventsList!=null)&&(EventsState=='cards')) ? <EventsCard  eventsData={eventsList} userType={0}/>:<CreateEvent token={token} handleEventState={handleEventState}/>}
         </>

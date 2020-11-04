@@ -2,6 +2,10 @@
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+.nav-scroll{
+    background-color: #43D8C9;
+}
+
 .navAfter_leftText{
     color:#43D8C9 !important;
     font-weight:500;
@@ -257,6 +261,7 @@
     height:100vh;
     right: 0;
     transition: 350ms;
+    z-index: 2;
 }
 
 .sidebar_loginNotActive{
@@ -288,6 +293,7 @@
     height:100vh;
     right: 0;
     transition: 350ms;
+    z-index: 2;
 }
 
 .sidebar_signupNotActive{
