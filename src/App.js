@@ -31,9 +31,9 @@ function App() {
 
   function refreshLogin(){
     console.log('Loaded')
-    console.log(sessionStorage.getItem('data'))
-    // if (sessionStorage.getItem('data'))
-    // loginStateHandler(true,sessionStorage.getItem('data'))
+    if (sessionStorage.getItem('data'))
+    loginStateHandler(true,JSON.parse(sessionStorage.getItem('data')))
+    // console.log(JSON.parse(sessionStorage.getItem('data')))
   }
  
   return (
