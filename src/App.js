@@ -10,7 +10,10 @@ function App() {
   const [data,setData]=useState({eventsRegistered:[]})
   const [token,setToken]=useState({})
 
-  function pageSetter(val){setPage(val)}
+  function pageSetter(val){
+    setPage(val)
+    sessionStorage.setItem('page',val)
+  }
 
   function logoutHandler(val){
     setLoggedIn(val)
@@ -31,10 +34,11 @@ function App() {
 
   function refreshLogin(){
     console.log('Loaded')
-    if (sessionStorage.getItem('data'))
+    if (sessionStorage.getItem('data')){
     loginStateHandler(true,JSON.parse(sessionStorage.getItem('data')))
+    pageSetter(sessionStorage.getItem('page'))  
     // console.log(JSON.parse(sessionStorage.getItem('data')))
-  }
+  }}
  
   return (
     <div className="app" onLoad={refreshLogin}>

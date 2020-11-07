@@ -48,4 +48,3 @@ function Home(props){
 }
 
 export default Home;
-// onClick={()=>{console.log(sessionStorage.getItem('item'))}}
