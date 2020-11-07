@@ -27,8 +27,7 @@ function Home(props){
       <div className="home">
           {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler}/> : <Nav loginStateHandler={loginStateHandler}/>}
           <br/>
-          {/* home-page-text */}
-          <div className="welcomeText">Welcome to</div>
+          <div className="welcomeText" >Welcome to</div>
           <div className="thepcText">THEPC </div>
           <div className="oneText">ONE</div>
           <div className="input_boxColor">
@@ -43,10 +42,10 @@ function Home(props){
               <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
             </svg>
           </div>
-         
           <Eventshome eventsRegister={eventsRegister} data={data}/>
       </div>
     ) 
 }
 
 export default Home;
+// onClick={()=>{console.log(sessionStorage.getItem('item'))}}

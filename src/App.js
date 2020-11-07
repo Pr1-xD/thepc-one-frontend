@@ -1,12 +1,10 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import Home from './Home/Home'
 import Events from './Events/Events'
 import './App.css';
-import { wait } from '@testing-library/react';
 
 function App() {
-
   const [page,setPage]=useState('Home')
   const [loggedin,setLoggedIn]=useState(false)
   const [data,setData]=useState({eventsRegistered:[]})
@@ -19,6 +17,7 @@ function App() {
     setPage('Home')
     setData({eventsRegistered:[]})
     setToken({})
+    sessionStorage.clear()
   }
 
   function loginStateHandler(val,data){
@@ -27,14 +26,18 @@ function App() {
     setLoggedIn(login) 
     setData(data) 
     setToken(data.tokens[data.tokens.length-1])
-    console.log(token)
-    sessionStorage.setItem('item', token);
-    console.log(sessionStorage.getItem('item'))
+    sessionStorage.setItem('data',JSON.stringify(data));
   }
 
+  function refreshLogin(){
+    console.log('Loaded')
+    console.log(sessionStorage.getItem('data'))
+    // if (sessionStorage.getItem('data'))
+    // loginStateHandler(true,sessionStorage.getItem('data'))
+  }
  
   return (
-    <div className="app">
+    <div className="app" onLoad={refreshLogin}>
       {page=='Home'?<Home pageSetter={pageSetter}  data={data} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler}/>:<></>}
       {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} userData={data} logoutHandler={logoutHandler}/>:<></>}
     </div>

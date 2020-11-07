@@ -24,6 +24,7 @@ function Login(props){
             if(response.status===200)
             setWarning("")
             loginStateHandler(true,response.data)
+            // sessionStorage.setItem('item', 'Logged In');
         }, (error) => {
             console.log(error);
             setWarning("Incorrect Username or Password")
