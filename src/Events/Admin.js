@@ -6,6 +6,7 @@ import AdminCard from '../Card/AdminCard'
 function Admin(props){
     const [eventsList,setEventsList] = useState(null)
     const token=props.token
+    const eventsData=props.eventsData
     
     useEffect(() => {
       axios.get('https://thepc-one.herokuapp.com/api/allEvents')
@@ -27,10 +28,10 @@ function Admin(props){
     return(
         <div>
             ADMIN
-        <h1>Requests</h1> 
+        <h1 className="event-headers">Requests</h1> 
             {eventsList? eventsList.map(AdminCardsMap):<></>}
-        <h1>Live events</h1>
-            {eventsList ? <EventsCard  eventsData={eventsList} buttonText='Details' userType={1}/> :<></> }
+        <h1 className="event-headers">Live events</h1>
+            {eventsData ? <EventsCard  eventsData={eventsData} buttonText='Details' userType={1}/> :<></> }
         </div>
     )
 }
