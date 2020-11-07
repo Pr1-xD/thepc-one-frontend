@@ -21,16 +21,14 @@ function Admin(props){
     function AdminCardsMap(obj)
     {   
         return( 
-           obj.approved?<br/> : <AdminCard token={token} name={obj.name} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} buttonText='Approve'/>
+           obj.approved?<br/> : <AdminCard token={token} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} buttonText='Approve'/>
         )
     }
 
     return(
         <div>
-            ADMIN
         <h1 className="event-headers">Requests</h1> 
             {eventsList? eventsList.map(AdminCardsMap):<></>}
-        <h1 className="event-headers">Live events</h1>
             {eventsData ? <EventsCard  eventsData={eventsData} buttonText='Details' userType={1}/> :<></> }
         </div>
     )

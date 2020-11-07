@@ -33,8 +33,8 @@ function Card(props) {
                             <div class="card-title">{props.name}</div>
                             <div class="card-desc mb-auto">{props.desc}</div>
                             <div class="d-flex justify-content-between align-items-center custom_footer">
-                                <h5 className="card_footerColor">DATE : <span className="card_footerColor">{newDate}</span></h5>
-                                <h5 className="card_footerColor">TIME : <span className="card_footerColor">2-6 PM</span></h5>
+                                <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
+                                <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
                                 {(buttonText)&&(buttonText!='Registered')?<button onClick={eventsRegister} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
                                 {buttonText=='Registered'?<button type="button" className="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto card_button_disabled">{props.buttonText}</button>:<></>}
                             </div>
