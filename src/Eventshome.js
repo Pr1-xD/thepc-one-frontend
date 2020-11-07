@@ -22,7 +22,7 @@ function Eventshome(props){
     return(
         <div className="eventsHomeCard">
             <div className="events_title"><h1>Events</h1></div>
-            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister} userData={userData}/>:<br/>}
+            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister} userData={userData}/> :<br/>}
         </div>
     )
 }

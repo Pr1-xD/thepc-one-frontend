@@ -1,20 +1,26 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import "./Card.css"
 
 function Card(props) {
-    const name=props.name;
-    const id=props.id;
+    const userID=props.userID
+    // const [buttonText,setButtonText]=useState(props.buttonText)
+    // console.log(buttonText)
+    const buttonText=props.buttonText
     const date=props.startDate
     const newDate = date.toString().substring(0,10);
 
     function eventsRegister()
-    {
+    {   if(userID)
+       { // setButtonText('Registered')    
         props.eventsRegister(
             {   
                 'eventName':props.name,
                 'eventID':props.id
             }
         )
+        }
+        else
+        console.log('Not logged in')
     }
 
     return (
@@ -29,8 +35,8 @@ function Card(props) {
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5>DATE : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5>TIME : <span className="card_footerColor">2-6 PM</span></h5>
-                                {(props.buttonText)&&(props.buttonText!='Registered')?<button onClick={eventsRegister} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Register</span></button>:<></>}
-                                {props.buttonText=='Registered'?<button type="button" className="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto card_button_disabled">{props.buttonText}</button>:<></>}
+                                {(buttonText)&&(buttonText!='Registered')?<button onClick={eventsRegister} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Register</span></button>:<></>}
+                                {buttonText=='Registered'?<button type="button" className="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto card_button_disabled">{props.buttonText}</button>:<></>}
                             </div>
                          </div>
                 </div>

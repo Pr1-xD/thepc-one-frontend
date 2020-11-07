@@ -27,7 +27,6 @@ function Home(props){
       <div className="home">
           {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler}/> : <Nav loginStateHandler={loginStateHandler}/>}
           <br/>
-          <br/>
           {/* home-page-text */}
           <div className="welcomeText">Welcome to</div>
           <div className="thepcText">THEPC </div>
@@ -45,7 +44,7 @@ function Home(props){
             </svg>
           </div>
          
-          <Eventshome eventsRegister={eventsRegister} data={data} />
+          <Eventshome eventsRegister={eventsRegister} data={data}/>
       </div>
     ) 
 }
