@@ -9,10 +9,10 @@ function NonMember(props){
 
     return(
         <>
-            <h1 className="event-headers">Live Events</h1>
+            {/* <h1 className="event-headers">Live Events</h1> */}
             {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} />:<></>}
-            <h1 className="event-headers">Past Events</h1>
-            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} userType={-1}/> : <></>}
+            {/* <h1 className="event-headers">Past Events</h1>
+            {eventsList ? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} userType={-1}/> : <></>} */}
         </>
     )
 }

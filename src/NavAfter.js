@@ -21,7 +21,7 @@ function NavAfter(props) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="navAfter_myEventButton navAfter_myEventButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" name="login" onClick={eventSetter} > MY EVENTS <span class="sr-only">(current)</span></a>
+                    <a class="navAfter_myEventButton navAfter_myEventButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" name="login" onClick={eventSetter}> My Events <span class="sr-only">(current)</span></a>
                     <a class="navAfter_logoutButton navAfter_logoutButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" name="signup" onClick={logoutHandler}><span className="logoutColor">LOGOUT</span></a>
                 </div>
             </div>
