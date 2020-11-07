@@ -9,7 +9,6 @@ function HomeCards(props){
     }
 
     function regListCheck(obj){
-        console.log('Called')
         let regUsersList=[]
         regUsersList=obj.regUsers.map(listMapFunction)
         function listMapFunction(obj){return obj._id}

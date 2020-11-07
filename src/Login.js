@@ -33,10 +33,10 @@ function Login(props){
         function loginFormValidator(){
             let flag=true
             // if((/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email)==false)
-            if(email.length==0)
+            if(email.length===0)
             {   setWarning("Email ID Invalid")
                 flag=false  }
-            else if(pass.length==0)
+            else if(pass.length===0)
             {   setWarning("Password Invalid")
                 flag=false  }
             return flag 

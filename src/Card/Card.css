@@ -77,11 +77,14 @@
       object-fit: contain;
       height: 19.7rem!important;
       
+      
   }
 
   /*add this it*/
   .card-image {
     display: flex;
+    
+    
   }
   /*-------------*/
   
@@ -97,10 +100,19 @@
   }
   
   /* Phone Devices Query */
-  @media only screen and (max-width: 37.5em) {
+  @media only screen and (max-width: 600px) {
+
+    .card-container{
+        width: 90%;
+        margin:1rem auto ;
+    }
     div.card-image img {
       width: 100%;
       height: auto;
+    }
+
+    .customImage{
+        margin: 0 auto;
     }
     
     /*add this it*/
@@ -120,22 +132,27 @@
     }
     .card-desc{
         text-align: center;
-        font-size: large;
+        font-size: 1rem;
     }
 
     .custom_footer{
-        flex-direction: column!important;
-        align-items: flex-center!important;
+        flex-direction: column !important;
+        align-items: flex-center !important;
     }
     .card_footerColor{
-        font-size: large;
+        margin-top: 10px;
+        font-size: 1rem;
     }
     .registerButton{
         font-size: medium;
     }
   }
 
-  @media  screen and (min-width: 38rem) and (max-width: 58rem){
+  @media  screen and (min-width: 600px) and (max-width: 900px){
+    .card-container{
+        width: 90%;
+        margin:1rem auto ;
+    }
     div.card-image img {
         width: 100%;
         height: auto;

@@ -17,6 +17,8 @@ function App() {
   function logoutHandler(val){
     setLoggedIn(val)
     setPage('Home')
+    setData({eventsRegistered:[]})
+    setToken({})
   }
 
   function loginStateHandler(val,data){
@@ -25,9 +27,11 @@ function App() {
     setLoggedIn(login) 
     setData(data) 
     setToken(data.tokens[data.tokens.length-1])
+    console.log(token)
+    sessionStorage.setItem('item', token);
+    console.log(sessionStorage.getItem('item'))
   }
 
-  React.useEffect(()=>{console.log(token)},[token])
  
   return (
     <div className="app">

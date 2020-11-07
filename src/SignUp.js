@@ -27,7 +27,7 @@ function SignUp(props){
         })
         .then((response) => {
           console.log(response);
-          if(response.status==200)
+          if(response.status===200)
             loginStateHandler(true,response.data)
             setWarning("")
         }, (error) => {
@@ -39,13 +39,13 @@ function SignUp(props){
       function signupFormValidator(){
         let flag=true
         // if((/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email)==false)
-        if(email.length==0)
+        if(email.length===0)
         {   setWarning("Email ID Invalid")
             flag=false  }
-        else if(pass.length==0)
+        else if(pass.length===0)
         {   setWarning("Password Invalid")
             flag=false  }
-        else if(pass!=cnfpass)
+        else if(pass!==cnfpass)
         {   setWarning("Passwords do not match")
             flag=false  }
         return flag 

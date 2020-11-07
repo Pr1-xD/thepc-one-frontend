@@ -8,7 +8,6 @@ function NavAfter(props) {
     function homeSetter(){
         props.pageSetter('Home')
     }
-
     function logoutHandler(){
         props.logoutHandler(false)
     }

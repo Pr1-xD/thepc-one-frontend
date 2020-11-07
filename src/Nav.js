@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import axios from 'axios'
 import SignUp from './SignUp'
 import Login from './Login'
 function Nav(props)
@@ -38,7 +37,7 @@ function Nav(props)
 
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-white home fixed-top navbar-custom">
-            <a class="navbar-brand navAfter_leftText mr-auto" >THEPC ONE</a>
+            <a class="navbar-brand navAfter_leftText mr-auto">THEPC ONE</a>
             <button class="navbar-toggler float-right customIcon" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon "></span>
             </button>
