@@ -1,9 +1,8 @@
 .home{
     font-family: 'Red Hat Display', sans-serif !important;
-    
 }
 
-.bg{
+.bg{  
   background-image: url(./thepc-one-01.png);
   width: 98.8vw;
   height:100vh;
@@ -225,13 +224,15 @@
 
 /* arrowIcon */
 .arrowIcon{
-    position:relative !important;
+    /* position:relative !important; */
     width:74px !important;
     /* height: 4px !important; */
-    left:725px;
-    top:60px;
+    /* left:725px;
+    top:60px; */
     font-size:55px;
+    margin: 8rem auto -1rem;
     color:var(--main);
+    
 }
 
 /* sidebar login */

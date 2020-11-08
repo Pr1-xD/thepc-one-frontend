@@ -30,6 +30,7 @@ function App() {
     setData(data) 
     setToken(data.tokens[data.tokens.length-1])
     sessionStorage.setItem('data',JSON.stringify(data));
+    sessionStorage.setItem('page','Home')
   }
 
   function refreshLogin(){
