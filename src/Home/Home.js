@@ -27,7 +27,7 @@ function Home(props){
       <div className="home bg">
           {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler}/> : <Nav loginStateHandler={loginStateHandler}/>}
           <br/>
-          <div className="home-text ">
+          <div className="home-text">
           <div className="welcomeText" >Welcome to</div>
           <div className="thepcText">THEPC </div>
           <div className="oneText">ONE</div>

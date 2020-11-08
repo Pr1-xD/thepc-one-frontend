@@ -175,8 +175,8 @@
 }
 
 .home-text{
-    margin-left: 7%;
-    margin-top: 12%;
+    margin-left: 6%;
+    margin-top: 10%;
 }
 
 /* Welecome Text */
@@ -230,7 +230,7 @@
     /* left:725px;
     top:60px; */
     font-size:55px;
-    margin: 8rem auto -1rem;
+    margin: 12% auto -1rem;
     color:var(--main);
     
 }
