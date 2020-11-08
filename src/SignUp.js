@@ -55,13 +55,13 @@ function SignUp(props){
             
               <div className="sidebar_form">
                 <form className="form-signin">
-                    <label for="inputEmail" class="sr-only">Name</label>
+                    <label htmlFor="inputEmail" className="sr-only">Name</label>
                     <input type="text" id="signUpName" className="form-control" placeholder="Name" onChange={e=>setName(e.target.value)} required/>
-                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <label htmlFor="inputEmail" className="sr-only">Email address</label>
                     <input type="email" id="inputEmail" className="form-control" placeholder="Email address" onChange={e=>setEmail(e.target.value)} required/>
-                    <label for="inputPassword" class="sr-only">Password</label>
+                    <label htmlFor="inputPassword" className="sr-only">Password</label>
                     <input type="password" id="signUpPassword" className="form-control" placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
-                    <label for="inputCnfPassword" class="sr-only">Confirm Password</label>
+                    <label htmlFor="inputCnfPassword" className="sr-only">Confirm Password</label>
                     <input type="password" id="signUpCnfPassword" className="form-control" placeholder="Confirm Password" onChange={e=>setCnfPass(e.target.value)} required/>
                     <p>{warning}</p>
                     <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={handleSignIn}>Sign in</button>

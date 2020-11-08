@@ -46,10 +46,10 @@ function Login(props){
         return(
             
                 <div className="sidebar_form">
-                <form className="form-signin" onSubmit="return false" >
-                    <label for="inputEmail" class="sr-only">Email address</label>
+                <form className="form-signin">
+                    <label htmlFor="inputEmail" className="sr-only">Email address</label>
                     <input type="email" id="inputEmail" className="form-control" placeholder="Email address" onChange={e=>setEmail(e.target.value)} required/>
-                    <label for="inputPassword" class="sr-only">Password</label>
+                    <label htmlFor="inputPassword" className="sr-only">Password</label>
                     <input type="password" id="inputPassword" className="form-control" placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
                     <p>{warning}</p>
                     <button className="btn btn-lg btn-primary btn-block" type="button" onClick={handleLogin}>Login</button>
