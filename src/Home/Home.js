@@ -24,9 +24,10 @@ function Home(props){
   }
 
   return(
-      <div className="home">
+      <div className="home bg">
           {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler}/> : <Nav loginStateHandler={loginStateHandler}/>}
           <br/>
+          <div className="home-text">
           <div className="welcomeText" >Welcome to</div>
           <div className="thepcText">THEPC </div>
           <div className="oneText">ONE</div>
@@ -34,7 +35,9 @@ function Home(props){
           <div className="colorBox"></div>
           </div>
           <div className="descriptionText">All events. One Portal.</div>
-          <div className="homeImage"><img src="https://picsum.photos/seed/picsum/350/450" alt=""/></div>
+          </div>
+          
+          {/* <div className="homeImage"><img src="https://picsum.photos/seed/picsum/350/450" alt=""/></div> */}
           <br/>
           <br/>
           <div className="arrowIcon">

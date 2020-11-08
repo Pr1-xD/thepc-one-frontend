@@ -1,5 +1,15 @@
 .home{
     font-family: 'Red Hat Display', sans-serif !important;
+    
+}
+
+.bg{
+  background-image: url(./thepc-one-01.png);
+  width: 98.8vw;
+  height:100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .nav-scroll{
@@ -165,80 +175,53 @@
     }
 }
 
+.home-text{
+    margin-left: 7%;
+    margin-top: 12%;
+}
 
 /* Welecome Text */
 .welcomeText{
-    position:relative;
-    width:422px !important;
-    height:106px !important;
-    top:195px !important;
-    left:171px !important;
-    font-size:80px !important;
-    line-height:106px;
+    font-size:3.2rem !important;
+    line-height:90px;
     color:#2C2C2C;
 }
 
 /* Thepc Text */
 .thepcText{
-    position:relative;
-    width:561px;
-    height:127px;
-    left:171px;
-    top:185px;
     font-weight:bold;   
-    font-size:96px;
-    line-height:127px;
+    font-size:6.8rem;
+    line-height:90px;
+    margin-bottom:10px ;
     color:#2C2C2C;
 }
 
 /* one text */
 .oneText{
-    position:relative;
-    width:561px;
-    height:127px;
-    left:525px;
-    top:60px;
     font-weight:bold;   
-    font-size:96px;
-    line-height:127px;
+    font-size:6.8rem;
+    line-height:100px;
+    margin-bottom:10px ;
     color:#43D8C9;
+    
 }
 
-/* Div color box */
-.input_boxColor{
-    position: relative;
-}
 
 .colorBox{
     width: 597px;
     height: 37px;
     display: inline-block;
     background-color: #43D8C9;
-    position: relative;
-    left: 171px;
-    top: 65px;
+    margin-top: 8px;
 }
 
 /* Description Text */
 .descriptionText{
-    position:relative;
-    width:462px;
-    height:64px;
-    left:171px;
-    top:75px;
-    font-size:48px;
+    font-size:3.2rem;
     line-height:64px;
+    margin-top: 10px;
 }
 
-/* Home page image */
-.homeImage{
-    position:relative;
-    width:343px !important;
-    height:70px !important;
-    left:1000px;
-    top:-350px;
-    z-index: -1;
-}
 
 /* arrowIcon */
 .arrowIcon{
