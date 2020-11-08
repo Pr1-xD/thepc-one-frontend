@@ -5,7 +5,7 @@
 }
 
 .success-message{
-    color: #43D8C9;
+    color: var(--main);
     font-size: 2rem;
 }
 

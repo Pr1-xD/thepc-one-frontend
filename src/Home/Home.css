@@ -13,11 +13,11 @@
 }
 
 .nav-scroll{
-    background-color: #43D8C9;
+    background-color: var(--main);
 }
 
 .navAfter_leftText{
-    color:#43D8C9 !important;
+    color:var(--main) !important;
     font-weight:500;
     font-size:2.6vw;
     margin-left: 5vw;
@@ -39,8 +39,8 @@
 }
 
 .navAfter_myEventButtonColor{
-    color:#43D8C9 !important;
-    border-color:#43D8C9 !important;
+    color:var(--main) !important;
+    border-color:var(--main) !important;
 }
 
 
@@ -52,7 +52,7 @@
     height: 3rem;
     padding-top: 1.7vh;
     margin-right: 2.8vw !important;
-    background-color:#43D8C9 !important;
+    background-color:var(--main) !important;
 }
 
 .logoutColor{
@@ -64,8 +64,8 @@
 }
 
 .navAfter_logoutButtonColor{
-    color:#43D8C9 !important;
-    border-color:#43D8C9 !important;
+    color:var(--main) !important;
+    border-color:var(--main) !important;
 }
 
 
@@ -82,7 +82,7 @@
         background-color: white!important;
     }
     .logoutColor{
-        color: #43D8C9;
+        color: var(--main);
     }
     .customIcon{
         margin-right: 1vw;
@@ -103,7 +103,7 @@
         background-color: white!important;
     }
     .logoutColor{
-        color: #43D8C9;
+        color: var(--main);
     }
     .customIcon{
         margin-right: 8vw;
@@ -167,7 +167,7 @@
         background-color: white!important;
     }
     .logoutColor{
-        color: #43D8C9;
+        color: var(--main);
     }
     .customIcon{
         margin-right: 55vw!important;
@@ -202,7 +202,7 @@
     font-size:6.8rem;
     line-height:100px;
     margin-bottom:10px ;
-    color:#43D8C9;
+    color:var(--main);
     
 }
 
@@ -211,7 +211,7 @@
     width: 597px;
     height: 37px;
     display: inline-block;
-    background-color: #43D8C9;
+    background-color:var(--main);
     margin-top: 8px;
 }
 
@@ -231,7 +231,7 @@
     left:725px;
     top:60px;
     font-size:55px;
-    color:#43D8C9;
+    color:var(--main);
 }
 
 /* sidebar login */
@@ -240,7 +240,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:#32dfb0;
     height:100vh;
     right: 0;
     transition: 350ms;
@@ -252,7 +252,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:var(--main);
     height:100vh;
     right:-100% !important;
     transition: 850ms;
@@ -272,7 +272,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:var(--main);
     height:100vh;
     right: 0;
     transition: 350ms;
@@ -284,7 +284,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:var(--main);
     height:100vh;
     right:-100% !important;
     transition: 850ms;
@@ -314,7 +314,7 @@
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #43D8C9;
+  background-color:var(--main);
   height:65%;  
 }
 

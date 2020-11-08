@@ -3,8 +3,8 @@
 }
 
 .registerButtonColor{
-    color:#43D8C9 !important;
-    border-color:#43D8C9 !important;
+    color:var(--main) !important;
+    border-color:var(--main) !important;
 }
 
 .registerText{
@@ -16,9 +16,8 @@
     border-radius:0 !important;
     width: 10rem;
     height: 3rem;
-    
     margin-right: 1.5vw !important;
-    background-color: #43D8C9;
+    background-color: var(--main);
 }
 
 
