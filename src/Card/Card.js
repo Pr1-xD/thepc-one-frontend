@@ -18,6 +18,7 @@ function Card(props) {
                 'eventID':props.id
             }
         )
+        
         }
         else
         console.log('Not logged in')
