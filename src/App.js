@@ -29,15 +29,17 @@ function App() {
     setLoggedIn(login) 
     setData(data) 
     setToken(data.tokens[data.tokens.length-1])
-    sessionStorage.setItem('data',JSON.stringify(data));
-    sessionStorage.setItem('page','Home')
+    sessionStorage.setItem('data',JSON.stringify(data))
   }
 
   function refreshLogin(){
     console.log('Loaded')
     if (sessionStorage.getItem('data')){
     loginStateHandler(true,JSON.parse(sessionStorage.getItem('data')))
-    pageSetter(sessionStorage.getItem('page'))  
+    if (sessionStorage.getItem('page'))
+    pageSetter(sessionStorage.getItem('page'))
+    else
+    pageSetter('Home')  
     // console.log(JSON.parse(sessionStorage.getItem('data')))
   }}
  
