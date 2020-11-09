@@ -24,7 +24,7 @@ function Home(props){
           <div className="thepcText">THEPC </div>
           <div className="oneText">ONE</div>
           <div className="input_boxColor"><div className="colorBox"></div></div>
-          <div className="descriptionText">All events. One Portal.</div>
+          <div className="descriptionText">One THEPC. One Portal.</div>
           </div>
           <br/>
           <br/>

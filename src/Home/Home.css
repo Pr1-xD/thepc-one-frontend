@@ -261,9 +261,10 @@
 
 .sidebar_loginText{
     position:relative;
-    left:152px;
-    top:160px;
+    left:140px;
+    top:220px;
     font-size:30px;
+    font-weight: 500;
 }
 
 /* sidebar signup */
@@ -293,9 +294,10 @@
 
 .sidebar_signupText{
     position:relative;
-    left:152px;
+    left:140px;
     top:160px;
     font-size:30px;
+    font-weight: 500;
 }
 
 /* crossIcon */
@@ -317,6 +319,12 @@
   padding-bottom: 40px;
   background-color:var(--main);
   height:65%;  
+}
+
+.login-button{
+    background-color: #2C2C2C;
+    color: var(--main);
+    border: none;
 }
 
 .form-signin {
@@ -344,7 +352,6 @@
   border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }

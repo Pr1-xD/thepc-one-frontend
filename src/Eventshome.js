@@ -41,7 +41,7 @@ function Eventshome(props){
     return(
         <div className="eventsHomeCard">
             <h1 className="events_title">Events</h1>
-            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister} userData={userData} />  :<br/>}
+            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister} userData={userData} />  :<></>}
         </div>
     )
 }

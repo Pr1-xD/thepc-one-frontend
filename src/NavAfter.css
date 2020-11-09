@@ -41,7 +41,7 @@
 .navAfter_logoutButton{
     font-weight:800 !important;
     border-radius:0 !important;
-    border:0;
+    border:3px var(--main);
     width: 9rem;
     height: 3rem;
     padding-top: 1.7vh;

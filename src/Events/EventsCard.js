@@ -7,6 +7,10 @@ function EventsCard(props){
     const buttonText=props.buttonText
     const userType=props.userType
 
+    // function handleEventState(val){
+    //     props.handleEventState(val)
+    // }
+
     function eventCardsMapLive(obj){
         const d1=new Date(obj.eventStart)
         const d2=new Date()
@@ -44,7 +48,10 @@ function EventsCard(props){
         )}
         if (userType==0){
         return(
-            (obj.approved)&&(d1<=d2)?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate}  />:<></>
+            <>
+            {/* <button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button> */}
+            {(obj.approved)&&(d1<=d2)?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate}  />:<></>}
+            </>
         )}
         if (userType==1){
         return(

@@ -52,8 +52,7 @@ function Login(props){
                     <label htmlFor="inputPassword" className="sr-only">Password</label>
                     <input type="password" id="inputPassword" className="form-control" placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
                     <p>{warning}</p>
-                    <button className="btn btn-lg btn-primary btn-block" type="button" onClick={handleLogin}>Login</button>
-                    <div className="orText">OR</div>
+                    <button className="btn btn-lg btn-primary btn-block login-button" type="button" onClick={handleLogin}>Login</button>
                     <div className="home_google">
                     {/* <img src={google} /> */}
                     </div>
