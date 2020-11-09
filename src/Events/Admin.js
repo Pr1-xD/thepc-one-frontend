@@ -21,7 +21,7 @@ function Admin(props){
     function AdminCardsMap(obj)
     {   
         return( 
-           obj.approved?<br/> : <AdminCard token={token} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} buttonText='Approve'/>
+           obj.approved?<></> : <AdminCard token={token} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} buttonText='Approve'/>
         )
     }
 

@@ -47,6 +47,10 @@ function Events(props){
               <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler} />
               <br/>
               <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
               {props.userData.memberType ===-1?<NonMember eventsData={eventsList} mDate={mDate} userData={data} userID={userID}/>:props.userData.memberType ===0?<Member eventsData={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:props.userData.memberType ===1?<Admin eventsData={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
             </>
         ) 
