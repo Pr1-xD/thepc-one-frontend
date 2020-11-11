@@ -24,8 +24,7 @@ function App() {
   }
 
   function loginStateHandler(val,data){
-    const login=val
-    console.log(data) 
+    const login=val 
     setLoggedIn(login) 
     setData(data) 
     setToken(data.tokens[data.tokens.length-1])

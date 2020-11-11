@@ -10,6 +10,7 @@ function EventsCard(props){
     // function handleEventState(val){
     //     props.handleEventState(val)
     // }
+    function eventStart(val){props.eventStart(val)}
 
     function eventCardsMapLive(obj){
         const d1=new Date(obj.eventStart)
@@ -20,9 +21,8 @@ function EventsCard(props){
         function listMapFunction(obj){
             return obj._id
         }
-        console.log(regUsersList)
         return(
-            (obj.approved)&&(regUsersList.includes(userID)&&(d1<=d2))?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={buttonText} />:<br/>
+            (obj.approved)&&(regUsersList.includes(userID)&&(d1<=d2))?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={buttonText} eventStart={eventStart} event={obj} />:<></>
         )}
         if (userType==0){
         return(
@@ -42,9 +42,8 @@ function EventsCard(props){
         function listMapFunction(obj){
             return obj._id
         }
-        console.log(regUsersList)
         return(
-            (obj.approved)&&(regUsersList.includes(userID)&&(d1<=d2))?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate}  />:<br/>
+            (obj.approved)&&(regUsersList.includes(userID)&&(d1<=d2))?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} />:<></>
         )}
         if (userType==0){
         return(

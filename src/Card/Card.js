@@ -2,10 +2,18 @@ import React, {useState} from 'react'
 import "./Card.css"
 
 function Card(props) {
+    let eventData={}
     const userID=props.userID
     const buttonText=props.buttonText
     const date=props.startDate
     const newDate = date.toString().substring(0,10);
+
+    if(buttonText=='Start')
+    eventData=props.event
+
+    function eventStart(){
+        props.eventStart(eventData)
+    }
 
     function eventsRegister()
     {   if(userID)
@@ -34,7 +42,8 @@ function Card(props) {
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
-                                {(buttonText)&&(buttonText!='Registered')?<button onClick={eventsRegister} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
+                                {(buttonText=='Register')?<button onClick={eventsRegister} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
+                                {(buttonText=='Start')?<button onClick={eventStart} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
                                 {buttonText=='Registered'?<button type="button" className="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto card_button_disabled">{props.buttonText}</button>:<></>}
                             </div>
                          </div>
