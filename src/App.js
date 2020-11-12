@@ -39,7 +39,6 @@ function App() {
     pageSetter(sessionStorage.getItem('page'))
     else
     pageSetter('Home')  
-    // console.log(JSON.parse(sessionStorage.getItem('data')))
   }}
  
   return (

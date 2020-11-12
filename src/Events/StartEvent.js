@@ -18,7 +18,7 @@ function StartEvent(props){
             {Array.from(Array(10).keys()).map(TextField)}
             {eventData.eventLink?<button className="button btn btn-lg btn-primary mt-5 custom" type="button">Go to Event</button>:<></>}
             </div>
-            :<></>
+            :<></>    
     )
 }
 export default StartEvent
