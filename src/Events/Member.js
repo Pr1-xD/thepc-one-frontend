@@ -5,26 +5,16 @@ import CreateEvent from './CreateEvent'
 
 function Member(props){
     const [EventsState,setEventsState]=useState('cards')
-    const [eventsList,setEventsList] = useState(null)
     const token=props.token
-    function handleEventState(val)
-    { setEventsState(val)}
+    const mDate = props.mDate
+    const eventsData=props.eventsData
 
-    useEffect(() => {
-      axios.get('https://thepc-one.herokuapp.com/api/allEvents')
-      .then((response) => {
-          console.log(response);
-          setEventsList(response.data);
-      }, (error) => {
-          console.log(error);
-      });    
-    },[])
-
+    function handleEventState(val){setEventsState(val)}
+    
     return(
         <>
-        <h1 className="event-headers">Live events</h1>
-        <button className="btn btn-lg btn-primary btn-block" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>
-         {((eventsList!=null)&&(EventsState=='cards')) ? <EventsCard  eventsData={eventsList} userType={0}/>:<CreateEvent token={token} handleEventState={handleEventState}/>}
+        <button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>
+         {((EventsState=='cards')) ? <EventsCard  mDate={mDate} eventsData={eventsData} userType={0} buttonText='Details'/>:<CreateEvent token={token} handleEventState={handleEventState}/>}
         </>
     )
 }

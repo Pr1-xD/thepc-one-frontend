@@ -5,7 +5,7 @@
 }
 
 .success-message{
-    color: #43D8C9;
+    color: var(--main);
     font-size: 2rem;
 }
 
@@ -13,4 +13,24 @@
     font-size: 2rem;
     font-weight: 600;
     margin-left: 4rem;
+}
+
+.create-event{
+    width: 10rem;
+    margin-left: 85%;
+    margin-bottom: -3rem;
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 0;
+    font-family: 'Red Hat Display';
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 800px) {
+    .event-headers{
+        text-align: center;
+        margin: 2rem 0rem;
+    }
 }

@@ -2,12 +2,21 @@
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+.bg{  
+  background-image: url(./thepc-one-01.png);
+  width: 98.8vw;
+  height:100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .nav-scroll{
-    background-color: #43D8C9;
+    background-color: var(--main);
 }
 
 .navAfter_leftText{
-    color:#43D8C9 !important;
+    color:var(--main) !important;
     font-weight:500;
     font-size:2.6vw;
     margin-left: 5vw;
@@ -29,8 +38,8 @@
 }
 
 .navAfter_myEventButtonColor{
-    color:#43D8C9 !important;
-    border-color:#43D8C9 !important;
+    color:var(--main) !important;
+    border-color:var(--main) !important;
 }
 
 
@@ -42,7 +51,7 @@
     height: 3rem;
     padding-top: 1.7vh;
     margin-right: 2.8vw !important;
-    background-color:#43D8C9 !important;
+    background-color:var(--main) !important;
 }
 
 .logoutColor{
@@ -54,8 +63,8 @@
 }
 
 .navAfter_logoutButtonColor{
-    color:#43D8C9 !important;
-    border-color:#43D8C9 !important;
+    color:var(--main) !important;
+    border-color:var(--main) !important;
 }
 
 
@@ -72,7 +81,7 @@
         background-color: white!important;
     }
     .logoutColor{
-        color: #43D8C9;
+        color: var(--main);
     }
     .customIcon{
         margin-right: 1vw;
@@ -93,7 +102,7 @@
         background-color: white!important;
     }
     .logoutColor{
-        color: #43D8C9;
+        color: var(--main);
     }
     .customIcon{
         margin-right: 8vw;
@@ -157,7 +166,7 @@
         background-color: white!important;
     }
     .logoutColor{
-        color: #43D8C9;
+        color: var(--main);
     }
     .customIcon{
         margin-right: 55vw!important;
@@ -165,90 +174,65 @@
     }
 }
 
+.home-text{
+    margin-left: 6%;
+    margin-top: 10%;
+}
 
 /* Welecome Text */
 .welcomeText{
-    position:relative;
-    width:422px !important;
-    height:106px !important;
-    top:195px !important;
-    left:171px !important;
-    font-size:80px !important;
-    line-height:106px;
+    font-size:3.2rem !important;
+    line-height:90px;
     color:#2C2C2C;
 }
 
 /* Thepc Text */
 .thepcText{
-    position:relative;
-    width:561px;
-    height:127px;
-    left:171px;
-    top:185px;
     font-weight:bold;   
-    font-size:96px;
-    line-height:127px;
+    font-size:6.8rem;
+    line-height:90px;
+    margin-bottom:10px ;
     color:#2C2C2C;
 }
 
 /* one text */
 .oneText{
-    position:relative;
-    width:561px;
-    height:127px;
-    left:525px;
-    top:60px;
     font-weight:bold;   
-    font-size:96px;
-    line-height:127px;
-    color:#43D8C9;
+    font-size:6.8rem;
+    line-height:100px;
+    margin-bottom:10px ;
+    color:var(--main);
+    
 }
 
-/* Div color box */
-.input_boxColor{
-    position: relative;
-}
 
 .colorBox{
     width: 597px;
     height: 37px;
     display: inline-block;
-    background-color: #43D8C9;
-    position: relative;
-    left: 171px;
-    top: 65px;
+    background-color:var(--main);
+    margin-top: 8px;
 }
 
 /* Description Text */
 .descriptionText{
-    position:relative;
-    width:462px;
-    height:64px;
-    left:171px;
-    top:75px;
-    font-size:48px;
+    font-size:3.2rem;
     line-height:64px;
+    margin-top: 10px;
 }
 
-/* Home page image */
-.homeImage{
-    position:relative;
-    width:343px !important;
-    height:70px !important;
-    left:1000px;
-    top:-350px;
-    z-index: -1;
-}
 
 /* arrowIcon */
 .arrowIcon{
-    position:relative !important;
+    /* position:relative !important; */
     width:74px !important;
     /* height: 4px !important; */
-    left:725px;
-    top:60px;
+    /* left:725px;
+    top:60px; */
     font-size:55px;
-    color:#43D8C9;
+    margin: 12% auto -1rem;
+    color:var(--main);
+    
 }
 
 /* sidebar login */
@@ -257,7 +241,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:#32dfb0;
     height:100vh;
     right: 0;
     transition: 350ms;
@@ -269,7 +253,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:var(--main);
     height:100vh;
     right:-100% !important;
     transition: 850ms;
@@ -277,9 +261,10 @@
 
 .sidebar_loginText{
     position:relative;
-    left:152px;
-    top:160px;
+    left:140px;
+    top:220px;
     font-size:30px;
+    font-weight: 500;
 }
 
 /* sidebar signup */
@@ -289,7 +274,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:var(--main);
     height:100vh;
     right: 0;
     transition: 350ms;
@@ -301,7 +286,7 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#43D8C9;
+    background-color:var(--main);
     height:100vh;
     right:-100% !important;
     transition: 850ms;
@@ -309,9 +294,10 @@
 
 .sidebar_signupText{
     position:relative;
-    left:152px;
+    left:140px;
     top:160px;
     font-size:30px;
+    font-weight: 500;
 }
 
 /* crossIcon */
@@ -331,8 +317,14 @@
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #43D8C9;
+  background-color:var(--main);
   height:65%;  
+}
+
+.login-button{
+    background-color: #2C2C2C;
+    color: var(--main);
+    border: none;
 }
 
 .form-signin {
@@ -360,7 +352,6 @@
   border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
