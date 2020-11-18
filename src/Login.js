@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios'
+import swal from '@sweetalert/with-react'
 
 function Login(props){
     function loginStateHandler(val,data){
@@ -9,7 +10,7 @@ function Login(props){
         const [pass,setPass]=useState("")
         const [warning,setWarning]=useState("")
 
-        function handleLogin(e){
+        function handleLogin(e){    
         e.preventDefault()
         if(loginFormValidator())
         {
@@ -24,6 +25,10 @@ function Login(props){
             if(response.status===200)
             setWarning("")
             loginStateHandler(true,response.data)
+            swal("Logged In", "Successfully!", "success",{
+                button:false,
+                timer:2000,
+            });
             // sessionStorage.setItem('item', 'Logged In');
         }, (error) => {
             console.log(error);

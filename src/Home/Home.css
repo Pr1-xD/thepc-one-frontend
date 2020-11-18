@@ -376,3 +376,18 @@
     left:140px;
     top:30px;
 }
+
+.customAlert{
+    z-index: 1;
+    height: auto;
+    width: auto;
+}
+
+.alertText{
+    font-size: 1.4rem;
+    object-fit: contain!important;
+}
+
+.crossButton{
+    font-size: 2rem;
+}
