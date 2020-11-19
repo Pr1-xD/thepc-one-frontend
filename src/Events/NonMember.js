@@ -10,7 +10,7 @@ function NonMember(props){
     const eventsList=props.eventsData
     const mDate = props.mDate
 
-    function CardsToggle(val){
+    function CardsToggle(){
         setEventData()
         setEventPage('Cards')
     }
