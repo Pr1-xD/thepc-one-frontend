@@ -13,8 +13,8 @@ function Member(props){
     
     return(
         <>
-        <button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>
-         {((EventsState=='cards')) ? <EventsCard  mDate={mDate} eventsData={eventsData} userType={0} buttonText='Details'/>:<CreateEvent token={token} handleEventState={handleEventState}/>}
+        {/* <button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button> */}
+         {((EventsState=='cards')) ? <EventsCard  mDate={mDate} eventsData={eventsData} userType={0} buttonText='Details' handleEventState={handleEventState}/>:<CreateEvent token={token} handleEventState={handleEventState}/>}
         </>
     )
 }

@@ -4,19 +4,22 @@ function StartEvent(props){
     const numTextBoxes=props.eventData.numTextBoxes
     const eventData=props.eventData
     console.log(eventData)
+
+    function CardsToggle(){
+        props.CardsToggle()
+    }
+
     function TextField(i){
         return(
-           
-            <input type="text" className="form-control" placeholder="Event" required />
-            
-           
+            <input type="text" className="form-control" placeholder="Event" required /> 
         )
     }
     return(
         eventData?<div>
             <h1 className="events-header">{eventData.eventName}</h1>
             {Array.from(Array(10).keys()).map(TextField)}
-            {eventData.eventLink?<button className="button btn btn-lg btn-primary mt-5 custom" type="button">Go to Event</button>:<></>}
+            {eventData.eventLink?<button className="registerButton registerButtonColor btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Go to Event</span></button>:<></>}
+            <button onClick={CardsToggle} className="registerButton registerButtonColor btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Back</span></button>
             </div>
             :<></>    
     )

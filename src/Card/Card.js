@@ -1,24 +1,23 @@
 import React, {useState} from 'react'
 import "./Card.css"
 import img from "../Images/thepcOneImg.png"
+import CardButton from './CardButton'
 
 function Card(props) {
     let eventData={}
     const userID=props.userID
-    const buttonText=props.buttonText
+    let buttonText=props.buttonText
     const date=props.startDate
-    const newDate = date.toString().substring(0,10);
+    const newDate = date.toString().substring(0,10)
+
+    function eventStart(){props.eventStart(eventData)}
 
     if(buttonText=='Start')
     eventData=props.event
-
-    function eventStart(){
-        props.eventStart(eventData)
-    }
-
+    
     function eventsRegister()
     {   if(userID)
-       {     
+       {  
         props.eventsRegister(
             {   
                 'eventName':props.name,
@@ -43,9 +42,10 @@ function Card(props) {
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
-                                {(buttonText=='Register')?<button onClick={eventsRegister} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
-                                {(buttonText=='Start')?<button onClick={eventStart} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
-                                {buttonText=='Registered'?<button type="button" className="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto card_button_disabled">{props.buttonText}</button>:<></>}
+                                {(buttonText=='Register')?<CardButton eventsRegister={eventsRegister} buttonText={buttonText} />:<></>}
+                                {(buttonText=='Start')?<CardButton eventStart={eventStart} buttonText={buttonText}/> :<></>}
+                                {buttonText=='Registered'?<CardButton buttonText={buttonText} />:<></>}
+
                             </div>
                          </div>
                 </div>
