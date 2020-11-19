@@ -42,9 +42,9 @@ function Card(props) {
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
-                                {(buttonText=='Register')?<CardButton eventsRegister={eventsRegister} buttonText={buttonText} />:<></>}
-                                {(buttonText=='Start')?<CardButton eventStart={eventStart} buttonText={buttonText}/> :<></>}
-                                {buttonText=='Registered'?<CardButton buttonText={buttonText} />:<></>}
+                                {(buttonText=='Register')?<CardButton eventsRegister={eventsRegister} buttonText={buttonText} userID={userID} />:<></>}
+                                {(buttonText=='Start')?<CardButton eventStart={eventStart} buttonText={buttonText} userID={userID}/>:<></>}
+                                {buttonText=='Registered'?<CardButton buttonText={buttonText} userID={userID}/>:<></>}
 
                             </div>
                          </div>
