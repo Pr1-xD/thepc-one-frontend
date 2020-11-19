@@ -2,12 +2,14 @@ import React,{useState} from 'react'
 
 function CardButton(props) {
    const [btnText,setBtnText]=useState(props.buttonText)
+   const userID=props.userID
 
    function eventsRegister(){
+     if(userID)
      setBtnText('Registered')
      props.eventsRegister()
    }
-   
+
    function eventStart(){
      props.eventStart()
    }
