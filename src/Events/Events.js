@@ -11,7 +11,6 @@ function Events(props){
         const data=props.userData
         const token=props.userData.tokens.pop()
         let userID=props.userData._id
-
         function pageSetter(val){props.pageSetter(val)}
         function logoutHandler(val){props.logoutHandler(val)}
         

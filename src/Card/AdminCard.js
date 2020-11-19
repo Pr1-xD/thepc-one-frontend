@@ -14,7 +14,19 @@ function AdminCard(props) {
     function eventsApprove(){
         console.log(header)
         axios.patch(link,
-            {},
+            {approved:true},
+            {
+                headers: {authorization:header}
+            })
+                    .then(res => {
+                    console.log(res);
+                    console.log(res.data);
+                    })          
+          }
+    function eventsReject(){
+        console.log(header)
+        axios.patch(link,
+            {approved:false},
             {
                 headers: {authorization:header}
             })
@@ -37,6 +49,7 @@ function AdminCard(props) {
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
                                 <button onClick={eventsApprove} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{props.buttonText}</span></button>
+                                <button onClick={eventsReject} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{'Reject'}</span></button>
                             </div>
                          </div>
                 </div>

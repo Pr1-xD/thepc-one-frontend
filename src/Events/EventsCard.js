@@ -6,7 +6,6 @@ function EventsCard(props){
     const mDate=props.mDate
     const buttonText=props.buttonText
     const userType=props.userType
-
     function handleEventState(val){
         props.handleEventState(val)
     }
@@ -38,6 +37,15 @@ function EventsCard(props){
             (obj.approved)&&(d1<=d2)?<Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={buttonText} />:<></>
         )}
     }
+    function eventCardsMapReq(obj){
+        if(obj.createdBy.length!=0){
+        let createdBy=[]
+        createdBy=obj.createdBy[0]._id
+        if ((userType==0)&&(createdBy==userID)&&(obj.approved==false)){    
+        return(
+            <Card name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText='Pending' />
+        )}}
+    }
     function eventCardsMapPast(obj){
         const d1=new Date(obj.eventStart)
         const d2=new Date()
@@ -64,6 +72,8 @@ function EventsCard(props){
     return(
         <>
         {userType==0?<button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>:<></>}
+        {(userType==0)? <h1 className="event-headers">Event Requests</h1>:<></>}
+        {(userType==0)&&(props.eventsData)? props.eventsData.map(eventCardsMapReq):<></>}
         <h1 className="event-headers">Live Events</h1>
         {props.eventsData?props.eventsData.map(eventCardsMapLive):<></>}  
         <h1 className="event-headers">Past Events</h1>
