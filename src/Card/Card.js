@@ -7,23 +7,14 @@ function Card(props) {
     let eventData={}
     const userID=props.userID
     let buttonText=props.buttonText
-    const [btnText,setBtnText]=useState(props.buttonText)
     const date=props.startDate
-    const newDate = date.toString().substring(0,10);
+    const newDate = date.toString().substring(0,10)
 
-    // if(buttonText=='Registered')
-    // setBtnText('Registered')
+    function eventStart(){props.eventStart(eventData)}
 
     if(buttonText=='Start')
     eventData=props.event
-
-    function eventStart(){
-        props.eventStart(eventData)
-    }
-    function test(){
-        buttonText='Register'
-    }
-
+    
     function eventsRegister()
     {   if(userID)
        {  
@@ -53,7 +44,7 @@ function Card(props) {
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
                                 {(buttonText=='Register')?<CardButton eventsRegister={eventsRegister} buttonText={buttonText} />:<></>}
                                 {(buttonText=='Start')?<CardButton eventStart={eventStart} buttonText={buttonText}/> :<></>}
-                                {buttonText=='Registered'?<CardButton test={test} buttonText={buttonText} />:<></>}
+                                {buttonText=='Registered'?<CardButton buttonText={buttonText} />:<></>}
 
                             </div>
                          </div>
