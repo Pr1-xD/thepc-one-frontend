@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import "./Card.css"
 import img from "../Images/thepcOneImg.png"
 import CardButton from './CardButton'
+import swal from '@sweetalert/with-react'
 
 function Card(props) {
     let eventData={}
@@ -27,6 +28,10 @@ function Card(props) {
         
         }
         else
+        swal("Please Login/SignUp", " ", "warning",{
+            button:false,
+            timer:2000,
+        });
         console.log('Not logged in')
     }
 

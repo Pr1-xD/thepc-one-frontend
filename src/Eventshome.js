@@ -2,6 +2,7 @@ import React , {useState,useEffect} from 'react'
 import axios from 'axios'
 import "./Eventshome.css"
 import HomeCards from './HomeCards'
+import swal from '@sweetalert/with-react'
 
 function Eventshome(props){
     const userData=props.data
@@ -14,6 +15,10 @@ function Eventshome(props){
         console.log(header)
           axios.patch(link,{},{headers: {authorization:header}})
                   .then(res => {console.log(res.data)})
+        swal("Event Registered", "Successfully", "success",{
+            button:false,
+            timer:2000,
+        });
         eventsRefresh()                        
     }
 

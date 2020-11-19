@@ -8,3 +8,7 @@
    text-align: center;
     
 }
+
+.swal-icon.swal-success {
+    border-color: #f27474 !important;
+  }
