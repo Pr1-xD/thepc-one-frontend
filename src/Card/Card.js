@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import "./Card.css"
+import img from "../Images/thepcOneImg.png"
 
 function Card(props) {
     let eventData={}
@@ -35,7 +36,7 @@ function Card(props) {
         <div class="card-container navAfter">
             <div class="float-layout">
                 <div class="card-image">
-                    <img class="customImage" src="https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"/>
+                    <img class="customImage" src={img}/>
                         <div class="card d-flex ">
                             <div class="card-title">{props.name}</div>
                             <div class="card-desc mb-auto">{props.desc}</div>
