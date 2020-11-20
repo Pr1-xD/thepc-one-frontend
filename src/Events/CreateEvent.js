@@ -27,7 +27,10 @@ function CreateEvent(props){
         numFileUploads:0,
         isTextBoxes:false,
         isMultiChoice:false,
-        isFileUpload:false
+        isFileUpload:false,
+        eventStart:'',
+        eventEnd:'',
+        regStart:''
       }
 
       const [eventDetails,setEventDetails]=useState(defaultEvent)
@@ -40,6 +43,7 @@ function CreateEvent(props){
       {  
         setEventDetails(abc)    
         console.log(eventDetails)
+        console.log(images)
         axios.post(link,eventDetails,{headers: {authorization:header}})
                 .then(res => {console.log(res.data)
                   if(res.dateCreated)
@@ -65,6 +69,12 @@ function CreateEvent(props){
                     
                     <label for="eventLink" class="sr-only">Event Link</label>
                     <input type="text" id="eventLink" className="form-control mt-3" placeholder="Event Link" onChange={e=>abc.eventLink=e.target.value} required/>
+                    <label for="eventStart" class="sr-only">Event Start (yyyy/mm/dd)</label>
+                    <input type="text" id="eventStart" className="form-control mt-3" placeholder="Event Start (yyyy/mm/dd)" onChange={e=>abc.eventStart=new Date(e.target.value)} required/>
+                    <label for="eventEnd" class="sr-only">Event End (yyyy/mm/dd)</label>
+                    <input type="text" id="eventEnd" className="form-control mt-3" placeholder="Event End (yyyy/mm/dd)" onChange={e=>abc.eventEnd=new Date(e.target.value)} required/>
+                    <label for="regStart" class="sr-only">Registration Start (yyyy/mm/dd)</label>
+                    <input type="text" id="regStart" className="form-control mt-3" placeholder="Registration Start (yyyy/mm/dd)" onChange={e=>abc.regStart=new Date(e.target.value)} required/>
                     <br></br>
 
                     <label for="eventImage" class="sr form-control mt-1 customImage_text"><b>Event Image</b></label>
@@ -126,13 +136,13 @@ function CreateEvent(props){
                     <label for="isMultiChoice" className="radioText">MultiChoice</label>
                     <input type="radio" id="isMultiChoice" name="isMultiChoice" className="radioCustom" value="true" onChange={e=>abc.isMultiChoice=e.target.checked} />
                     
-                    <label for="isFileUpload" className="radioText">isFileUpload</label>
+                    <label for="isFileUpload" className="radioText">FileUpload</label>
                     <input type="radio" id="isFileUpload" name="isFileUpload" className="radioCustom" value="true" onChange={e=>abc.isFileUpload=e.target.checked}  />
                     <br></br>
                     <button className="button btn btn-lg btn-primary mt-2 " type="button" onClick={handleSubmit}>Submit</button>
                 </form>
                 <button className="button btn btn-lg btn-primary mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
-                <p className="success-message">{formStatus}</p>
+                {/* <p className="success-message">{formStatus}</p> */}
         </div>
     )
 }
