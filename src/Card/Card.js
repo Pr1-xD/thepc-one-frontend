@@ -10,7 +10,7 @@ function Card(props) {
     let buttonText=props.buttonText
     const date=props.startDate
     const newDate = date.toString().substring(0,10)
-
+    console.log(buttonText)
     function eventStart(){props.eventStart(eventData)}
 
     if(buttonText=='Start')

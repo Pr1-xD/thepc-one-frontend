@@ -6,10 +6,12 @@ import swal from '@sweetalert/with-react'
 
 function Eventshome(props){
     const userData=props.data
-    const [eventsList, setEventsList] = useState(null);
+    const eventsList=props.eventsList
     const token=props.token
 
     function setData(val){props.setData(val)}
+    function setEventsList(val){props.setEventsList(val)}
+    function reload(){setTimeout(function() {window.location.reload(false)}, 2000)}
 
     function eventsRegister(val){
         let link='https://thepc-one.herokuapp.com/api/user/'+val.eventID
@@ -21,7 +23,8 @@ function Eventshome(props){
             button:false,
             timer:2000,  
         });
-                                
+        eventsRefresh()
+        reload()                     
     }
 
     function eventsRefresh(){

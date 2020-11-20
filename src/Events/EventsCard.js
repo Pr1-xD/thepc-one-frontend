@@ -6,7 +6,7 @@ function EventsCard(props){
     const mDate=props.mDate
     const buttonText=props.buttonText
     const userType=props.userType
-    const eventsData=props.eventsData
+    const eventsData=props.eventsList
     function handleEventState(val){props.handleEventState(val)}
     function eventStart(val){props.eventStart(val)}
 

@@ -11,11 +11,9 @@ function Home(props){
   let token=props.token
   let data=props.data
   let loggedin=props.loggedin
-  function setData(val){props.setData(val)
-  console.log('Passed')}
-  // const [show, setShow] = useState(true);
-
-
+  const eventsList=props.eventsList
+  function setData(val){props.setData(val)}
+  function setEventsList(val){props.setEventsList(val)}
   function pageSetter(val){props.pageSetter(val)}
   function loginStateHandler(val,data){props.loginStateHandler(val,data)}
   function logoutHandler(val){props.logoutHandler(val)}                         
@@ -39,7 +37,7 @@ function Home(props){
               <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
             </svg>
           </div>
-          <Eventshome data={data} setData={setData} token={token}/>
+          <Eventshome data={data} setData={setData} token={token} eventsList={eventsList} setEventsList={setEventsList} />
       </div>
     ) 
 }
