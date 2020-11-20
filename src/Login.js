@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import axios from 'axios'
 import swal from '@sweetalert/with-react'
+import google from './Home/google.png'
+import LoginGoogle from './Events/LoginGoogle'
 
 function Login(props){
     function loginStateHandler(val,data){
@@ -59,7 +61,8 @@ function Login(props){
                     <p>{warning}</p>
                     <button className="btn btn-lg btn-primary btn-block login-button" type="button" onClick={handleLogin}>Login</button>
                     <div className="home_google">
-                    {/* <img src={google} /> */}
+                    {/* <img src={google} onClick={LoginGoogle} /> */}
+                    <LoginGoogle />
                     </div>
 
                 </form>

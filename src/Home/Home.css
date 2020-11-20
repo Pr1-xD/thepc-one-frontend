@@ -363,6 +363,28 @@
         right:-100% !important;
         transition: 850ms;
     }
+    .sidebar_loginActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:#32dfb0;
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
+    .sidebar_signupActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:var(--main);
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
     .navAfter_leftText{
         font-size: large;
     }
@@ -460,6 +482,28 @@
         right:-100% !important;
         transition: 850ms;
     }
+    .sidebar_loginActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:#32dfb0;
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
+    .sidebar_signupActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:var(--main);
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
     .navAfter_leftText{
         font-size: larger;
     }
@@ -555,6 +599,28 @@
         height:100vh;
         right:-100% !important;
         transition: 850ms;
+    }
+    .sidebar_loginActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:#32dfb0;
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
+    .sidebar_signupActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:var(--main);
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
     }
     .navAfter_leftText{
         font-size: larger;
@@ -652,6 +718,28 @@
         right:-100% !important;
         transition: 850ms;
     }
+    .sidebar_loginActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:#32dfb0;
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
+    .sidebar_signupActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:var(--main);
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
     .navAfter_leftText{
         font-size: larger;
     }
@@ -748,6 +836,7 @@
         right:-100% !important;
         transition: 850ms;
     }
+
     .navAfter_leftText{
         font-size: small;
         margin-left: 0.5vw;
