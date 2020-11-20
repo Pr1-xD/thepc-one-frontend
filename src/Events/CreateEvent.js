@@ -30,7 +30,8 @@ function CreateEvent(props){
         isFileUpload:false,
         eventStart:'',
         eventEnd:'',
-        regStart:''
+        regStart:'',
+        eventTime:''
       }
 
       const [eventDetails,setEventDetails]=useState(defaultEvent)
@@ -75,6 +76,8 @@ function CreateEvent(props){
                     <input type="text" id="eventEnd" className="form-control mt-3" placeholder="Event End (yyyy/mm/dd)" onChange={e=>abc.eventEnd=new Date(e.target.value)} required/>
                     <label for="regStart" class="sr-only">Registration Start (yyyy/mm/dd)</label>
                     <input type="text" id="regStart" className="form-control mt-3" placeholder="Registration Start (yyyy/mm/dd)" onChange={e=>abc.regStart=new Date(e.target.value)} required/>
+                    <label for="eventTime" class="sr-only">Event Time</label>
+                    <input type="text" id="eventTime" className="form-control mt-3" placeholder="Event Time" onChange={e=>abc.eventTime=e.target.value} required/>
                     <br></br>
 
                     <label for="eventImage" class="sr form-control mt-1 customImage_text"><b>Event Image</b></label>

@@ -766,9 +766,5 @@
     .logoutColor{
         color: var(--main);
     }
-    .customIcon{
-        margin-right: 55vw!important;
-        font-size: xx-small;
-    }
 }
 

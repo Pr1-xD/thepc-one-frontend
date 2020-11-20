@@ -26,6 +26,7 @@ function AdminCard(props) {
           }
     function eventsReject(){
         console.log(header)
+        console.log(link+'/false')
         axios.patch(link+'/false',
             {},
             {
@@ -49,8 +50,10 @@ function AdminCard(props) {
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
-                                <button onClick={eventsApprove} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{props.buttonText}</span></button>
+                                <div>
                                 <button onClick={eventsReject} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{'Reject'}</span></button>
+                                <button onClick={eventsApprove} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{props.buttonText}</span></button> 
+                                </div>
                             </div>
                          </div>
                 </div>
