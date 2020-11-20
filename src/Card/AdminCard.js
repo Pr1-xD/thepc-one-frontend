@@ -4,10 +4,12 @@ import axios from 'axios'
 import swal from '@sweetalert/with-react'
 
 function AdminCard(props) {
-    const id=props.id;
-    console.log(props.token)
+    const id=props.id
+    const eventsList=props.eventsList
     const date=props.startDate
-    const newDate = date.toString().substring(0,10);
+    const newDate = date.toString().substring(0,10)
+    function setEventsList(val){props.setEventsList(val)}
+    function reload(){setTimeout(function() {window.location.reload(false)}, 2000)}
 
     let link='https://thepc-one.herokuapp.com/api/approveEvent/'+id
     let header='Bearer '+(props.token.token)
@@ -27,7 +29,9 @@ function AdminCard(props) {
                     swal("Event Approved", "Successfully!", "success",{
                         button:false,
                         timer:2000,
-                    });         
+                    });
+                    eventsRefresh()
+                    reload()         
           }
     function eventsReject(){
         console.log(header)
@@ -44,10 +48,22 @@ function AdminCard(props) {
                     swal("Event Rejected", " ", "error",{
                         button:false,
                         timer:2000,
-                    });          
+                    });
+                    eventsRefresh()  
+                    reload()        
           }
         
-    
+          function eventsRefresh(){
+            console.log("reg")
+            axios.get('https://thepc-one.herokuapp.com/api/allEvents')
+            .then((response) => {
+                console.log(response);
+                setEventsList(response.data);
+            }, (error) => {
+                console.log(error);
+            })
+        }
+
     return (
         <div class="card-container navAfter">
             <div class="float-layout">

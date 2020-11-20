@@ -10,19 +10,11 @@ function Events(props){
 
         const data=props.userData
         const token=props.userData.tokens.pop()
+        const eventsList=props.eventsList
         let userID=props.userData._id
         function pageSetter(val){props.pageSetter(val)}
         function logoutHandler(val){props.logoutHandler(val)}
-        
-        const [eventsList,setEventsList] = useState(null)
-        useEffect(() => {
-          axios.get('https://thepc-one.herokuapp.com/api/allEvents')
-          .then((response) => {
-              setEventsList(response.data);
-          }, (error) => {
-              console.log(error);
-          });    
-        },[])
+        function setEventsList(val){props.setEventsList(val)}
 
         const todayDate = new Date()
 
@@ -50,7 +42,7 @@ function Events(props){
               <br/>
               <br/>
               <br/>
-              {props.userData.memberType ===-1?<NonMember eventsData={eventsList} mDate={mDate} userData={data} userID={userID}/>:props.userData.memberType ===0?<Member eventsData={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:props.userData.memberType ===1?<Admin eventsData={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
+              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} mDate={mDate} userData={data} userID={userID}/>:props.userData.memberType ===0?<Member eventsList={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} setEventsList={setEventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
             </>
         ) 
 }
