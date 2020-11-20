@@ -1,10 +1,21 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
 import "./CreateEvent.css"
+import swal from '@sweetalert/with-react'
+import ImageUploading from 'react-images-uploading';
 
 function CreateEvent(props){
 
     function handleEventState(val){props.handleEventState(val)}
+
+    const [images, setImages] = useState([]);
+    const maxNumber = 69;
+   
+    const onChange = (imageList, addUpdateIndex) => {
+      // data for submit
+      console.log(imageList, addUpdateIndex);
+      setImages(imageList);
+    }
 
     let defaultEvent={
         eventName:'',
@@ -34,7 +45,12 @@ function CreateEvent(props){
                   if(res.dateCreated)
                   setFormStatus('Event Created')
                   ;})
-        setEventDetails(defaultEvent)        
+        setEventDetails(defaultEvent)
+        swal("Event created", "Successfully!", "success",{
+          button:false,
+          timer:2000,
+        });
+        handleEventState('cards')          
       }
 
 
@@ -49,7 +65,49 @@ function CreateEvent(props){
                     
                     <label for="eventLink" class="sr-only">Event Link</label>
                     <input type="text" id="eventLink" className="form-control mt-3" placeholder="Event Link" onChange={e=>abc.eventLink=e.target.value} required/>
-                    
+                    <br></br>
+
+                    <label for="eventImage" class="sr form-control mt-1 customImage_text"><b>Event Image</b></label>
+
+                    <ImageUploading multiple value={images} onChange={onChange} maxNumber={maxNumber} dataURLKey="data_url">
+                    {({
+                        imageList,
+                        onImageUpload,
+                        onImageRemoveAll,
+                        onImageUpdate,
+                        onImageRemove,
+                        isDragging,
+                        dragProps,
+                      }) => (
+                        // write your building UI
+                        <div className="upload__image-wrapper">
+                          <button
+                            type="button"
+                            className="btn btn-dark"
+                            style={isDragging ? { color: 'red' } : undefined}
+                            onClick={onImageUpload}
+                            {...dragProps}
+                          >
+                          Choose Image or Drop here
+                          </button>
+                          &nbsp;
+                          {/* <button className="btn btn-dark" onClick={onImageRemoveAll}>Remove all images</button> */}
+                          
+                          {imageList.map((image, index) => (
+                            <div key={index} className="image-item">
+                            <br></br>
+                              <img src={image['data_url']} alt="" width="100" />
+                                <div className="image-item__btn-wrapper">
+                                <br></br>
+                                  <button className="btn btn-dark" onClick={() => onImageRemove(index)}>Remove</button>
+                                </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </ImageUploading>
+
+
                     <label for="numTextBoxes" class="sr-only">Number of text boxes</label>
                     <input type="text" id="numTextBoxes" className="form-control mt-3" placeholder="Number of text boxes" onChange={e=>abc.numTextBoxes=e.target.value} required/>
                     

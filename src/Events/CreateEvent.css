@@ -1,7 +1,11 @@
 .container {
     position: relative;
   }
-  
+ 
+  .customImage_text{
+    border: none;
+  }
+
   .button {
     margin: 0;
     position: absolute;

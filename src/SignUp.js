@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import axios from 'axios'
+import swal from '@sweetalert/with-react'
 
 function SignUp(props){
     function loginStateHandler(val,data){
@@ -30,6 +31,10 @@ function SignUp(props){
           if(response.status===200)
             loginStateHandler(true,response.data)
             setWarning("")
+            swal("Signed Up", "Successfully!", "success",{
+              button:false,
+              timer:2000,
+          });
         }, (error) => {
           console.log(error);
           setWarning("Invalid Details")

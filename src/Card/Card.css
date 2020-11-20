@@ -2,6 +2,11 @@
     font-family: 'Red Hat Display', sans-serif !important;
 }
 
+.customText{
+    color: white;
+    cursor: default;
+}
+
 .registerButtonColor{
     color:var(--main) !important;
     border-color:var(--main) !important;
