@@ -6,7 +6,7 @@ function EventsCard(props){
     const mDate=props.mDate
     const buttonText=props.buttonText
     const userType=props.userType
-    const eventsData=props.eventsList
+    const eventsList=props.eventsList
     function handleEventState(val){props.handleEventState(val)}
     function eventStart(val){props.eventStart(val)}
 
@@ -201,7 +201,7 @@ function EventsCard(props){
         {props.eventsData?props.eventsData.map(eventCardsMapLive):<></>}  
         <h1 className="event-headers">Past Events</h1>
         {props.eventsData?props.eventsData.map(eventCardsMapPast):<></>}   */}
-        {eventsData?MemberCards(eventsData):<></>}
+        {eventsList?MemberCards(eventsList):<></>}
         </>
     )
 }

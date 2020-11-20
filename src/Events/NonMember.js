@@ -7,7 +7,7 @@ function NonMember(props){
     const [eventsSetter,setEventPage]=useState('Cards')
     const userID=props.userID
     const data=props.userData
-    const eventsList=props.eventsData
+    const eventsList=props.eventsList
     const mDate = props.mDate
 
     function CardsToggle(){
@@ -23,7 +23,7 @@ function NonMember(props){
 
     return(
         <>
-            {eventsSetter=='Cards'? <EventsCard mDate={mDate} eventsData={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} />:<StartEvent eventData={startEventData} CardsToggle={CardsToggle}/>}
+            {eventsSetter=='Cards'? <EventsCard mDate={mDate} eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} />:<StartEvent eventData={startEventData} CardsToggle={CardsToggle}/>}
         </>
     )
 }
