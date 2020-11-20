@@ -13,8 +13,9 @@ function AdminCard(props) {
 
     function eventsApprove(){
         console.log(header)
-        axios.patch(link,
-            {approved:true},
+        
+        axios.patch(link+'/true',
+            {},
             {
                 headers: {authorization:header}
             })
@@ -25,8 +26,8 @@ function AdminCard(props) {
           }
     function eventsReject(){
         console.log(header)
-        axios.patch(link,
-            {approved:false},
+        axios.patch(link+'/false',
+            {},
             {
                 headers: {authorization:header}
             })
