@@ -50,7 +50,10 @@ function Card(props) {
                                 {(buttonText=='Register')?<CardButton eventsRegister={eventsRegister} buttonText={buttonText} userID={userID} />:
                                 (buttonText=='Start')?<CardButton eventStart={eventStart} buttonText={buttonText} userID={userID}/>:
                                 (buttonText=='Registered')?<CardButton buttonText={buttonText} userID={userID}/>:
-                                (buttonText=='Pending')?<CardButton buttonText={buttonText} userID={userID}/>:<></>}
+                                (buttonText=='Pending')?<CardButton buttonText={buttonText} userID={userID}/>:
+                                <>
+                                    <span className="customText">Registered</span>
+                                </>}
 
                             </div>
                          </div>
