@@ -11,7 +11,8 @@ function Home(props){
   let token=props.token
   let data=props.data
   let loggedin=props.loggedin
-  function setData(val){props.setData(val)}
+  function setData(val){props.setData(val)
+  console.log('Passed')}
   // const [show, setShow] = useState(true);
 
 

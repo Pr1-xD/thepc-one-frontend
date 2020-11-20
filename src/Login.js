@@ -62,7 +62,7 @@ function Login(props){
                     <button className="btn btn-lg btn-block login-button" type="button" onClick={handleLogin}>Login</button>
                     <div className="home_google">
                     {/* <img src={google} onClick={LoginGoogle} /> */}
-                    <LoginGoogle />
+                    <LoginGoogle loginStateHandler={loginStateHandler}/>
                     </div>
 
                 </form>

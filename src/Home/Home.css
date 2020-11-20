@@ -104,8 +104,7 @@
     width: 597px;
     height: 37px;
     display: inline-block;
-    /* background-color:var(--main); */
-    background-color: #45B099;
+    background-color: var(--main);
     margin-top: 8px;
 }
 
@@ -119,11 +118,7 @@
 
 /* arrowIcon */
 .arrowIcon{
-    /* position:relative !important; */
     width:74px !important;
-    /* height: 4px !important; */
-    /* left:725px;
-    top:60px; */
     font-size:55px;
     margin: 12% auto -1rem;
     color:var(--main);
@@ -156,8 +151,8 @@
 
 .sidebar_loginText{
     position:relative;
-    left:140px;
-    top:220px;
+    text-align: center;
+    margin-top: 12rem;
     font-size:30px;
     font-weight: 500;
 }
@@ -189,8 +184,8 @@
 
 .sidebar_signupText{
     position:relative;
-    left:140px;
-    top:160px;
+    text-align: center;
+    margin-top: 10rem;
     font-size:30px;
     font-weight: 500;
 }
@@ -199,8 +194,7 @@
 .crossIcon{
     position:relative;
     font-size:45px;
-    left:8px !important;
-    top:-50px;
+    margin:1rem 0 0 1rem;
     cursor:pointer;
 }
 
@@ -212,8 +206,7 @@
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color:var(--main);
-  height:65%;  
+  background-color:var(--main); 
 }
 
 .login-button{
@@ -232,12 +225,11 @@
     color: white;
 }
 
-
 .form-signin {
   width: 100%;
   max-width: 330px;
   padding: 15px;
-  margin: auto;
+  margin: 1rem auto;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -270,8 +262,8 @@
 /* home sign in with google */
 .home_google{
     position:relative;
-    top:50px;
-    left:20%;
+    margin: 4rem auto;
+    text-align: center;
     cursor:pointer;
     height:auto !important;
 }
@@ -302,11 +294,6 @@
 @media  screen and (max-width: 320px) and (max-width: 375px) {
     .bg{  
         background-image: url(./thepc-one-03-01.png);
-        width: 100vw;
-        height:100vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
       }
       .home-text{
         margin: 3rem 0 1rem;
@@ -317,25 +304,20 @@
     .welcomeText{
         font-size:2rem !important;
         line-height:70px;
-        color:#2C2C2C;
     }
     
     /* Thepc Text */
-    .thepcText{
-        font-weight:bold;   
+    .thepcText{  
         font-size:4rem;
         line-height:45px;
         margin-bottom:10px ;
-        color:#2C2C2C;
     }
     
     /* one text */
-    .oneText{
-        font-weight:bold;   
+    .oneText{   
         font-size:4rem;
         line-height:65px;
         margin-bottom:10px ;
-        color:var(--main);
         
     }
     
@@ -343,8 +325,6 @@
     .colorBox{
         width: 200px;
         height: 20px;
-        display: inline-block;
-        background-color:var(--main);
         margin-top: 8px;
     }
     
@@ -356,8 +336,6 @@
     }
 
     .sidebar_loginNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
         top:0px;
         background-color:var(--main);

@@ -49,7 +49,7 @@ function Card(props) {
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
                                 {(buttonText=='Register')?<CardButton eventsRegister={eventsRegister} buttonText={buttonText} userID={userID} />:
                                 (buttonText=='Start')?<CardButton eventStart={eventStart} buttonText={buttonText} userID={userID}/>:
-                                (buttonText=='Registered')?<CardButton buttonText={buttonText} userID={userID}/>:
+                                (buttonText=='Registered')?<CardButton buttonText={buttonText} eventsRegister={eventsRegister} userID={userID}/>:
                                 (buttonText=='Pending')?<CardButton buttonText={buttonText} userID={userID}/>:
                                 <>
                                     <span className="customText">Registered</span>
