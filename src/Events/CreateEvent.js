@@ -8,6 +8,12 @@ function CreateEvent(props){
 
     function handleEventState(val){props.handleEventState(val)}
 
+    function reload(){
+      setTimeout(function() {
+        window.location.reload(false);
+    }, 2000);
+    }
+
     const [images, setImages] = useState([]);
     const maxNumber = 69;
    
@@ -55,7 +61,8 @@ function CreateEvent(props){
           button:false,
           timer:2000,
         });
-        handleEventState('cards')          
+        handleEventState('cards')
+        reload()          
       }
 
 
