@@ -142,9 +142,9 @@ function CreateEvent(props){
                     <label for="isFileUpload" className="radioText">FileUpload</label>
                     <input type="radio" id="isFileUpload" name="isFileUpload" className="radioCustom" value="true" onChange={e=>abc.isFileUpload=e.target.checked}  />
                     <br></br>
-                    <button className="button btn btn-lg btn-primary mt-2 " type="button" onClick={handleSubmit}>Submit</button>
+                    <button className="button btn btn-lg submitButton mt-2 " type="button" onClick={handleSubmit}>Submit</button>
                 </form>
-                <button className="button btn btn-lg btn-primary mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
+                <button className="button btn btn-lg submitButton mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
                 {/* <p className="success-message">{formStatus}</p> */}
         </div>
     )

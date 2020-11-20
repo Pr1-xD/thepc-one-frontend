@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./Card.css"
 import axios from 'axios'
+import swal from '@sweetalert/with-react'
 
 function AdminCard(props) {
     const id=props.id;
@@ -14,7 +15,7 @@ function AdminCard(props) {
     function eventsApprove(){
         console.log(header)
         
-        axios.patch(link+'/true',
+        axios.post(link+'/true',
             {},
             {
                 headers: {authorization:header}
@@ -22,12 +23,16 @@ function AdminCard(props) {
                     .then(res => {
                     console.log(res);
                     console.log(res.data);
-                    })          
+                    }) 
+                    swal("Event Approved", "Successfully!", "success",{
+                        button:false,
+                        timer:2000,
+                    });         
           }
     function eventsReject(){
         console.log(header)
         console.log(link+'/false')
-        axios.patch(link+'/false',
+        axios.post(link+'/false',
             {},
             {
                 headers: {authorization:header}
@@ -35,7 +40,11 @@ function AdminCard(props) {
                     .then(res => {
                     console.log(res);
                     console.log(res.data);
-                    })          
+                    })
+                    swal("Event Rejected", " ", "error",{
+                        button:false,
+                        timer:2000,
+                    });          
           }
         
     

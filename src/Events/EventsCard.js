@@ -194,7 +194,7 @@ function EventsCard(props){
     // }
     return(
         <>
-        {userType==0?<button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>:<></>}
+        {userType==0?<button className="btn btn-lg btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>:<></>}
         {/* {(userType==0)? <h1 className="event-headers">Event Requests</h1>:<></>}
         {(userType==0)&&(props.eventsData)? props.eventsData.map(eventCardsMapReq):<></>}
         <h1 className="event-headers">Live Events</h1>
