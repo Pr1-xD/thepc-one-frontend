@@ -3,6 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import Home from './Home/Home'
 import Events from './Events/Events'
 import './App.css';
+import { GoogleLogout } from 'react-google-login'
 
 function App() {
   const [page,setPage]=useState('Home')
@@ -33,6 +34,7 @@ function App() {
 
   function refreshLogin(){
     console.log('Loaded')
+    console.log(data)
     if (sessionStorage.getItem('data')){
     loginStateHandler(true,JSON.parse(sessionStorage.getItem('data')))
     if (sessionStorage.getItem('page'))
@@ -43,7 +45,7 @@ function App() {
  
   return (
     <div className="app" onLoad={refreshLogin}>
-      {page=='Home'?<Home pageSetter={pageSetter}  data={data} setData={setData} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler}/>:<></>}
+      {page=='Home'?<Home pageSetter={pageSetter}  data={data} setData={setData} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler} />:<></>}
       {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} userData={data} logoutHandler={logoutHandler}/>:<></>}
     </div>
   );
