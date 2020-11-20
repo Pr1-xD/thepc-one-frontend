@@ -85,7 +85,7 @@
     font-size:6.8rem;
     line-height:90px;
     margin-bottom:10px ;
-    color:#2C2C2C;
+    color:#07221B;
 }
 
 /* one text */
@@ -94,7 +94,8 @@
     font-size:6.8rem;
     line-height:100px;
     margin-bottom:10px ;
-    color:var(--main);
+    /* color:var(--main); */
+    color:#07221B;
     
 }
 
@@ -103,7 +104,8 @@
     width: 597px;
     height: 37px;
     display: inline-block;
-    background-color:var(--main);
+    /* background-color:var(--main); */
+    background-color: #45B099;
     margin-top: 8px;
 }
 
@@ -219,6 +221,17 @@
     color: var(--main);
     border: none;
 }
+
+.login-button:active{
+    background-color: #07221B!important;
+    color: white;
+}
+
+.login-button:hover{
+    background-color: #07221B!important;
+    color: white;
+}
+
 
 .form-signin {
   width: 100%;

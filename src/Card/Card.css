@@ -25,6 +25,10 @@
     background-color: var(--main);
 }
 
+.registerButton:active{
+    background-color: #2F5A52;
+}
+
 
 .float-layout {
     /* padding: 1vw 1vw; */
@@ -93,7 +97,7 @@
   /*-------------*/
   
   div.card-image img {
-    width: 25%;
+    width: auto;
     height: auto;
   }
 

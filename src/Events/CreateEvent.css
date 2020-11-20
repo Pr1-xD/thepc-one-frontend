@@ -15,6 +15,18 @@
     transform: translate(-50%, -50%);
   }
 
+  .submitButton{
+    background-color:var(--main);
+    /* color: white; */
+    font-weight: lighter;
+    font-size: large;
+  }
+
+  .submitButton:hover{
+    background-color: #2F5A52;
+    color: white;
+  }
+
   .custom{
     left: 50%; 
     top: 112%
