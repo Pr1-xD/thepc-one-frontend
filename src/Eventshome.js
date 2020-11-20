@@ -9,17 +9,20 @@ function Eventshome(props){
     const [eventsList, setEventsList] = useState(null);
     const token=props.token
 
+    function setData(val){props.setData(val)}
+
     function eventsRegister(val){
         let link='https://thepc-one.herokuapp.com/api/user/'+val.eventID
         let header='Bearer '+(token.token)
         console.log(header)
           axios.patch(link,{},{headers: {authorization:header}})
-                  .then(res => {console.log(res.data)})
+                  .then(res => {console.log(res.data)
+                    setData(res.data)})
         swal("Event Registered", "Successfully", "success",{
             button:false,
-            timer:2000,
+            timer:2000,  
         });
-        eventsRefresh()                        
+                                
     }
 
     function eventsRefresh(){

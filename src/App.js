@@ -43,7 +43,7 @@ function App() {
  
   return (
     <div className="app" onLoad={refreshLogin}>
-      {page=='Home'?<Home pageSetter={pageSetter}  data={data} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler}/>:<></>}
+      {page=='Home'?<Home pageSetter={pageSetter}  data={data} setData={setData} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler}/>:<></>}
       {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} userData={data} logoutHandler={logoutHandler}/>:<></>}
     </div>
   );

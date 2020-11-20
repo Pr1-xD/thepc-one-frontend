@@ -3,10 +3,10 @@ import { GoogleLogin } from 'react-google-login'
 
 const clientID= '390060085294-k1l5r25ugf2jpsqorsmns7m8o3ject6f.apps.googleusercontent.com';
 
-function Login() {
+function LoginGoogle() {
     const onSuccess = (res) =>{
         console.log("Success")
-        console.log(res.tokenId)
+        console.log(res)
     }
     const onFailure = (res) =>{
         console.log("Failure")
@@ -27,4 +27,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default LoginGoogle;
