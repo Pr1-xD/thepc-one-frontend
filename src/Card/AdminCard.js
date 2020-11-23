@@ -76,7 +76,7 @@ function AdminCard(props) {
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
                                 <div>
-                                <button onClick={eventsReject} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{'Reject'}</span></button>
+                                <button onClick={eventsReject} class="adminReject_button registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{'Reject'}</span></button>
                                 <button onClick={eventsApprove} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{props.buttonText}</span></button> 
                                 </div>
                             </div>

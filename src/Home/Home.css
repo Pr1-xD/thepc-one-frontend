@@ -15,6 +15,38 @@
     background-color: var(--main);
 }
 
+.custom-control{
+    border: none;
+    border-radius: 0;
+    box-shadow: none !important;
+}
+
+.custom-controlOne{
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+
+.custom-controlTwo{
+    margin-bottom: 8px !important;
+}
+
+.custom-controlThree{
+    border-bottom-left-radius:5px !important;
+    border-bottom-right-radius:5px !important;
+}
+
+.borderRadius{
+    border-radius: 5px!important;
+}
+
+.googleText{
+    font-size: large;
+    color: #07221B;
+    font-weight: 500;
+    margin-left: 3.8rem;
+    margin-top: 2rem !important;
+}
+
 .navAfter_leftText{
     color:var(--main) !important;
     font-weight:500;
@@ -25,7 +57,7 @@
 
 .navAfter_myEventButton{
     font-weight:800 !important;
-    border-radius:0 !important;
+    border-radius:5px !important;
     width: 9rem;
     height: 3rem;
     padding-top: 1.7vh;
@@ -45,7 +77,7 @@
 
 .navAfter_logoutButton{
     font-weight:800 !important;
-    border-radius:0 !important;
+    border-radius:5px !important;
     border:0;
     width: 9rem;
     height: 3rem;
@@ -262,7 +294,7 @@
 /* home sign in with google */
 .home_google{
     position:relative;
-    margin: 4rem auto;
+    margin: 2rem auto;
     text-align: center;
     cursor:pointer;
     height:auto !important;

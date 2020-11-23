@@ -55,11 +55,12 @@ function Login(props){
                 <div className="sidebar_form">
                 <form className="form-signin">
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" className="form-control" placeholder="Email address" onChange={e=>setEmail(e.target.value)} required/>
+                    <input type="email" id="inputEmail" className="form-control custom-control custom-controlTwo borderRadius" placeholder="Email address" onChange={e=>setEmail(e.target.value)} required/>
                     <label htmlFor="inputPassword" className="sr-only">Password</label>
-                    <input type="password" id="inputPassword" className="form-control" placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
+                    <input type="password" id="inputPassword" className="form-control custom-control borderRadius " placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
                     <p>{warning}</p>
                     <button className="btn btn-lg btn-block login-button" type="button" onClick={handleLogin}>Login</button>
+                    <div className="googleText">or Sign in with google</div>
                     <div className="home_google">
                     {/* <img src={google} onClick={LoginGoogle} /> */}
                     <LoginGoogle loginStateHandler={loginStateHandler}/>

@@ -20,6 +20,7 @@
     /* color: white; */
     font-weight: lighter;
     font-size: large;
+    width: 8rem;
   }
 
   .submitButton:hover{
@@ -29,7 +30,7 @@
 
   .custom{
     left: 50%; 
-    top: 112%
+    top: 110%;
   }
 
   .radioCustom{
