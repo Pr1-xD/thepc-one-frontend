@@ -20,10 +20,10 @@
 
 .navAfter_myEventButton{
     font-weight:800 !important;
-    border-radius:0 !important;
+    /* border-radius:0 !important; */
     width: 9rem;
     height: 3rem;
-    padding-top: 1.7vh;
+    padding-top: 13px;
     margin-right: 1.5vw !important;
 }
 
@@ -40,13 +40,14 @@
 
 .navAfter_logoutButton{
     font-weight:800 !important;
-    border-radius:0 !important;
+    /* border-radius:0 !important; */
     border:3px var(--main);
     width: 9rem;
     height: 3rem;
-    padding-top: 1.7vh;
+    padding-top: 14px;
     margin-right: 2.8vw !important;
     background-color:var(--main) !important;
+    border: none;
 }
 
 .logoutColor{

@@ -60,10 +60,10 @@ function SignUp(props){
             
               <div className="sidebar_form">
                 <form className="form-signin">
-                    <input type="text" id="signUpName" className="form-control" placeholder="Name" onChange={e=>setName(e.target.value)} required/>
-                    <input type="email" id="inputEmail" className="form-control" placeholder="Email address" onChange={e=>setEmail(e.target.value)} required/>
-                    <input type="password" id="signUpPassword" className="form-control" placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
-                    <input type="password" id="signUpCnfPassword" className="form-control" placeholder="Confirm Password" onChange={e=>setCnfPass(e.target.value)} required/>
+                    <input type="text" id="signUpName" className="form-control custom-control custom-controlOne" placeholder="Name" onChange={e=>setName(e.target.value)} required/>
+                    <input type="email" id="inputEmail" className="form-control custom-control" placeholder="Email address" onChange={e=>setEmail(e.target.value)} required/>
+                    <input type="password" id="signUpPassword" className="form-control custom-control custom-controlTwo custom-controlThree" placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
+                    <input type="password" id="signUpCnfPassword" className="form-control custom-control borderRadius" placeholder="Confirm Password" onChange={e=>setCnfPass(e.target.value)} required/>
                     <p>{warning}</p>
                     <button className="btn btn-lg btn-primary btn-block login-button" type="submit" onClick={handleSignIn}>Sign in</button>
 

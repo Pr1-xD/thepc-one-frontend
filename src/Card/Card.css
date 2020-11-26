@@ -18,11 +18,17 @@
 
 .registerButton{
     font-weight:800 !important;
-    border-radius:0 !important;
+    border-radius:5px !important;
     width: 10rem;
     height: 3rem;
     margin-right: 1.5vw !important;
     background-color: var(--main);
+    border: none;
+}
+
+.adminReject_button{
+    background-color:#E04050;
+    border: none;
 }
 
 .registerButton:active{
@@ -60,6 +66,7 @@
     margin-left: 0;
     border: 0;
     margin-top: 0;
+    border: none;
   }
   
   .card-title {
