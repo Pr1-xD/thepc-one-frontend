@@ -69,6 +69,7 @@ function CreateEvent(props){
     return(
         <div class="container mt-3">
         <form className="form-event" onSubmit="return false" >
+        <h1 className="event-headers">Create Event</h1>
                     <label for="eventName" class="sr-only">Event Name</label>
                     <input type="text" id="eventName" className="form-control" placeholder="Event Name" onChange={e=>abc.eventName=e.target.value} required/>
                     
