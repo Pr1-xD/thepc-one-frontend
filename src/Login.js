@@ -60,7 +60,7 @@ function Login(props){
                     <input type="password" id="inputPassword" className="form-control custom-control borderRadius " placeholder="Password" onChange={e=>setPass(e.target.value)} required/>
                     <p>{warning}</p>
                     <button className="btn btn-lg btn-block login-button" type="button" onClick={handleLogin}>Login</button>
-                    <div className="googleText">or Sign in with google</div>
+                    <div className="googleText">OR</div>
                     <div className="home_google">
                     {/* <img src={google} onClick={LoginGoogle} /> */}
                     <LoginGoogle loginStateHandler={loginStateHandler}/>

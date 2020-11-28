@@ -8,9 +8,7 @@ const clientID= '390060085294-k1l5r25ugf2jpsqorsmns7m8o3ject6f.apps.googleuserco
 
 function LoginGoogle(props) {
 
-    function loginStateHandler(val,data){
-        props.loginStateHandler(val,data)
-    }
+    function loginStateHandler(val,data){props.loginStateHandler(val,data)}
 
     function LoginSync(email,name){
         axios.post('https://thepc-one.herokuapp.com/api/google/auth',
@@ -33,28 +31,24 @@ function LoginGoogle(props) {
     }
 
     const onSuccess = (res) =>{
-        console.log("Success")
-        console.log(res.profileObj.email)
-        console.log(res.profileObj.name)
         LoginSync(res.profileObj.email,res.profileObj.name)
     }
     const onFailure = (res) =>{
-        console.log("Failure")
         console.log(res)
     }
     return(
         <div>
            <GoogleLogin
            clientId={clientID}
-           buttonText="Login"
+           buttonText="Login With Google"
            onSuccess={onSuccess}
            onFailure={onFailure}
            cookiePolicy={'single_host_origin'}
-           style={{ marginTop: '100px'}}
            isSignedIn={false}
+           theme='dark'
            />
         </div>
     )
 }
 
-export default LoginGoogle;
+export default LoginGoogle

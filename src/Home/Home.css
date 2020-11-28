@@ -43,8 +43,8 @@
     font-size: large;
     color: #07221B;
     font-weight: 500;
-    margin-left: 3.8rem;
-    margin-top: 2rem !important;
+    text-align: center;
+    margin: 2rem 0;
 }
 
 .navAfter_leftText{
