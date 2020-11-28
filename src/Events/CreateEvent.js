@@ -7,12 +7,7 @@ import ImageUploading from 'react-images-uploading';
 function CreateEvent(props){
 
     function handleEventState(val){props.handleEventState(val)}
-
-    function reload(){
-      setTimeout(function() {
-        window.location.reload(false);
-    }, 2000);
-    }
+    function eventsRefresh(){props.eventsRefresh()}
     const [isTextBoxes, setTextBoxes] = useState(false)
     const [isFileUpload, setFileUpload] = useState(false)
     const [isMultiChoice, setMultiChoice] = useState(false)
@@ -64,7 +59,7 @@ function CreateEvent(props){
           timer:2000,
         });
         handleEventState('cards')
-        reload()          
+        setTimeout(eventsRefresh,2000)        
       }
 
 

@@ -12,7 +12,10 @@ function Home(props){
   let data=props.data
   let loggedin=props.loggedin
   const eventsList=props.eventsList
-  function setData(val){props.setData(val)}
+  function setData(val){
+    console.log('Passed')
+    console.log(val)
+    props.setData(val)}
   function setEventsList(val){props.setEventsList(val)}
   function pageSetter(val){props.pageSetter(val)}
   function loginStateHandler(val,data){props.loginStateHandler(val,data)}

@@ -10,7 +10,6 @@ function Card(props) {
     let buttonText=props.buttonText
     const date=props.startDate
     const newDate = date.toString().substring(0,10)
-    console.log(buttonText)
     function eventStart(){props.eventStart(eventData)}
 
     if(buttonText=='Start')
@@ -28,11 +27,13 @@ function Card(props) {
         
         }
         else
+        {
         swal("Please Login/SignUp", " ", "warning",{
             button:false,
             timer:2000,
         });
         console.log('Not logged in')
+    }
     }
 
     return (

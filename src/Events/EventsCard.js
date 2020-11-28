@@ -11,7 +11,6 @@ function EventsCard(props){
     function eventStart(val){props.eventStart(val)}
 
     function MemberCards(data){
-        console.log(data)
         let liveEventsList=LiveEventsCheck(data)
         let reqEventsList=ReqEventsCheck(data)
         let pastEventsList=PastEventsCheck(data)

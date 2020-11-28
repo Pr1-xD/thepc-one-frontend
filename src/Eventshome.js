@@ -7,6 +7,7 @@ import swal from '@sweetalert/with-react'
 function Eventshome(props){
     const userData=props.data
     const eventsList=props.eventsList
+    const [eventsData,setEventsData]=useState(eventsList)
     const token=props.token
 
     function setData(val){props.setData(val)}
@@ -23,35 +24,37 @@ function Eventshome(props){
             button:false,
             timer:2000,  
         });
-        eventsRefresh()
-        reload()                     
+        setTimeout(eventsRefresh,2000)
+        // eventsRefresh()
+        // reload()                     
     }
 
     function eventsRefresh(){
-        console.log("reg")
         axios.get('https://thepc-one.herokuapp.com/api/allEvents')
         .then((response) => {
-            console.log(response);
-            setEventsList(response.data);
+            console.log(response.data)
+            setEventsList(response.data)
+            setEventsData(response.data)
         }, (error) => {
-            console.log(error);
+            console.log(error)
         })
     }
 
     useEffect(() => {
         axios.get('https://thepc-one.herokuapp.com/api/allEvents')
         .then((response) => {
-            console.log(response);
-            setEventsList(response.data);
+            console.log(response)
+            setEventsList(response.data)
+            setEventsData(response.data)
         }, (error) => {
-            console.log(error);
+            console.log(error)
         });    
     },[])
 
     return(
         <div className="eventsHomeCard">
-            <h1 className="events_title">Events</h1>
-            {eventsList?<HomeCards data={eventsList} eventsRegister={eventsRegister} userData={userData} />  :<></>}
+            <h1 className="events_title" onClick={eventsRefresh}>Events</h1>
+            {eventsData?<HomeCards data={eventsData} eventsRegister={eventsRegister} userData={userData} />:<></>}
         </div>
     )
 }

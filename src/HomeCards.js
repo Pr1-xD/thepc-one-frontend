@@ -5,7 +5,6 @@ function HomeCards(props){
     const userID=props.userData._id
 
     function eventsRegister(val){
-        console.log('Passed')
         props.eventsRegister(val)
     }
 

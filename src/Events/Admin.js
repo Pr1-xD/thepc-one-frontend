@@ -7,11 +7,11 @@ function Admin(props){
     const eventsList=props.eventsList
     const token=props.token
     function setEventsList(val){props.setEventsList(val)}
-
+    function eventsRefresh(){props.eventsRefresh()}
     function AdminCardsMap(obj)
     {   
         return( 
-           obj.approved?<></> : <AdminCard token={token} name={obj.eventName} eventsList={eventsList} setEventsList={setEventsList} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} buttonText='Approve'/>
+           obj.approved?<></> : <AdminCard token={token} name={obj.eventName} eventsList={eventsList} eventsRefresh={eventsRefresh} setEventsList={setEventsList} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} buttonText='Approve'/>
         )
     }
 

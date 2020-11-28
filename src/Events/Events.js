@@ -9,12 +9,13 @@ import axios from 'axios'
 function Events(props){
 
         const data=props.userData
-        const token=props.userData.tokens.pop()
         const eventsList=props.eventsList
+        const token=props.userData.tokens.pop()
         let userID=props.userData._id
         function pageSetter(val){props.pageSetter(val)}
         function logoutHandler(val){props.logoutHandler(val)}
         function setEventsList(val){props.setEventsList(val)}
+        function eventsRefresh(){props.eventsRefresh()} 
 
         const todayDate = new Date()
 
@@ -42,7 +43,7 @@ function Events(props){
               <br/>
               <br/>
               <br/>
-              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} mDate={mDate} userData={data} userID={userID}/>:props.userData.memberType ===0?<Member eventsList={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} setEventsList={setEventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
+              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} mDate={mDate} userData={data} userID={userID} />:props.userData.memberType ===0?<Member eventsList={eventsList} mDate={mDate} userData={data} token={token} userID={userID} eventsRefresh={eventsRefresh}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} eventsRefresh={eventsRefresh} setEventsList={setEventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
             </>
         ) 
 }
