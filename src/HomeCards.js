@@ -28,7 +28,10 @@ function HomeCards(props){
         )
     }
     return(
-        props.data.map(homeCardsMap)
+        <div>
+           { props.data.map(homeCardsMap)}
+        </div>
+        
     )
 }
 

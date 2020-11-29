@@ -6,6 +6,22 @@
     color: white;
     cursor: default;
 }
+.slide {
+    position: relative;
+    left: -600px;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
 
 .registerButtonColor{
     color:var(--main) !important;
@@ -59,9 +75,7 @@
   .card {
     background-color: white;
     color: black;
-    min-height: 100%; /*replace this it in width: 100%*/
     width: 100%;
-    float: right;
     margin: 2vw;
     margin-left: 0;
     border: 0;
@@ -84,7 +98,6 @@
   }
   
   .customImage{
-      margin: 1vw;
       margin-right: 3vw;
       margin-top: 0;
       margin-bottom: 0;
@@ -97,9 +110,7 @@
 
   /*add this it*/
   .card-image {
-    display: flex;
-    
-    
+    display: flex; 
   }
   /*-------------*/
   

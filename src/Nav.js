@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import SignUp from './SignUp'
 import Login from './Login'
+import logo from './Images/T1 Logo.png'
 function Nav(props)
 {      
   function loginStateHandler(val,data){
@@ -37,7 +38,7 @@ function Nav(props)
 
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-white home fixed-top navbar-custom">
-            <a className="navbar-brand navAfter_leftText mr-auto">THEPC ONE</a>
+    <a className="navbar-brand navAfter_leftText mr-auto">THEPC ONE</a>
             <button className="navbar-toggler float-right customIcon" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon "></span>
             </button>

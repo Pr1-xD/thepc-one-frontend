@@ -5,7 +5,12 @@
     --border-active: #1E2235;
     --tick: #fff;
     position: relative;
+    margin: 0 0.5rem;
   }
+  .checkbox-inline{
+    display: flex;
+  }
+
   .checkbox input,
   .checkbox svg {
     width: 21px;

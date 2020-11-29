@@ -31,7 +31,7 @@ function AdminCard(props) {
                         button:false,
                         timer:2000,
                     });
-                    setTimeout(eventsRefresh(),2000)                
+                    setTimeout(eventsRefresh(),8000)                
           }
 
     function eventsReject(){
@@ -50,7 +50,7 @@ function AdminCard(props) {
                         button:false,
                         timer:2000,
                     });
-                    setTimeout(eventsRefresh(),2000)          
+                    setTimeout(eventsRefresh(),8000)          
           }
         
 

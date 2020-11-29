@@ -1,8 +1,10 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
+import FormData from 'form-data'
 import "./CreateEvent.css"
 import swal from '@sweetalert/with-react'
-import ImageUploading from 'react-images-uploading';
+import ImageUploading from 'react-images-uploading'
+import "../Events Components/Checkboxes.css"
 
 function CreateEvent(props){
 
@@ -11,14 +13,17 @@ function CreateEvent(props){
     const [isTextBoxes, setTextBoxes] = useState(false)
     const [isFileUpload, setFileUpload] = useState(false)
     const [isMultiChoice, setMultiChoice] = useState(false)
-    const [images, setImages] = useState([]);
+    const [picture,setPicture]=useState()
+    const [images, setImages] = useState();
     const maxNumber = 69;
    
     const onChange = (imageList, addUpdateIndex) => {
       // data for submit
-      console.log(imageList, addUpdateIndex);
+      console.log(imageList, addUpdateIndex)
       setImages(imageList);
     }
+
+    useEffect(()=>{console.log(images)},[images])
 
     let defaultEvent={
         eventName:'',
@@ -34,25 +39,59 @@ function CreateEvent(props){
         eventStart:'',
         eventEnd:'',
         regStart:'',
-        eventTime:''
+        textTime:'',
+        eventImage:{}
       }
+      let abc=defaultEvent
+      let formdata=new FormData()
+
+      function onUpload(e){
+        e.preventDefault()
+        let img=e.target.files[0]
+        setPicture(img)
+        setImages({file: img})
+        formdata.append('eventImage',img)
+        abc.eventImage=formdata
+        console.log(abc)
+
+      }
+      function imgSubmit(e){
+        e.preventDefault()
+        console.log(images)
+        console.log(abc)
+        console.log(abc)
+      }
+
 
       const [eventDetails,setEventDetails]=useState(defaultEvent)
       const [formStatus,setFormStatus]=useState('')
-      let abc=defaultEvent
       let link='https://thepc-one.herokuapp.com/api/newEvent'
       let header='Bearer '+(props.token.token)
       
-      function handleSubmit()
-      {  
-        setEventDetails(abc)    
-        console.log(eventDetails)
-        console.log(images)
-        axios.post(link,eventDetails,{headers: {authorization:header}})
-                .then(res => {console.log(res.data)
-                  if(res.dateCreated)
-                  setFormStatus('Event Created')
-                  ;})
+      function handleSubmit(e)
+      {  e.preventDefault()
+        console.log(abc)
+        // setEventDetails(abc)    
+        // console.log(eventDetails)
+        formdata.append('eventName',abc.eventName)
+        formdata.append('eventDesc',abc.eventDesc)
+        formdata.append('eventLink',abc.eventLink)
+        formdata.append('numTextBoxes',abc.numTextBoxes)
+        formdata.append('numMultiChoice',abc.numMultiChoice)
+        formdata.append('numOptions',abc.numOptions)
+        formdata.append('numFileUploads',abc.numFileUploads)
+        formdata.append('eventStart',abc.eventStart)
+        formdata.append('eventEnd',abc.eventEnd)
+        formdata.append('regStart',abc.regStart)
+        formdata.append('textTime',abc.textTime)
+
+
+        axios.post(link,formdata,{headers: {
+          authorization:header}})
+                .then(res => {console.log(res.data)}
+                ,(error) => {
+                  console.log(error)
+              })
         setEventDetails(defaultEvent)
         swal("Event created", "Successfully!", "success",{
           button:false,
@@ -82,12 +121,12 @@ function CreateEvent(props){
                     <label for="regStart" class="sr-only">Registration Start (yyyy/mm/dd)</label>
                     <input type="text" id="regStart" className="form-control mt-3" placeholder="Registration Start (yyyy/mm/dd)" onChange={e=>abc.regStart=new Date(e.target.value)} required/>
                     <label for="eventTime" class="sr-only">Event Time</label>
-                    <input type="text" id="eventTime" className="form-control mt-3" placeholder="Event Time" onChange={e=>abc.eventTime=e.target.value} required/>
+                    <input type="text" id="eventTime" className="form-control mt-3" placeholder="Event Time" onChange={e=>abc.textTime=e.target.value} required/>
                     <br></br>
 
                     <label for="eventImage" class="sr form-control mt-1 customImage_text"><b>Event Image</b></label>
 
-                    <ImageUploading multiple value={images} onChange={onChange} maxNumber={maxNumber} dataURLKey="data_url">
+                    {/* <ImageUploading multiple value={images} onChange={onChange} maxNumber={maxNumber} dataURLKey="data_url">
                     {({
                         imageList,
                         onImageUpload,
@@ -111,7 +150,7 @@ function CreateEvent(props){
                           &nbsp;
                           {/* <button className="btn btn-dark" onClick={onImageRemoveAll}>Remove all images</button> */}
                           
-                          {imageList.map((image, index) => (
+                          {/* {imageList.map((image, index) => (
                             <div key={index} className="image-item">
                             <br></br>
                               <img src={image['data_url']} alt="" width="100" />
@@ -123,7 +162,11 @@ function CreateEvent(props){
                           ))}
                         </div>
                       )}
-                    </ImageUploading>
+                    </ImageUploading> */} 
+                    {/* <Checkboxes label="Text Boxes"/> */}
+
+                    <input type="file" name="file" onChange={(e)=>{formdata.append('eventImg',e.target.files[0])}}/>
+
                     <br/>
                     <br/>
                     <br/>
@@ -150,9 +193,13 @@ function CreateEvent(props){
                     <label for="numFileUploads" class="sr-only">Number of File Uploads</label>
                     {isFileUpload?<input type="number" id="numFileUploads" className="form-control mt-3" placeholder="Number of File Uploads" onChange={e=>abc.numFileUploads=e.target.value} required/>:<></>}
                     <br></br>
+                    <div className="create-form-btn">
                     <button className="button btn btn-lg submitButton mt-2 " type="button" onClick={handleSubmit}>Submit</button>
+                    <button className="button btn btn-lg submitButton mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
+                    </div>
+                    
                 </form>
-                <button className="button btn btn-lg submitButton mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
+                
                 <br/>
                 <br/>
                 <br/>

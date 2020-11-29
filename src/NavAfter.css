@@ -1,6 +1,10 @@
 .navAfter{
     font-family: 'Red Hat Display', sans-serif !important;
 }
+.nav-logo{
+    width: 4 rem;
+    object-fit: contain;
+}
 
 .navbar-custom{
     z-index: 1;
