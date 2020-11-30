@@ -3,7 +3,7 @@ import axios from 'axios'
 import FormData from 'form-data'
 import "./CreateEvent.css"
 import swal from '@sweetalert/with-react'
-import ImageUploading from 'react-images-uploading'
+import "../Events Components/Checkboxes.css"
 import "../Events Components/Checkboxes.css"
 
 function CreateEvent(props){
@@ -15,13 +15,7 @@ function CreateEvent(props){
     const [isMultiChoice, setMultiChoice] = useState(false)
     const [picture,setPicture]=useState()
     const [images, setImages] = useState();
-    const maxNumber = 69;
    
-    const onChange = (imageList, addUpdateIndex) => {
-      // data for submit
-      console.log(imageList, addUpdateIndex)
-      setImages(imageList);
-    }
 
     useEffect(()=>{console.log(images)},[images])
 
@@ -64,7 +58,6 @@ function CreateEvent(props){
 
 
       const [eventDetails,setEventDetails]=useState(defaultEvent)
-      const [formStatus,setFormStatus]=useState('')
       let link='https://thepc-one.herokuapp.com/api/newEvent'
       let header='Bearer '+(props.token.token)
       
@@ -126,44 +119,6 @@ function CreateEvent(props){
 
                     <label for="eventImage" class="sr form-control mt-1 customImage_text"><b>Event Image</b></label>
 
-                    {/* <ImageUploading multiple value={images} onChange={onChange} maxNumber={maxNumber} dataURLKey="data_url">
-                    {({
-                        imageList,
-                        onImageUpload,
-                        onImageRemoveAll,
-                        onImageUpdate,
-                        onImageRemove,
-                        isDragging,
-                        dragProps,
-                      }) => (
-                        // write your building UI
-                        <div className="upload__image-wrapper">
-                          <button
-                            type="button"
-                            className="btn btn-dark"
-                            style={isDragging ? { color: 'red' } : undefined}
-                            onClick={onImageUpload}
-                            {...dragProps}
-                          >
-                          Choose Image or Drop here
-                          </button>
-                          &nbsp;
-                          {/* <button className="btn btn-dark" onClick={onImageRemoveAll}>Remove all images</button> */}
-                          
-                          {/* {imageList.map((image, index) => (
-                            <div key={index} className="image-item">
-                            <br></br>
-                              <img src={image['data_url']} alt="" width="100" />
-                                <div className="image-item__btn-wrapper">
-                                <br></br>
-                                  <button className="btn btn-dark" onClick={() => onImageRemove(index)}>Remove</button>
-                                </div>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </ImageUploading> */} 
-                    {/* <Checkboxes label="Text Boxes"/> */}
 
                     <input type="file" name="file" onChange={(e)=>{formdata.append('eventImg',e.target.files[0])}}/>
 
@@ -172,14 +127,40 @@ function CreateEvent(props){
                     <br/>
                     <h1 className="event-headers">Event Details</h1>
                     
-                    <label for="isTextBoxes" className="radioText">Text Boxes</label>
-                    <input type="radio" id="isTextBoxes" name="isTextBoxes" className="radioCustom" value="true" onChange={e=>{abc.isTextBoxes=e.target.checked;setTextBoxes(e.target.checked)}} />
+
+                    <div className="d-flex ">
+                    <div className="checkbox-inline p-4">
+                    <div>Text Boxes</div>
+                      <label for="isTextBoxes" className="radioText checkbox bounce">
+                      <input type="checkbox" id="isTextBoxes" name="isTextBoxes" className="radioCustom" value="true" onChange={e=>{abc.isTextBoxes=e.target.checked;setTextBoxes(e.target.checked)}} />
+                      <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                      </svg>
+                      </label>
+                    </div>
+
+
+                    <div className="checkbox-inline p-4">
+                    <div>MultiChoice</div>
+                    <label for="isMultiChoice" className="radioText checkbox bounce">
+                    <input type="checkbox" id="isMultiChoice" name="isMultiChoice" className="radioCustom" value="true" onChange={e=>{abc.isMultiChoice=e.target.checked;setMultiChoice(e.target.checked)}} />
+                    <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                    </svg>
+                    </label>
+                    </div>
+
+                    <div className="checkbox-inline p-4">
+                    <div>FileUpload</div>
+                    <label for="isFileUpload" className="radioText checkbox bounce">
+                    <input type="checkbox" id="isFileUpload" name="isFileUpload" className="radioCustom" value="true" onChange={e=>{abc.isFileUpload=e.target.checked;setFileUpload(e.target.checked)}}  />
                     
-                    <label for="isMultiChoice" className="radioText">MultiChoice</label>
-                    <input type="radio" id="isMultiChoice" name="isMultiChoice" className="radioCustom" value="true" onChange={e=>{abc.isMultiChoice=e.target.checked;setMultiChoice(e.target.checked)}} />
-                    
-                    <label for="isFileUpload" className="radioText">FileUpload</label>
-                    <input type="radio" id="isFileUpload" name="isFileUpload" className="radioCustom" value="true" onChange={e=>{abc.isFileUpload=e.target.checked;setFileUpload(e.target.checked)}}  />
+                    <svg viewBox="0 0 21 21">
+                        <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
+                    </svg>
+                    </label>
+                    </div> 
+                    </div>
 
                     <label for="numTextBoxes" class="sr-only">Number of text boxes</label>
                     {isTextBoxes?<input type="text" id="numTextBoxes" className="form-control mt-3" placeholder="Number of text boxes" onChange={e=>abc.numTextBoxes=e.target.value} required/>:<></>}
@@ -203,7 +184,6 @@ function CreateEvent(props){
                 <br/>
                 <br/>
                 <br/>
-                {/* <p className="success-message">{formStatus}</p> */}
         </div>
     )
 }
