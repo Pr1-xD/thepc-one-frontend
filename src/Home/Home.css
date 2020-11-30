@@ -34,6 +34,9 @@
     border-bottom-left-radius:5px !important;
     border-bottom-right-radius:5px !important;
 }
+.custom-controlFour{
+    margin-bottom: 4rem;
+}
 
 .borderRadius{
     border-radius: 5px!important;
