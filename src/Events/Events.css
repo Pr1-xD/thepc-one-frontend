@@ -41,7 +41,14 @@
 @media only screen and (max-width: 800px) {
     .event-headers{
         text-align: center;
-        margin: 2rem 0rem;
+        margin: 0rem 0rem 6rem;
         font-size: 2rem;
+    }
+    .create-event{
+        width: 10rem;
+        margin: auto ;
+        margin-top: 3rem;
+        margin-bottom: -6rem;
+        
     }
 }
