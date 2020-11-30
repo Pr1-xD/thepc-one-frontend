@@ -3,6 +3,7 @@ import './Home.css';
 import Nav from '../Nav'
 import NavAfter from '../NavAfter'
 import Eventshome from '../Eventshome'
+import Loader from '../Loader'
 import axios from 'axios'
 import { Button , Alert} from "reactstrap";
 
@@ -43,6 +44,7 @@ function Home(props){
           </div>
           
       </div>
+      
       <Eventshome data={data} setData={setData} token={token} eventsList={eventsList} setEventsList={setEventsList} />
       </>
     ) 

@@ -1,10 +1,12 @@
 import React,{useEffect, useState} from 'react';
 import axios from 'axios'
 import "../node_modules/bootstrap/dist/css/bootstrap.css"
+import "animate.css/animate.min.css"
 import Home from './Home/Home'
 import Events from './Events/Events'
 import './App.css';
 import Footer from './Footer'
+import Loader from './Loader';
 
 function App() {
   const [page,setPage]=useState('Home')
@@ -12,6 +14,7 @@ function App() {
   const [data,setData]=useState({eventsRegistered:[]})
   const [token,setToken]=useState({})
   const [eventsList, setEventsList] = useState(null);
+  
 
   function dataSetter(val){
     sessionStorage.setItem('data',JSON.stringify(val))
@@ -49,8 +52,6 @@ function App() {
   }
 
   function refreshLogin(){
-    console.log('Loaded')
-    console.log(data)
     if (sessionStorage.getItem('data')){
     loginStateHandler(true,JSON.parse(sessionStorage.getItem('data')))
     if (sessionStorage.getItem('page'))
@@ -61,9 +62,10 @@ function App() {
  
   return (
     <div className="app" onLoad={refreshLogin}>
-      {page=='Home'?<Home pageSetter={pageSetter}  data={data} setData={dataSetter} eventsList={eventsList} setEventsList={setEventsList} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler} />:<></>}
+      
+      {(page=='Home')?<Home pageSetter={pageSetter}  data={data} setData={dataSetter} eventsList={eventsList} setEventsList={setEventsList} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler} />:<></>}
       {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} userData={data} logoutHandler={logoutHandler} eventsList={eventsList} setEventsList={setEventsList} eventsRefresh={eventsRefresh}/>:<></>}
-      <Footer />
+      {(eventsList)?<Footer />:<></>}
     </div>
   );
 }

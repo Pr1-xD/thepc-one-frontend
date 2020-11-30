@@ -37,6 +37,11 @@
     top: 110%;
   }
 
+  .create-event-options{
+    margin: auto !important;
+    text-align: center;
+  }
+
   .radioCustom{
     margin-top: 4vh;
     margin-right: 4vw;

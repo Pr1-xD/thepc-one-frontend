@@ -4,20 +4,11 @@ import FormData from 'form-data'
 import "./CreateEvent.css"
 import swal from '@sweetalert/with-react'
 import "../Events Components/Checkboxes.css"
-import "../Events Components/Checkboxes.css"
 
 function CreateEvent(props){
 
     function handleEventState(val){props.handleEventState(val)}
     function eventsRefresh(){props.eventsRefresh()}
-    const [isTextBoxes, setTextBoxes] = useState(false)
-    const [isFileUpload, setFileUpload] = useState(false)
-    const [isMultiChoice, setMultiChoice] = useState(false)
-    const [picture,setPicture]=useState()
-    const [images, setImages] = useState();
-   
-
-    useEffect(()=>{console.log(images)},[images])
 
     let defaultEvent={
         eventName:'',
@@ -34,49 +25,55 @@ function CreateEvent(props){
         eventEnd:'',
         regStart:'',
         textTime:'',
-        eventImage:{}
+        eventImg:{}
       }
-      let abc=defaultEvent
-      let formdata=new FormData()
+      const abc=defaultEvent
 
-      function onUpload(e){
-        e.preventDefault()
-        let img=e.target.files[0]
-        setPicture(img)
-        setImages({file: img})
-        formdata.append('eventImage',img)
-        abc.eventImage=formdata
-        console.log(abc)
-
-      }
-      function imgSubmit(e){
-        e.preventDefault()
-        console.log(images)
-        console.log(abc)
-        console.log(abc)
-      }
-
+      const [isTextBoxes, setTextBoxes] = useState(false)
+      const [isFileUpload, setFileUpload] = useState(false)
+      const [isMultiChoice, setMultiChoice] = useState(false)
 
       const [eventDetails,setEventDetails]=useState(defaultEvent)
       let link='https://thepc-one.herokuapp.com/api/newEvent'
       let header='Bearer '+(props.token.token)
+
+      function callFileUpload(val){
+        setEventDetails(abc)
+        abc.isFileUpload=val
+        setFileUpload(!isFileUpload)
+      }
+      function callTextBoxes(val){
+        setEventDetails(abc)
+        abc.isFileUpload=val
+        setTextBoxes(!isTextBoxes)
+      }
+      function callMultiChoice(val){
+        setEventDetails(abc)
+        abc.isFileUpload=val
+        setMultiChoice(!isMultiChoice)
+      }
       
       function handleSubmit(e)
       {  e.preventDefault()
-        console.log(abc)
-        // setEventDetails(abc)    
-        // console.log(eventDetails)
-        formdata.append('eventName',abc.eventName)
-        formdata.append('eventDesc',abc.eventDesc)
-        formdata.append('eventLink',abc.eventLink)
+        if(isFileUpload==false&&isMultiChoice==false&&isTextBoxes==false)
+        setEventDetails(abc)
+
+        let formdata=new FormData()
+        formdata.append('eventImg',eventDetails.eventImg)
+        formdata.append('eventName',eventDetails.eventName)
+        formdata.append('eventDesc',eventDetails.eventDesc)
+        formdata.append('eventLink',eventDetails.eventLink)
+        formdata.append('eventStart',eventDetails.eventStart)
+        formdata.append('eventEnd',eventDetails.eventEnd)
+        formdata.append('regStart',eventDetails.regStart)
+        formdata.append('textTime',eventDetails.textTime)
+        formdata.append('isTextBoxes',eventDetails.isTextBoxes)
+        formdata.append('isMultiChoice',eventDetails.isMultiChoice)
+        formdata.append('isFileUpload',eventDetails.isFileUpload)
         formdata.append('numTextBoxes',abc.numTextBoxes)
         formdata.append('numMultiChoice',abc.numMultiChoice)
         formdata.append('numOptions',abc.numOptions)
         formdata.append('numFileUploads',abc.numFileUploads)
-        formdata.append('eventStart',abc.eventStart)
-        formdata.append('eventEnd',abc.eventEnd)
-        formdata.append('regStart',abc.regStart)
-        formdata.append('textTime',abc.textTime)
 
 
         axios.post(link,formdata,{headers: {
@@ -98,13 +95,11 @@ function CreateEvent(props){
     return(
         <div class="container mt-3">
         <form className="form-event" onSubmit="return false" >
-        <h1 className="event-headers">Create Event</h1>
+        <h1 className="event-headers">Create Event</h1>  
                     <label for="eventName" class="sr-only">Event Name</label>
                     <input type="text" id="eventName" className="form-control" placeholder="Event Name" onChange={e=>abc.eventName=e.target.value} required/>
-                    
                     <label for="eventDesc" class="sr-only">Event Description</label>
                     <textarea type="text" id="eventDesc" className="form-control mt-3" placeholder="Event Desc" rows="3" cols="100" onChange={e=>abc.eventDesc=e.target.value} required/>
-                    
                     <label for="eventLink" class="sr-only">Event Link</label>
                     <input type="text" id="eventLink" className="form-control mt-3" placeholder="Event Link" onChange={e=>abc.eventLink=e.target.value} required/>
                     <label for="eventStart" class="sr-only">Event Start (yyyy/mm/dd)</label>
@@ -118,9 +113,7 @@ function CreateEvent(props){
                     <br></br>
 
                     <label for="eventImage" class="sr form-control mt-1 customImage_text"><b>Event Image</b></label>
-
-
-                    <input type="file" name="file" onChange={(e)=>{formdata.append('eventImg',e.target.files[0])}}/>
+                    <input type="file" name="file" onChange={(e)=>{abc.eventImg=e.target.files[0]}}/>
 
                     <br/>
                     <br/>
@@ -128,11 +121,11 @@ function CreateEvent(props){
                     <h1 className="event-headers">Event Details</h1>
                     
 
-                    <div className="d-flex ">
+                    <div className="d-flex create-event-options ">
                     <div className="checkbox-inline p-4">
                     <div>Text Boxes</div>
                       <label for="isTextBoxes" className="radioText checkbox bounce">
-                      <input type="checkbox" id="isTextBoxes" name="isTextBoxes" className="radioCustom" value="true" onChange={e=>{abc.isTextBoxes=e.target.checked;setTextBoxes(e.target.checked)}} />
+                      <input type="checkbox" id="isTextBoxes" name="isTextBoxes" className="radioCustom" value={!isTextBoxes}  onChange={e=>callTextBoxes(e.target.value)} />
                       <svg viewBox="0 0 21 21">
                         <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
                       </svg>
@@ -143,7 +136,7 @@ function CreateEvent(props){
                     <div className="checkbox-inline p-4">
                     <div>MultiChoice</div>
                     <label for="isMultiChoice" className="radioText checkbox bounce">
-                    <input type="checkbox" id="isMultiChoice" name="isMultiChoice" className="radioCustom" value="true" onChange={e=>{abc.isMultiChoice=e.target.checked;setMultiChoice(e.target.checked)}} />
+                    <input type="checkbox" id="isMultiChoice" name="isMultiChoice" className="radioCustom" value={!isMultiChoice} onChange={e=>callMultiChoice(e.target.value)} />
                     <svg viewBox="0 0 21 21">
                         <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
                     </svg>
@@ -153,7 +146,7 @@ function CreateEvent(props){
                     <div className="checkbox-inline p-4">
                     <div>FileUpload</div>
                     <label for="isFileUpload" className="radioText checkbox bounce">
-                    <input type="checkbox" id="isFileUpload" name="isFileUpload" className="radioCustom" value="true" onChange={e=>{abc.isFileUpload=e.target.checked;setFileUpload(e.target.checked)}}  />
+                    <input type="checkbox" id="isFileUpload" name="isFileUpload" className="radioCustom" value={!isFileUpload} onChange={e=>callFileUpload(e.target.value)}  />
                     
                     <svg viewBox="0 0 21 21">
                         <polyline points="5 10.75 8.5 14.25 16 6"></polyline>
@@ -163,10 +156,10 @@ function CreateEvent(props){
                     </div>
 
                     <label for="numTextBoxes" class="sr-only">Number of text boxes</label>
-                    {isTextBoxes?<input type="text" id="numTextBoxes" className="form-control mt-3" placeholder="Number of text boxes" onChange={e=>abc.numTextBoxes=e.target.value} required/>:<></>}
+                    {isTextBoxes?<input type="number" id="numTextBoxes" className="form-control mt-3" placeholder="Number of text boxes" onChange={(e)=>{abc.numTextBoxes=e.target.value}} required/>:<></>}
                     
                     <label for="numMultiChoice" class="sr-only">Number of Multi Choice</label>
-                    {isMultiChoice?<input type="number" id=" numMultiChoice" className="form-control mt-3" placeholder="Number of Multi Choice" onChange={e=>abc.numMultiChoice=e.target.value} required/>:<></>}
+                    {isMultiChoice?<input type="number" id=" numMultiChoice" className="form-control mt-3" placeholder="Number of Multi Choice" onChange={(e)=>abc.numMultiChoice=e.target.value} required/>:<></>}
                     
                     <label for="numOptions" class="sr-only">Number of Options</label>
                     {isMultiChoice?<input type="number" id="numOptions" className="form-control mt-3" placeholder="Number of Options" onChange={e=>abc.numOptions=e.target.value} required/>:<></>}

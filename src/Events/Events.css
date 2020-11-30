@@ -10,22 +10,23 @@
 }
 
 .event-headers{
-    font-size: 2rem;
-    font-weight: 600;
-    margin-left: 4rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 3rem auto;
+    text-align: center;
 }
 
 .create-event{
     width: 10rem;
     margin-left: 85%;
-    margin-bottom: -3rem;
+    margin-bottom: -6rem;
     background-color: var(--main);
     color: white;
     border: none;
     border-radius: 0;
     font-family: 'Red Hat Display';
-    font-size: 1rem;
-    font-weight: lighter;
+    font-size: 1.1rem;
+    font-weight: 300;
 }
 
 
@@ -41,5 +42,6 @@
     .event-headers{
         text-align: center;
         margin: 2rem 0rem;
+        font-size: 2rem;
     }
 }

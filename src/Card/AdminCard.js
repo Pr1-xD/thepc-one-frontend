@@ -1,13 +1,25 @@
 import React, { useState } from 'react'
 import "./Card.css"
+import img from "../Images/thepcOneImg.png"
 import axios from 'axios'
 import swal from '@sweetalert/with-react'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 function AdminCard(props) {
     const id=props.id
     const eventsList=props.eventsList
     const date=props.startDate
     const newDate = date.toString().substring(0,10)
+
+    let blob = new Blob([arrayBuffer])
+    let srcBlob=null
+    if(props.image){
+        var arrayBuffer = new Uint8Array( props.image.data)
+        blob=new Blob( [ arrayBuffer], { type: "image/jpeg" } );
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL( blob );
+    }
+
     function setEventsList(val){props.setEventsList(val)}
     function eventsRefresh(){props.eventsRefresh()}
 
@@ -55,10 +67,12 @@ function AdminCard(props) {
         
 
     return (
+        <>
+        <ScrollAnimation animateIn="animate__slideInLeft" delay='200' duration='0.6' animateOnce='true' >
         <div class="card-container navAfter">
             <div class="float-layout">
                 <div class="card-image">
-                    <img class="customImage" src="https://images.pexels.com/photos/534151/pexels-photo-534151.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"/>
+                        {props.image?<img class="customImage" src={imageUrl}/>:<img class="customImage" src={img}/>}
                         <div class="card d-flex ">
                             <div class="card-title">{props.name}</div>
                             <div class="card-desc mb-auto">{props.desc}</div>
@@ -74,6 +88,8 @@ function AdminCard(props) {
                 </div>
             </div>
         </div>
+        </ScrollAnimation>
+        </>
     )
 }
 

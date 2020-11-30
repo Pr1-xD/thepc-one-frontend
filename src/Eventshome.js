@@ -3,6 +3,7 @@ import axios from 'axios'
 import "./Eventshome.css"
 import HomeCards from './HomeCards'
 import swal from '@sweetalert/with-react'
+import Loader from './Loader'
 
 function Eventshome(props){
     const userData=props.data
@@ -51,7 +52,8 @@ function Eventshome(props){
 
     return(
         <div className="eventsHomeCard">
-            <h1 className="events_title" onClick={eventsRefresh}>Events</h1>
+            {eventsData?<h1 className="events_title">Events</h1>:<></>}
+            {eventsData?<></>:<Loader/>}
             {eventsData?<HomeCards data={eventsData} eventsRegister={eventsRegister} userData={userData} />:<></>}
         </div>
     )

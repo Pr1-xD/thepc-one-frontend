@@ -1,7 +1,10 @@
 import React,{useState} from 'react'
 import SignUp from './SignUp'
 import Login from './Login'
-import logo from './Images/T1 Logo.png'
+import logo from './Images/t1-logo.png'
+import './NavAfter.css'
+import ScrollAnimation from 'react-animate-on-scroll';
+
 function Nav(props)
 {      
   function loginStateHandler(val,data){
@@ -37,8 +40,10 @@ function Nav(props)
     return(
 
     <div>
+      {/* <ScrollAnimation animateIn="animate__slideInLeft" delay='200' duration='0.6' animateOnce='true' > */}
       <nav className="navbar navbar-expand-lg navbar-light bg-white home fixed-top navbar-custom">
-    <a className="navbar-brand navAfter_leftText mr-auto">THEPC ONE</a>
+    <a className="navbar-brand navAfter_leftText mr-auto">
+      <img src={logo} className="nav-logo"/></a>
             <button className="navbar-toggler float-right customIcon" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon "></span>
             </button>
@@ -49,7 +54,7 @@ function Nav(props)
                 </div>
             </div>
         </nav>
-        
+        {/* </ScrollAnimation>  */}
           <div className={loginSidebar ? 'sidebar_loginActive' : 'sidebar_loginNotActive'}>
           <div className="crossIcon" onClick={closeLoginSidebar}>
         <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-x" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -58,9 +63,7 @@ function Nav(props)
     </div>
     <div className="sidebar_loginText">LOGIN</div>
     <Login loginStateHandler={loginStateHandler} />
-
     </div>
-
         <div className={signupSidebar ? 'sidebar_signupActive' : 'sidebar_signupNotActive'}>
         <div className="crossIcon" onClick={closeSignupSidebar}>
         <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-x" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -70,6 +73,7 @@ function Nav(props)
         <div className="sidebar_signupText">SIGN UP</div>
         <SignUp loginStateHandler={loginStateHandler}/>
         </div>
+        
     </div>
     )
 }

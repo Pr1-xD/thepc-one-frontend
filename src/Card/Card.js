@@ -3,6 +3,7 @@ import "./Card.css"
 import img from "../Images/thepcOneImg.png"
 import CardButton from './CardButton'
 import swal from '@sweetalert/with-react'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 function Card(props) {
     let eventData={}
@@ -10,6 +11,17 @@ function Card(props) {
     let buttonText=props.buttonText
     const date=props.startDate
     const newDate = date.toString().substring(0,10)
+    let blob = new Blob([arrayBuffer])
+    let srcBlob=null
+
+    if(props.image){
+        var arrayBuffer = new Uint8Array( props.image.data)
+        blob=new Blob( [ arrayBuffer], { type: "image/jpeg" } );
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL( blob );
+    }
+    
+
     function eventStart(){props.eventStart(eventData)}
 
     if(buttonText=='Start')
@@ -37,11 +49,12 @@ function Card(props) {
     }
 
     return (
-
+        <>
+        <ScrollAnimation animateIn="animate__slideInLeft" delay='200' duration='0.6' animateOnce='true' >
         <div class="card-container navAfter">
             <div class="float-layout">
                 <div class="card-image">
-                    <img class="customImage" src={img}/>
+                    {props.image?<img class="customImage" src={imageUrl}/>:<img class="customImage" src={img}/>}
                         <div class="card d-flex ">
                             <div class="card-title">{props.name}</div>
                             <div class="card-desc mb-auto">{props.desc}</div>
@@ -61,7 +74,8 @@ function Card(props) {
                 </div>
             </div>
         </div>
-
+        </ScrollAnimation>
+    </>
     )
 }
 
