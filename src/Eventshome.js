@@ -24,9 +24,7 @@ function Eventshome(props){
             button:false,
             timer:2000,  
         });
-        setTimeout(eventsRefresh,2000)
-        // eventsRefresh()
-        // reload()                     
+        setTimeout(eventsRefresh,2000)                 
     }
 
     function eventsRefresh(){
