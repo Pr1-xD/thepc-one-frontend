@@ -44,7 +44,7 @@ function Events(props){
               <br/>
               <br/>
               <br/>
-              {/* {eventsList}?<></>:<Loader /> */}
+              {eventsList?<></>:<Loader />}
               {props.userData.memberType ===-1?<NonMember eventsList={eventsList} mDate={mDate} userData={data} userID={userID} />:props.userData.memberType ===0?<Member eventsList={eventsList} mDate={mDate} userData={data} token={token} userID={userID} eventsRefresh={eventsRefresh}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} eventsRefresh={eventsRefresh} setEventsList={setEventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
             </>
         ) 

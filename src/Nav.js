@@ -40,7 +40,7 @@ function Nav(props)
     return(
 
     <div>
-      {/* <ScrollAnimation animateIn="animate__slideInLeft" delay='200' duration='0.6' animateOnce='true' > */}
+      
       <nav className="navbar navbar-expand-lg navbar-light bg-white home fixed-top navbar-custom">
     <a className="navbar-brand navAfter_leftText mr-auto">
       <img src={logo} className="nav-logo"/></a>
@@ -54,7 +54,7 @@ function Nav(props)
                 </div>
             </div>
         </nav>
-        {/* </ScrollAnimation>  */}
+         
           <div className={loginSidebar ? 'sidebar_loginActive' : 'sidebar_loginNotActive'}>
           <div className="crossIcon" onClick={closeLoginSidebar}>
         <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-x" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg">

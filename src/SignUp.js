@@ -16,6 +16,7 @@ function SignUp(props){
     function handleSignIn(e)
       {
         e.preventDefault()
+        window.scrollTo(0, 0)
         if(signupFormValidator()){
         console.log("clicked")
         console.log(name,email,pass,cnfpass)

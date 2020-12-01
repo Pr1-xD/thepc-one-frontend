@@ -1,6 +1,4 @@
-.navAfter{
-    font-family: 'Red Hat Display', sans-serif !important;
-}
+
 
 .customText{
     color: white;
@@ -93,6 +91,7 @@
   }
   
   .card-desc {
+    font-family: 'Raleway';  
     padding: 0.5vw;
     padding-left: 0;
     text-align: left;

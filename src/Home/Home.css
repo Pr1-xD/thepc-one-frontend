@@ -1,5 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 .home{
-    font-family: 'Red Hat Display', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 .bg{  
@@ -160,11 +163,12 @@
     left:1200;
     width:400px;
     top:0px;
-    background-color:#32dfb0;
+    background-color:var(--main);
     height:100vh;
     right: 0;
     transition: 350ms;
     z-index: 2;
+    box-shadow: 0px 4px 12px 2px rgba(1,1,1,0.40);
 }
 
 .sidebar_loginNotActive{
@@ -198,6 +202,7 @@
     right: 0;
     transition: 350ms;
     z-index: 2;
+    box-shadow: 0px 4px 12px 2px rgba(1,1,1,0.40);
 }
 
 .sidebar_signupNotActive{
@@ -349,12 +354,9 @@
         margin-bottom:10px ;
         
     }
-    
-    
     .colorBox{
         width: 200px;
         height: 20px;
-        margin-top: 8px;
     }
     
     /* Description Text */
@@ -372,44 +374,17 @@
 
     .sidebar_loginNotActive{
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
 
     .sidebar_signupNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
     .sidebar_loginActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:#32dfb0;
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
+
     .sidebar_signupActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .navAfter_myEventButton{
         border: 0;
@@ -446,7 +421,6 @@
     .welcomeText{
         font-size:2.2rem !important;
         line-height:70px;
-        color:#2C2C2C;
     }
     
     /* Thepc Text */
@@ -454,8 +428,6 @@
         font-weight:bold;   
         font-size:4.5rem;
         line-height:60px;
-        margin-bottom:10px ;
-        color:#2C2C2C;
     }
     
     /* one text */
@@ -463,18 +435,12 @@
         font-weight:bold;   
         font-size:4.5rem;
         line-height:65px;
-        margin-bottom:10px ;
-        color:var(--main);
-        
     }
     
     
     .colorBox{
         width: 200px;
         height: 30px;
-        display: inline-block;
-        background-color:var(--main);
-        margin-top: 8px;
     }
     
     /* Description Text */
@@ -491,47 +457,17 @@
     }
 
     .sidebar_loginNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
 
     .sidebar_signupNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
     .sidebar_loginActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:#32dfb0;
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .sidebar_signupActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .navAfter_leftText{
         font-size: larger;
@@ -570,7 +506,6 @@
     .welcomeText{
         font-size:2.2rem !important;
         line-height:70px;
-        color:#2C2C2C;
     }
     
     /* Thepc Text */
@@ -578,8 +513,6 @@
         font-weight:bold;   
         font-size:4.5rem;
         line-height:60px;
-        margin-bottom:10px ;
-        color:#2C2C2C;
     }
     
     /* one text */
@@ -587,18 +520,12 @@
         font-weight:bold;   
         font-size:4.5rem;
         line-height:65px;
-        margin-bottom:10px ;
-        color:var(--main);
-        
     }
     
     
     .colorBox{
         width: 200px;
         height: 30px;
-        display: inline-block;
-        background-color:var(--main);
-        margin-top: 8px;
     }
     
     /* Description Text */
@@ -615,47 +542,17 @@
     }
 
     .sidebar_loginNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
 
     .sidebar_signupNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
     .sidebar_loginActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:#32dfb0;
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .sidebar_signupActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .navAfter_leftText{
         font-size: larger;
@@ -694,7 +591,6 @@
     .welcomeText{
         font-size:2.2rem !important;
         line-height:70px;
-        color:#2C2C2C;
     }
     
     /* Thepc Text */
@@ -702,27 +598,19 @@
         font-weight:bold;   
         font-size:4.5rem;
         line-height:60px;
-        margin-bottom:10px ;
-        color:#2C2C2C;
     }
     
     /* one text */
     .oneText{
         font-weight:bold;   
         font-size:4.5rem;
-        line-height:65px;
-        margin-bottom:10px ;
-        color:var(--main);
-        
+        line-height:65px;  
     }
     
     
     .colorBox{
         width: 200px;
         height: 30px;
-        display: inline-block;
-        background-color:var(--main);
-        margin-top: 8px;
     }
     
     /* Description Text */
@@ -733,47 +621,17 @@
     }
 
     .sidebar_loginNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
 
     .sidebar_signupNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
     .sidebar_loginActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:#32dfb0;
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .sidebar_signupActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .navAfter_leftText{
         font-size: larger;
@@ -811,7 +669,6 @@
     .welcomeText{
         font-size:2.2rem !important;
         line-height:70px;
-        color:#2C2C2C;
     }
     
     /* Thepc Text */
@@ -819,27 +676,19 @@
         font-weight:bold;   
         font-size:4.5rem;
         line-height:60px;
-        margin-bottom:10px ;
-        color:#2C2C2C;
     }
     
     /* one text */
     .oneText{
         font-weight:bold;   
         font-size:4.5rem;
-        line-height:65px;
-        margin-bottom:10px ;
-        color:var(--main);
-        
+        line-height:65px;  
     }
     
     
     .colorBox{
         width: 200px;
         height: 30px;
-        display: inline-block;
-        background-color:var(--main);
-        margin-top: 8px;
     }
     
     /* Description Text */
@@ -850,47 +699,17 @@
     }
 
     .sidebar_loginNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
 
     .sidebar_signupNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
     .sidebar_loginActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:#32dfb0;
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .sidebar_signupActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right: 0;
-        transition: 350ms;
-        z-index: 2;
     }
     .navAfter_leftText{
         font-size: larger;
@@ -929,7 +748,6 @@
     .welcomeText{
         font-size:3rem !important;
         line-height:90px;
-        color:#2C2C2C;
     }
     
     /* Thepc Text */
@@ -937,27 +755,19 @@
         font-weight:bold;   
         font-size:6rem;
         line-height:80px;
-        margin-bottom:10px ;
-        color:#2C2C2C;
     }
     
     /* one text */
     .oneText{
         font-weight:bold;   
         font-size:6rem;
-        line-height:90px;
-        margin-bottom:10px ;
-        color:var(--main);
-        
+        line-height:90px;   
     }
     
     
     .colorBox{
         width: 300px;
         height: 30px;
-        display: inline-block;
-        background-color:var(--main);
-        margin-top: 8px;
     }
     
     /* Description Text */
@@ -968,25 +778,11 @@
     }
 
     .sidebar_loginNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
 
     .sidebar_signupNotActive{
-        position:fixed;
-        left:1200;
         width:100%;
-        top:0px;
-        background-color:var(--main);
-        height:100vh;
-        right:-100% !important;
-        transition: 850ms;
     }
 
     .navAfter_leftText{

@@ -1,11 +1,9 @@
-import React,{ useState,useEffect } from 'react';
+import React from 'react';
+// import './HomeDark.css';
 import './Home.css';
 import Nav from '../Nav'
 import NavAfter from '../NavAfter'
 import Eventshome from '../Eventshome'
-import Loader from '../Loader'
-import axios from 'axios'
-import { Button , Alert} from "reactstrap";
 
 function Home(props){
 
@@ -20,20 +18,25 @@ function Home(props){
   function setEventsList(val){props.setEventsList(val)}
   function pageSetter(val){props.pageSetter(val)}
   function loginStateHandler(val,data){props.loginStateHandler(val,data)}
-  function logoutHandler(val){props.logoutHandler(val)}                         
+  function logoutHandler(val){props.logoutHandler(val)}
+  // const darkTheme=props.darkTheme
+  // function setDarkTheme(val){
+  //   console.log('Dark')
+  //   props.setDarkTheme(val)}                         
 
 
   return(
     <>
       <div className="home bg">
           {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler} /> : <Nav loginStateHandler={loginStateHandler}/>}
-          <br/>
+          <br/> 
           <div className="home-text">
           <div className="welcomeText" >Welcome to</div>
           <div className="thepcText">THEPC </div>
           <div className="oneText">ONE</div>
           <div className="input_boxColor"><div className="colorBox"></div></div>
           <div className="descriptionText">One THEPC. One Portal.</div>
+          {/* <button type="button" onClick={()=>setDarkTheme(!darkTheme)}>Dark</button> */}
           </div>
           <br/>
           <br/>

@@ -42,6 +42,18 @@
     text-align: center;
   }
 
+  .event-form-one{
+    background-color:#28d1a4;
+    width: 100%;
+    padding: 4rem;
+    border-radius: 1rem;
+  }
+
+  /* .form-colour{
+    background-color: #444343;
+    border: hidden;
+  } */
+
   .radioCustom{
     margin-top: 4vh;
     margin-right: 4vw;
