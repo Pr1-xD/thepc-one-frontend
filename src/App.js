@@ -13,7 +13,8 @@ function App() {
   const [loggedin,setLoggedIn]=useState(false)
   const [data,setData]=useState({eventsRegistered:[]})
   const [token,setToken]=useState({})
-  const [eventsList, setEventsList] = useState(null);
+  const [eventsList, setEventsList] = useState(null)
+  const [darkTheme,setDarkTheme]=useState(false)
   
 
   function dataSetter(val){
@@ -63,7 +64,7 @@ function App() {
   return (
     <div className="app" onLoad={refreshLogin}>
       
-      {(page=='Home')?<Home pageSetter={pageSetter}  data={data} setData={dataSetter} eventsList={eventsList} setEventsList={setEventsList} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler} />:<></>}
+      {(page=='Home')?<Home pageSetter={pageSetter} darkTheme={darkTheme} setDarkTheme={setDarkTheme}  data={data} setData={dataSetter} eventsList={eventsList} setEventsList={setEventsList} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler} />:<></>}
       {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} userData={data} logoutHandler={logoutHandler} eventsList={eventsList} setEventsList={setEventsList} eventsRefresh={eventsRefresh}/>:<></>}
       {(eventsList)?<Footer />:<></>}
     </div>

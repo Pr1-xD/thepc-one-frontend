@@ -97,26 +97,27 @@ function CreateEvent(props){
     return(
         <div class="container mt-3">
         <form className="form-event" onSubmit="return false" >
+          <div >
         <h1 className="event-headers">Create Event</h1>  
                     <label for="eventName" class="sr-only">Event Name</label>
-                    <input type="text" id="eventName" className="form-control" placeholder="Event Name" onChange={e=>abc.eventName=e.target.value} required/>
-                    <label for="eventDesc" class="sr-only">Event Description</label>
-                    <textarea type="text" id="eventDesc" className="form-control mt-3" placeholder="Event Desc" rows="3" cols="100" onChange={e=>abc.eventDesc=e.target.value} required/>
+                    <input type="text" id="eventName" className="form-control form-colour" placeholder="Event Name" onChange={e=>abc.eventName=e.target.value} required/>
+                    <label for="eventDesc" class="sr-only" >Event Description</label>
+                    <textarea type="text" id="eventDesc" className="form-control mt-3 form-colour" maxlength='200' placeholder="Event Desc" rows="3" cols="100" onChange={e=>abc.eventDesc=e.target.value} required/>
                     <label for="eventLink" class="sr-only">Event Link</label>
-                    <input type="text" id="eventLink" className="form-control mt-3" placeholder="Event Link" onChange={e=>abc.eventLink=e.target.value} required/>
+                    <input type="text" id="eventLink" className="form-control mt-3 form-colour" placeholder="Event Link" onChange={e=>abc.eventLink=e.target.value} required/>
                     <label for="eventStart" class="sr-only">Event Start (yyyy/mm/dd)</label>
-                    <input type="text" id="eventStart" className="form-control mt-3" placeholder="Event Start (yyyy/mm/dd)" onChange={e=>abc.eventStart=new Date(e.target.value)} required/>
+                    <input type="text" id="eventStart" className="form-control mt-3 form-colour" placeholder="Event Start (yyyy/mm/dd)" onChange={e=>abc.eventStart=new Date(e.target.value)} required/>
                     <label for="eventEnd" class="sr-only">Event End (yyyy/mm/dd)</label>
-                    <input type="text" id="eventEnd" className="form-control mt-3" placeholder="Event End (yyyy/mm/dd)" onChange={e=>abc.eventEnd=new Date(e.target.value)} required/>
+                    <input type="text" id="eventEnd" className="form-control mt-3 form-colour" placeholder="Event End (yyyy/mm/dd)" onChange={e=>abc.eventEnd=new Date(e.target.value)} required/>
                     <label for="regStart" class="sr-only">Registration Start (yyyy/mm/dd)</label>
-                    <input type="text" id="regStart" className="form-control mt-3" placeholder="Registration Start (yyyy/mm/dd)" onChange={e=>abc.regStart=new Date(e.target.value)} required/>
+                    <input type="text" id="regStart" className="form-control mt-3 form-colour" placeholder="Registration Start (yyyy/mm/dd)" onChange={e=>abc.regStart=new Date(e.target.value)} required/>
                     <label for="eventTime" class="sr-only">Event Time</label>
-                    <input type="text" id="eventTime" className="form-control mt-3" placeholder="Event Time" onChange={e=>abc.textTime=e.target.value} required/>
+                    <input type="text" id="eventTime" className="form-control mt-3 form-colour" placeholder="Event Time" onChange={e=>abc.textTime=e.target.value} required/>
                     <br></br>
 
-                    <label for="eventImage" class="sr form-control mt-1 customImage_text"><b>Event Image</b></label>
+                    <label for="eventImage" class="sr form-control mt-1 customImage_text form-colour"><b>Event Image</b></label>
                     <input type="file" name="file" onChange={(e)=>{abc.eventImg=e.target.files[0]}}/>
-
+                    </div>
                     <br/>
                     <br/>
                     <br/>

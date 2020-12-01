@@ -1,0 +1,12 @@
+.home-dark{
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.bg-dark{  
+  background-image: url(./thepc-one-02-01.png);
+  width: 100vw;
+  height:100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
