@@ -5,12 +5,15 @@ import logo from './Images/t1-logo.png'
 function NavAfter(props) {
     function eventSetter(){
         props.pageSetter('Events')
+        window.scrollTo(0, 0)
     }
     function homeSetter(){
         props.pageSetter('Home')
+        window.scrollTo(0, 0)
     }
     function logoutHandler(){
         props.logoutHandler(false)
+        window.scrollTo(0, 0)
     }
 
     return (

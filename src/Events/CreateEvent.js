@@ -7,7 +7,9 @@ import "../Events Components/Checkboxes.css"
 
 function CreateEvent(props){
 
-    function handleEventState(val){props.handleEventState(val)}
+    function handleEventState(val){
+      window.scrollTo(0, 0)
+      props.handleEventState(val)}
     function eventsRefresh(){props.eventsRefresh()}
 
     let defaultEvent={

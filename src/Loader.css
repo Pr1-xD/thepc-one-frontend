@@ -25,24 +25,24 @@ body .container-loader .box1 {
   height: 48px;
   margin-top: 64px;
   margin-left: 0px;
-  -webkit-animation: anime1 4s 0s forwards ease-in-out infinite;
-          animation: anime1 4s 0s forwards ease-in-out infinite;
+  -webkit-animation: anime1 3s 0s forwards ease-in-out infinite;
+          animation: anime1 3s 0s forwards ease-in-out infinite;
 }
 body .container-loader .box2 {
   width: 48px;
   height: 48px;
   margin-top: 0px;
   margin-left: 0px;
-  -webkit-animation: anime2 4s 0s forwards ease-in-out infinite;
-          animation: anime2 4s 0s forwards ease-in-out infinite;
+  -webkit-animation: anime2 3s 0s forwards ease-in-out infinite;
+          animation: anime2 3s 0s forwards ease-in-out infinite;
 }
 body .container-loader .box3 {
   width: 48px;
   height: 48px;
   margin-top: 0px;
   margin-left: 64px;
-  -webkit-animation: anime3 4s 0s forwards ease-in-out infinite;
-          animation: anime3 4s 0s forwards ease-in-out infinite;
+  -webkit-animation: anime3 3s 0s forwards ease-in-out infinite;
+          animation: anime3 3s 0s forwards ease-in-out infinite;
 }
 @-webkit-keyframes anime1 {
   0% {

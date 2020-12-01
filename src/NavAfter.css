@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 .navAfter{
-    font-family: 'Red Hat Display', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 .nav-logo{
     width: 7rem;
@@ -71,6 +73,9 @@
     .navAfter_leftText{
         font-size: large;
     }
+    .nav-logo{
+        width: 4rem;
+    }
     .navAfter_myEventButton{
         border: 0;
         font-size: small;
@@ -92,6 +97,9 @@
     .navAfter_leftText{
         font-size: larger;
     }
+    .nav-logo{
+        width: 4rem;
+    }
     .navAfter_myEventButton{
         border: 0;
         font-size: small;
@@ -112,6 +120,9 @@
     .navAfter_leftText{
         font-size: larger;
     }
+    .nav-logo{
+        width: 4rem;
+    }
     .navAfter_myEventButton{
         border: 0;
         font-size: small;
@@ -131,6 +142,9 @@
 @media only screen and (min-width: 425px) and (max-width: 450px){
     .navAfter_leftText{
         font-size: larger;
+    }
+    .nav-logo{
+        width: 4rem;
     }
     .navAfter_myEventButton{
         border: 0;
@@ -153,6 +167,9 @@
         font-size: small;
         margin-left: 0.5vw;
         margin-top: 0.35vh;
+    }
+    .nav-logo{
+        width: 4rem;
     }
     .navAfter_myEventButton{
         border: 0;

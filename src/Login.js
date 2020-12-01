@@ -14,6 +14,7 @@ function Login(props){
 
         function handleLogin(e){    
         e.preventDefault()
+        window.scrollTo(0, 0)
         if(loginFormValidator())
         {
         console.log(email,pass)
