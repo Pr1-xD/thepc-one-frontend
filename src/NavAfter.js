@@ -1,5 +1,6 @@
 import React from 'react'
 import './NavAfter.css'
+import logo from './Images/t1-logo.png'
 
 function NavAfter(props) {
     function eventSetter(){
@@ -14,7 +15,10 @@ function NavAfter(props) {
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white navbar-custom home fixed-top">
-            <a className="navbar-brand navAfter_leftText mr-auto" onClick={homeSetter} >THEPC ONE</a>
+            <a className="navbar-brand navAfter_leftText mr-auto" onClick={homeSetter} >
+                <img src={logo} className='nav-logo' />
+                {/* THEPC ONE */}
+            </a>
             <button className="navbar-toggler float-right customIcon" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon "></span>
             </button>

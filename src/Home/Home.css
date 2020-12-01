@@ -34,6 +34,9 @@
     border-bottom-left-radius:5px !important;
     border-bottom-right-radius:5px !important;
 }
+.custom-controlFour{
+    margin-bottom: 4rem;
+}
 
 .borderRadius{
     border-radius: 5px!important;
@@ -47,13 +50,7 @@
     margin: 2rem 0;
 }
 
-.navAfter_leftText{
-    color:var(--main) !important;
-    font-weight:500;
-    font-size:2.6vw;
-    margin-left: 5vw;
-    margin-top: 0.9vh;
-}
+
 
 .navAfter_myEventButton{
     font-weight:800 !important;
@@ -323,7 +320,7 @@
 }
 
 
-@media  screen and (max-width: 320px) and (max-width: 375px) {
+@media  screen and (min-width: 320px) and (max-width: 375px) {
     .bg{  
         background-image: url(./thepc-one-03-01.png);
       }
@@ -414,9 +411,6 @@
         transition: 350ms;
         z-index: 2;
     }
-    .navAfter_leftText{
-        font-size: large;
-    }
     .navAfter_myEventButton{
         border: 0;
         font-size: small;
@@ -434,7 +428,7 @@
 }
 
 
-@media only screen and (min-width: 370px)and (max-width: 400px){
+@media only screen and (min-width: 375px)and (max-width: 400px){
     .bg{  
         background-image: url(./thepc-one-03-01.png);
         width: 100vw;
@@ -683,6 +677,123 @@
 }
 
 @media only screen and (min-width: 425px) and (max-width: 450px){
+    .bg{  
+        background-image: url(./thepc-one-03-01.png);
+        width: 100vw;
+        height:100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .home-text{
+        margin: 4rem 0 12rem;
+        text-align: center;
+    }
+    
+    /* Welcome Text */
+    .welcomeText{
+        font-size:2.2rem !important;
+        line-height:70px;
+        color:#2C2C2C;
+    }
+    
+    /* Thepc Text */
+    .thepcText{
+        font-weight:bold;   
+        font-size:4.5rem;
+        line-height:60px;
+        margin-bottom:10px ;
+        color:#2C2C2C;
+    }
+    
+    /* one text */
+    .oneText{
+        font-weight:bold;   
+        font-size:4.5rem;
+        line-height:65px;
+        margin-bottom:10px ;
+        color:var(--main);
+        
+    }
+    
+    
+    .colorBox{
+        width: 200px;
+        height: 30px;
+        display: inline-block;
+        background-color:var(--main);
+        margin-top: 8px;
+    }
+    
+    /* Description Text */
+    .descriptionText{
+        font-size:1.8rem;
+        line-height:64px;
+        margin-top: 10px;
+    }
+
+    .sidebar_loginNotActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:var(--main);
+        height:100vh;
+        right:-100% !important;
+        transition: 850ms;
+    }
+
+    .sidebar_signupNotActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:var(--main);
+        height:100vh;
+        right:-100% !important;
+        transition: 850ms;
+    }
+    .sidebar_loginActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:#32dfb0;
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
+    .sidebar_signupActive{
+        position:fixed;
+        left:1200;
+        width:100%;
+        top:0px;
+        background-color:var(--main);
+        height:100vh;
+        right: 0;
+        transition: 350ms;
+        z-index: 2;
+    }
+    .navAfter_leftText{
+        font-size: larger;
+    }
+    .navAfter_myEventButton{
+        border: 0;
+        font-size: small;
+    }
+    .navAfter_logoutButton{
+        font-size: small;
+        background-color: white!important;
+    }
+    .logoutColor{
+        color: #43D8C9;
+    }
+    .customIcon{
+        margin-right: 20vw;
+    }
+}
+@media only screen and (min-width: 450px) and (max-width: 550px){
     .bg{  
         background-image: url(./thepc-one-03-01.png);
         width: 100vw;
