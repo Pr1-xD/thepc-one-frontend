@@ -1,17 +1,16 @@
-.card-container-dark {
-    overflow: hidden;
-    height: min-content;
-    box-shadow: 0px 4px 12px 2px rgba(1,1,1,0.20);
-    /* margin-top: 2vw;
-    margin-right: 2vw;
-    margin-left: 2vw; */
-    margin: 1vw auto;
-    background-color: rgb(49, 48, 48);
-    border-radius: 8px;
-    width: 90%;
+.card-container-dark{
+  font-family: 'Poppins';
+  overflow: hidden;
+  height: min-content;
+  box-shadow: 0px 4px 12px 2px rgba(1,1,1,0.20);
+  margin: 1vw auto;
+  background-color:var(--dark);
+  border-radius: 8px;
+  width: 90%;
   }
-  .card-dark {
-    background-color: rgb(49, 48, 48);
+  .card-custom-dark {
+    font-family: 'Poppins';
+    background-color: var(--dark);
     color: white;
     margin: 2vw;
     margin-left: 0;
@@ -20,3 +19,42 @@
     border: none;
     width: 100%;
   }
+  .registerButtonColorDark{
+    background-color:var(--dark) !important;
+    border-color:var(--main) !important;
+}
+.customTextDark{
+  color: var(--dark);
+  cursor: default;
+}
+.registerButtonColorDark:hover{
+  color: var(--main)
+}
+
+@media only screen and (max-width: 600px) {
+
+  .card-container-dark{
+      width: 90%;
+      margin:1rem auto ;
+  }
+
+  .card-dark{
+    width: 100%;
+    margin-top: -64px;
+  }
+
+
+}
+
+@media  screen and (min-width: 600px) and (max-width: 900px){
+  .card-container-dark{
+      width: 90%;
+      margin:1rem auto ;
+  }
+  
+    .card-dark {
+      width: 100%;
+      margin-top: -64px;
+    }
+
+}

@@ -13,7 +13,7 @@
 }
 
 .create-event{
-    width: 10rem;
+    width: 11rem;
     margin-left: 85%;
     margin-bottom: -6rem;
     background-color: var(--main);
@@ -23,6 +23,27 @@
     font-family: 'Poppins';
     font-size: 1.1rem;
     font-weight: 300;
+    border-radius: 5px;
+    display: flex;
+}
+.create-event-dark{
+    width: 11rem;
+    margin-left: 85%;
+    margin-bottom: -6rem;
+    background-color: var(--main);
+    color: white;
+    border: none;
+    border-radius: 0;
+    font-family: 'Poppins';
+    font-size: 1.1rem;
+    font-weight: 300;
+    border-radius: 5px;
+    display: flex;
+}
+
+.create-event-icon{
+    font-size: 1.7rem;
+    margin-left: 5px;
 }
 
 
@@ -34,14 +55,21 @@
     color: white;
 }
 
+.create-event-dark:active{
+    background-color: white;
+}
+.create-event-dark:hover{
+    background-color: var(--dark);
+    color: white;
+}
+
 @media only screen and (max-width: 800px) {
     .event-headers{
         text-align: center;
         margin: 0rem 0rem 6rem;
         font-size: 2rem;
     }
-    .create-event{
-        width: 10rem;
+    .create-event{ 
         margin: auto ;
         margin-top: 3rem;
         margin-bottom: -6rem;

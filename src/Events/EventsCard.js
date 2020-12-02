@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Card from '../Card/Card'
 
 function EventsCard(props){
+    const darkTheme=props.darkTheme
     const userID=props.userID
     const mDate=props.mDate
     const buttonText=props.buttonText
@@ -15,12 +16,12 @@ function EventsCard(props){
         let reqEventsList=ReqEventsCheck(data)
         let pastEventsList=PastEventsCheck(data)
         return(
-            <>
-            {(reqEventsList.length!=0)?<h1 className="event-headers">Event Requests</h1>: <></>}
+            <>{/* ADD CONDITIONAL RENDERING */}
+            {(reqEventsList.length!=0)?<h1 className={darkTheme?"event-headers-dark":"event-headers"}>Event Requests</h1>: <></>}
             {(reqEventsList.length!=0)?reqEventsList.map(ReqCardsRender): <></>}
-            {(liveEventsList.length!=0)?<h1 className="event-headers">Live Events</h1>: <></>}
+            {(liveEventsList.length!=0)?<h1 className={darkTheme?"event-headers-dark":"event-headers"}>Live Events</h1>: <></>}
             {(liveEventsList.length!=0)?liveEventsList.map(LiveCardsRender):<></>}
-            {(pastEventsList.length!=0)?<h1 className="event-headers">Past Events</h1>: <></>}
+            {(pastEventsList.length!=0)?<h1 className={darkTheme?"event-headers-dark":"event-headers"}>Past Events</h1>: <></>}
             {(pastEventsList.length!=0)?pastEventsList.map(PastCardsRender): <></>}
             </>
         )
@@ -106,36 +107,40 @@ function EventsCard(props){
     function LiveCardsRender(obj){
         if(userType==-1){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} />
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} darkTheme={darkTheme} />
             )
         }
         if(userType==0){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj}/>
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} darkTheme={darkTheme}/>
             )
         }
         if(userType==1){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj}/>
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} darkTheme={darkTheme}/>
             )
         }  
     }
     function PastCardsRender(obj){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate}/>
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} darkTheme={darkTheme}/>
             ) 
     }
     function ReqCardsRender(obj){
         if(userType==0){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText='Pending' />
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText='Pending' darkTheme={darkTheme} />
             )
         }
     }
 
     return(
         <>
-        {userType==0?<button className="btn btn-lg btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>:<></>}
+        {userType==0?<button className="btn btn-lg btn-block create-event-dark" type="button" onClick={()=>handleEventState('Create')}>Create Event {/* ADD CONDITIONAL RENDERING */}
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus create-event-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+        </svg>
+        </button>:<></>}
         {eventsList?MemberCards(eventsList):<></>}
         </>
     )

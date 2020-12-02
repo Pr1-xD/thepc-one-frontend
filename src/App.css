@@ -2,6 +2,7 @@
 .App {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 html{
@@ -10,6 +11,11 @@ html{
 -moz-appearance: none;
 appearance: none;
 }
+
+.app-dark{
+  background-color: var(--bgdark);
+}
+
 
 
 

@@ -6,10 +6,16 @@ import swal from '@sweetalert/with-react'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 function AdminCard(props) {
+    const darkTheme=props.darkTheme
     const id=props.id
     const eventsList=props.eventsList
     const date=props.startDate
     const newDate = date.toString().substring(0,10)
+
+    let textTime='2-6PM'
+    if(props.textTime){
+        textTime=props.textTime
+    }
 
     let blob = new Blob([arrayBuffer])
     let srcBlob=null
@@ -69,16 +75,16 @@ function AdminCard(props) {
     return (
         <>
         <ScrollAnimation animateIn="animate__slideInLeft" delay='200' duration='0.6' animateOnce='true' >
-        <div class="card-container navAfter">
+        <div class={darkTheme?"card-container-dark":"card-container"}>{/* ADD CONDITIONAL RENDERING */}
             <div class="float-layout">
                 <div class="card-image">
                         {props.image?<img class="customImage" src={imageUrl}/>:<img class="customImage" src={img}/>}
-                        <div class="card d-flex ">
+                        <div class={darkTheme?"card card-custom-dark d-flex":"card card-custom d-flex"}>{/* ADD CONDITIONAL RENDERING */}
                             <div class="card-title">{props.name}</div>
                             <div class="card-desc mb-auto">{props.desc}</div>
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
-                                <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
+                                <h5 className="card_footerColor">Time : <span className="card_footerColor">{textTime}</span></h5>
                                 <div>
                                 <button onClick={eventsReject} class="adminReject_button registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{'Reject'}</span></button>
                                 <button onClick={eventsApprove} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{props.buttonText}</span></button> 

@@ -8,7 +8,17 @@
 .events_title{
    text-align: center;
    font-family: 'Poppins';
-    
+}
+.events_title_dark{
+    color: white;
+   text-align: center;
+   font-family: 'Poppins';
+}
+.events_title svg{
+    margin-left: 1rem;
+}
+.events_title_dark svg{
+    margin-left: 1rem;
 }
 
 .swal-icon.swal-success {
