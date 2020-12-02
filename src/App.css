@@ -12,5 +12,10 @@ html{
 appearance: none;
 }
 
+.app-dark{
+  background-color: var(--bgdark);
+}
+
+
 
 

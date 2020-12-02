@@ -75,6 +75,10 @@
     font-size: large;
   }
 
+  .image-label svg{
+    margin-left: 8px;
+  }
+
 
   .uploadbtn::-webkit-file-upload-button {
     background-color: white;
@@ -100,6 +104,7 @@
     border: solid white 1px;
     color:white;
     font-family: 'Poppins';
+    box-shadow: none;
   }
 
   .radioCustom{

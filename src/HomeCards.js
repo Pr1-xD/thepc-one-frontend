@@ -3,6 +3,7 @@ import Card from './Card/Card'
 
 function HomeCards(props){
     const userID=props.userData._id
+    const darkTheme=props.darkTheme
 
     function eventsRegister(val){
         props.eventsRegister(val)
@@ -24,12 +25,12 @@ function HomeCards(props){
         const d1=new Date(obj.eventStart)
         const d2=new Date()
         return(
-            ((obj.approved)&&(d1<=d2))?<Card image={obj.eventImg} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} eventsRegister={eventsRegister}  buttonText={buttonText} userID={userID}/> : <></>
+            ((obj.approved)&&(d1<=d2))?<Card image={obj.eventImg} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} eventsRegister={eventsRegister}  buttonText={buttonText} userID={userID} darkTheme={darkTheme}/> : <></>
         )
     }
     return(
         <div>
-           { props.data.map(homeCardsMap)}
+           {props.data.map(homeCardsMap)}
         </div>
         
     )

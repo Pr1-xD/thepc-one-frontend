@@ -6,6 +6,7 @@ import swal from '@sweetalert/with-react'
 import ScrollAnimation from 'react-animate-on-scroll';
 
 function AdminCard(props) {
+    const darkTheme=props.darkTheme
     const id=props.id
     const eventsList=props.eventsList
     const date=props.startDate
@@ -74,11 +75,11 @@ function AdminCard(props) {
     return (
         <>
         <ScrollAnimation animateIn="animate__slideInLeft" delay='200' duration='0.6' animateOnce='true' >
-        <div class="card-container navAfter">
+        <div class={darkTheme?"card-container-dark":"card-container"}>{/* ADD CONDITIONAL RENDERING */}
             <div class="float-layout">
                 <div class="card-image">
                         {props.image?<img class="customImage" src={imageUrl}/>:<img class="customImage" src={img}/>}
-                        <div class="card d-flex ">
+                        <div class={darkTheme?"card card-custom-dark d-flex":"card card-custom d-flex"}>{/* ADD CONDITIONAL RENDERING */}
                             <div class="card-title">{props.name}</div>
                             <div class="card-desc mb-auto">{props.desc}</div>
                             <div class="d-flex justify-content-between align-items-center custom_footer">

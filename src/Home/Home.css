@@ -14,6 +14,7 @@
   background-size: cover;
 }
 
+
 .nav-scroll{
     background-color: var(--main);
 }
@@ -55,36 +56,12 @@
 
 
 
-.navAfter_myEventButton{
-    font-weight:800 !important;
-    border-radius:5px !important;
-    width: 9rem;
-    height: 3rem;
-    padding-top: 1.7vh;
-    margin-right: 1.5vw !important;
-}
-
 .btn:focus,.btn:active {
    outline: none !important;
    box-shadow: none;
 }
 
-.navAfter_myEventButtonColor{
-    color:var(--main) !important;
-    border-color:var(--main) !important;
-}
 
-
-.navAfter_logoutButton{
-    font-weight:800 !important;
-    border-radius:5px !important;
-    border:0;
-    width: 9rem;
-    height: 3rem;
-    padding-top: 1.7vh;
-    margin-right: 2.8vw !important;
-    background-color:var(--main) !important;
-}
 
 .logoutColor{
     color: white;
@@ -153,8 +130,10 @@
     width:74px !important;
     font-size:55px;
     margin: 12% auto -1rem;
-    color:var(--main);
-    
+    color:var(--main) !important; 
+}
+.arrowIconColour{
+    background-color: var(--main);
 }
 
 /* sidebar login */

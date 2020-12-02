@@ -3,10 +3,238 @@
 }
 
 .bg-dark{  
-  background-image: url(./thepc-one-02-01.png);
+  background-image: url(./thepc-one-dark-01.png);
   width: 100vw;
   height:100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.welcomeTextDark{
+  font-size:3.2rem !important;
+  line-height:90px;
+  color:white;
+}
+
+/* Thepc Text */
+.thepcTextDark{
+  font-weight:bold;   
+  font-size:6.8rem;
+  line-height:90px;
+  margin-bottom:10px ;
+  color:white;
+}
+
+/* one text */
+.oneTextDark{
+  font-weight:bold;   
+  font-size:6.8rem;
+  line-height:100px;
+  margin-bottom:10px ;
+  /* color:var(--main); */
+  color:white;
+  
+}
+
+.descriptionTextDark{
+  font-size:3.2rem;
+  line-height:64px;
+  margin-top: 10px;
+  color: #D9F9F0;
+}
+
+@media  screen and (min-width: 320px) and (max-width: 830px) {
+  .bg-dark{  
+      background-image: url(./thepc-one-mobile-dark-01.png);
+    }}
+
+    @media  screen and (min-width: 320px) and (max-width: 375px) {
+      
+      /* Welcome Text */
+      .welcomeTextDark{
+          font-size:2rem !important;
+          line-height:70px;
+      }
+      
+      /* Thepc Text */
+      .thepcTextDark{  
+          font-size:4rem;
+          line-height:45px;
+          margin-bottom:10px ;
+      }
+      
+      /* one text */
+      .oneTextDark{   
+          font-size:4rem;
+          line-height:65px;
+          margin-bottom:10px ;
+          
+      }
+
+      
+      /* Description Text */
+      .descriptionTextDark{
+          font-size:1.5rem;
+          line-height:30px;
+          margin-top: 8px;
+      }
+    }
+  
+  
+  @media only screen and (min-width: 375px)and (max-width: 400px){
+      
+      
+      /* Welcome Text */
+      .welcomeTextDark{
+          font-size:2.2rem !important;
+          line-height:70px;
+      }
+      
+      /* Thepc Text */
+      .thepcTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:60px;
+      }
+      
+      /* one text */
+      .oneTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:65px;
+      }
+      
+   
+      /* Description Text */
+      .descriptionTextDark{
+          font-size:1.8rem;
+          line-height:64px;
+          margin-top: 10px;
+      }
+     
+  }
+  
+  @media only screen and (min-width: 400px)and (max-width: 425px){
+      
+      /* Welcome Text */
+      .welcomeTextDark{
+          font-size:2.2rem !important;
+          line-height:70px;
+      }
+      
+      /* Thepc Text */
+      .thepcTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:60px;
+      }
+      
+      /* one text */
+      .oneTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:65px;
+      }
+      
+ 
+      /* Description Text */
+      .descriptionTextDark{
+          font-size:1.8rem;
+          line-height:64px;
+          margin-top: 10px;
+      }
+      
+  }
+  
+  @media only screen and (min-width: 425px) and (max-width: 450px){
+
+      /* Welcome Text */
+      .welcomeTextDark{
+          font-size:2.2rem !important;
+          line-height:70px;
+      }
+      
+      /* Thepc Text */
+      .thepcTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:60px;
+      }
+      
+      /* one text */
+      .oneTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:65px;  
+      }
+      
+      /* Description Text */
+      .descriptionTextDark{
+          font-size:1.8rem;
+          line-height:64px;
+          margin-top: 10px;
+      }
+  
+  }
+  @media only screen and (min-width: 450px) and (max-width: 550px){
+
+      /* Welcome Text */
+      .welcomeTextDark{
+          font-size:2.2rem !important;
+          line-height:70px;
+      }
+      
+      /* Thepc Text */
+      .thepcTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:60px;
+      }
+      
+      /* one text */
+      .oneTextDark{
+          font-weight:bold;   
+          font-size:4.5rem;
+          line-height:65px;  
+      }
+      
+      /* Description Text */
+      .descriptionTextDark{
+          font-size:1.8rem;
+          line-height:64px;
+          margin-top: 10px;
+      }
+  
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 830px){
+      
+      /* Welcome Text */
+      .welcomeTextDark{
+          font-size:3rem !important;
+          line-height:90px;
+      }
+      
+      /* Thepc Text */
+      .thepcTextDark{
+          font-weight:bold;   
+          font-size:6rem;
+          line-height:80px;
+      }
+      
+      /* one text */
+      .oneTextDark{
+          font-weight:bold;   
+          font-size:6rem;
+          line-height:90px;   
+      }
+      
+      /* Description Text */
+      .descriptionTextDark{
+          font-size:3rem;
+          line-height:90px;
+          margin-top: 10px;
+      }
+  
+  }
+     

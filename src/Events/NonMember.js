@@ -3,6 +3,7 @@ import EventsCard from './EventsCard'
 import StartEvent from './StartEvent'
 
 function NonMember(props){
+    const darkTheme=props.darkTheme
     const [startEventData,setEventData]=useState()
     const [eventsSetter,setEventPage]=useState('Cards')
     const userID=props.userID
@@ -23,7 +24,7 @@ function NonMember(props){
 
     return(
         <>
-            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} />:<StartEvent eventData={startEventData} CardsToggle={CardsToggle}/>}
+            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} darkTheme={darkTheme} />:<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>}
         </>
     )
 }
