@@ -13,7 +13,6 @@ function Eventshome(props){
 
     function setData(val){props.setData(val)}
     function setEventsList(val){props.setEventsList(val)}
-    function reload(){setTimeout(function() {window.location.reload(false)}, 2000)}
 
     function eventsRegister(val){
         let link='https://thepc-one.herokuapp.com/api/user/'+val.eventID

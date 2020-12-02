@@ -11,6 +11,11 @@ function AdminCard(props) {
     const date=props.startDate
     const newDate = date.toString().substring(0,10)
 
+    let textTime='2-6PM'
+    if(props.textTime){
+        textTime=props.textTime
+    }
+
     let blob = new Blob([arrayBuffer])
     let srcBlob=null
     if(props.image){
@@ -78,7 +83,7 @@ function AdminCard(props) {
                             <div class="card-desc mb-auto">{props.desc}</div>
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
-                                <h5 className="card_footerColor">Time : <span className="card_footerColor">2-6 PM</span></h5>
+                                <h5 className="card_footerColor">Time : <span className="card_footerColor">{textTime}</span></h5>
                                 <div>
                                 <button onClick={eventsReject} class="adminReject_button registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{'Reject'}</span></button>
                                 <button onClick={eventsApprove} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="button" > <span class="registerText">{props.buttonText}</span></button> 

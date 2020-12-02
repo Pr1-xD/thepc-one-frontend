@@ -106,29 +106,29 @@ function EventsCard(props){
     function LiveCardsRender(obj){
         if(userType==-1){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} />
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} />
             )
         }
         if(userType==0){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj}/>
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj}/>
             )
         }
         if(userType==1){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj}/>
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj}/>
             )
         }  
     }
     function PastCardsRender(obj){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate}/>
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate}/>
             ) 
     }
     function ReqCardsRender(obj){
         if(userType==0){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} mDate={mDate} buttonText='Pending' />
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText='Pending' />
             )
         }
     }

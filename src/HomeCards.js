@@ -24,7 +24,7 @@ function HomeCards(props){
         const d1=new Date(obj.eventStart)
         const d2=new Date()
         return(
-            ((obj.approved)&&(d1<=d2))?<Card image={obj.eventImg} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} eventsRegister={eventsRegister}   buttonText={buttonText} userID={userID}/> : <></>
+            ((obj.approved)&&(d1<=d2))?<Card image={obj.eventImg} name={obj.eventName} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} eventsRegister={eventsRegister}  buttonText={buttonText} userID={userID}/> : <></>
         )
     }
     return(
