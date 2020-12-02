@@ -16,7 +16,11 @@
   }
   .create-form-btn{
     display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
+    font-family: 'Poppins';
+    padding: 0 !important;
+    font-weight: normal;
 }
 
   .submitButton{
@@ -40,19 +44,63 @@
   .create-event-options{
     margin: auto !important;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-family: 'Poppins';
   }
 
   .event-form-one{
     background-color:#28d1a4;
     width: 100%;
-    padding: 4rem;
+    padding: 6rem;
     border-radius: 1rem;
   }
+  .event-form-two{
+    background-color:#444343;
+    width: 100%;
+    padding: 4rem 6rem 6rem;
+    border-radius: 1rem;
+    color: white;
+    font-family: 'Poppins';
+  }
 
-  /* .form-colour{
+  .uploadbtn{
+    font-family: 'Poppins';
+  }
+  .image-label{
+    color: #2c2c2c;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: large;
+  }
+
+
+  .uploadbtn::-webkit-file-upload-button {
+    background-color: white;
+    color: #2c2c2c;
+    padding: 0.5rem;
+    font-family: 'Poppins';
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 7rem;
+  }
+
+
+  .form-colour{
     background-color: #444343;
     border: hidden;
-  } */
+    color:white;
+    font-family: 'Poppins';
+  }
+  .form-colour:focus{
+    background-color: #444343;
+    border: solid white 1px;
+    color:white;
+    font-family: 'Poppins';
+  }
 
   .radioCustom{
     margin-top: 4vh;
@@ -66,5 +114,15 @@
     }
     .radioText{
         font-size: small;
+    }
+  }
+
+  @media  screen and (min-width: 320px) and (max-width: 500px) {
+    .event-form-one{
+      padding: 4rem 1.2rem;
+    }
+    .create-event-options{
+      display: inline;
+ 
     }
   }

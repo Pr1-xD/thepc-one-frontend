@@ -97,7 +97,7 @@ function CreateEvent(props){
     return(
         <div class="container mt-3">
         <form className="form-event" onSubmit="return false" >
-          <div >
+          <div className="event-form-one" >
         <h1 className="event-headers">Create Event</h1>  
                     <label for="eventName" class="sr-only">Event Name</label>
                     <input type="text" id="eventName" className="form-control form-colour" placeholder="Event Name" onChange={e=>abc.eventName=e.target.value} required/>
@@ -114,17 +114,20 @@ function CreateEvent(props){
                     <label for="eventTime" class="sr-only">Event Time</label>
                     <input type="text" id="eventTime" className="form-control mt-3 form-colour" placeholder="Event Time" onChange={e=>abc.textTime=e.target.value} required/>
                     <br></br>
+                    <br></br>
 
-                    <label for="eventImage" class="sr form-control mt-1 customImage_text form-colour"><b>Event Image</b></label>
-                    <input type="file" name="file" onChange={(e)=>{abc.eventImg=e.target.files[0]}}/>
+                    <label for="eventImage" className='image-label'>Event Image</label>
+                    <br/>
+                    <input type="file" name="file" id="eventImage" className='uploadbtn' onChange={(e)=>{abc.eventImg=e.target.files[0]}}/>
                     </div>
                     <br/>
                     <br/>
                     <br/>
+                    <div className="event-form-two">
                     <h1 className="event-headers">Event Details</h1>
                     
 
-                    <div className="d-flex create-event-options ">
+                    <div className="create-event-options ">
                     <div className="checkbox-inline p-4">
                     <div>Text Boxes</div>
                       <label for="isTextBoxes" className="radioText checkbox bounce">
@@ -148,7 +151,7 @@ function CreateEvent(props){
 
                     <div className="checkbox-inline p-4">
                     <div>FileUpload</div>
-                    <label for="isFileUpload" className="radioText checkbox bounce">
+                    <label for="isFileUpload" className="radioText checkbox bounce ">
                     <input type="checkbox" id="isFileUpload" name="isFileUpload" className="radioCustom" value={!isFileUpload} onChange={e=>callFileUpload(e.target.value)}  />
                     
                     <svg viewBox="0 0 21 21">
@@ -169,10 +172,12 @@ function CreateEvent(props){
                     
                     <label for="numFileUploads" class="sr-only">Number of File Uploads</label>
                     {isFileUpload?<input type="number" id="numFileUploads" className="form-control mt-3" placeholder="Number of File Uploads" onChange={e=>abc.numFileUploads=e.target.value} required/>:<></>}
+                    </div>
                     <br></br>
+
                     <div className="create-form-btn">
-                    <button className="button btn btn-lg submitButton mt-2 " type="button" onClick={handleSubmit}>Submit</button>
-                    <button className="button btn btn-lg submitButton mt-5 custom" type="button" onClick={()=>handleEventState('cards')}>Back</button>
+                    <button className=" btn btn-lg submitButton m-1" type="button" onClick={handleSubmit}>Submit</button>
+                    <button className=" btn btn-lg submitButton m-1" type="button" onClick={()=>handleEventState('cards')}>Back</button>
                     </div>
                     
                 </form>
