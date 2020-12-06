@@ -60,6 +60,7 @@ function Eventshome(props){
             <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
             </svg>
             </h1>:<></>}
+            <br/>
             {(!eventsData)&&(darkTheme)?<LoaderDark/>:<></>}{/* ADD CONDITIONAL RENDERING */}
             {(eventsData)?<></>:<Loader/>}{/* ADD CONDITIONAL RENDERING */}
             {eventsData?<HomeCards data={eventsData} eventsRegister={eventsRegister} userData={userData} darkTheme={darkTheme} />:<></>}
