@@ -46,12 +46,12 @@ function CreateEvent(props){
       }
       function callTextBoxes(val){
         setEventDetails(abc)
-        abc.isFileUpload=val
+        abc.isTextBoxes=val
         setTextBoxes(!isTextBoxes)
       }
       function callMultiChoice(val){
         setEventDetails(abc)
-        abc.isFileUpload=val
+        abc.isMultiChoice=val
         setMultiChoice(!isMultiChoice)
       }
       

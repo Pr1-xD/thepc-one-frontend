@@ -6,9 +6,11 @@ import logoDark from './Images/T1LogoDark.png'
 import './NavAfter.css'
 import ScrollAnimation from 'react-animate-on-scroll';
 import DarkToggle from './Home/DarkToggle'
+import Alert from './Home/Alert'
 
 function Nav(props)
 { 
+  const eventsList=props.eventsList
   const darkTheme=props.darkTheme
   function setDarkTheme(val){
     if(val)
@@ -53,7 +55,8 @@ function Nav(props)
     <div>
       
       <nav className={darkTheme?"navbar navbar-expand-lg navbar-light navbar-custom-dark bg-white home fixed-top navbar-custom":"navbar navbar-expand-lg navbar-light bg-white home fixed-top navbar-custom"}>{/* ADD CONDITIONAL RENDERING */}
-    <a className="navbar-brand navAfter_leftText mr-auto">
+      {/* {eventsList?<Alert  eventsList={eventsList} />:<></>} */}
+    <a className="navbar-brand navAfter_leftText mr-auto ">
       <img src={darkTheme?logoDark:logo} className='nav-logo' className="nav-logo"/></a>
             
             <button className="navbar-toggler float-right customIcon" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

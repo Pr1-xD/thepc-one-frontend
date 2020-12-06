@@ -5,6 +5,7 @@ import Nav from '../Nav'
 import NavAfter from '../NavAfter'
 import Eventshome from '../Eventshome'
 import DarkToggle from './DarkToggle'
+import Alert from './Alert'
 
 function Home(props){
 
@@ -27,7 +28,8 @@ function Home(props){
   return(
     <>
       <div className={darkTheme?"home-dark bg-dark":"home bg"}>{/* ADD CONDITIONAL RENDERING */}
-          {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/> : <Nav loginStateHandler={loginStateHandler} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}
+          {/* <Alert /> */}
+          {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/> : <Nav loginStateHandler={loginStateHandler} eventsList={eventsList} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}
           <br/> 
           <div className="home-text">
           <div className={darkTheme?"welcomeTextDark":"welcomeText"}>Welcome to</div>{/* ADD CONDITIONAL RENDERING */}
