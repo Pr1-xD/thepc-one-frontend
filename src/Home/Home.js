@@ -29,7 +29,7 @@ function Home(props){
     <>
       <div className={darkTheme?"home-dark bg-dark":"home bg"}>{/* ADD CONDITIONAL RENDERING */}
           {/* <Alert /> */}
-          {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/> : <Nav loginStateHandler={loginStateHandler} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}
+          {loggedin ? <NavAfter pageSetter={pageSetter} logoutHandler={logoutHandler} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/> : <Nav loginStateHandler={loginStateHandler} eventsList={eventsList} darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>}
           <br/> 
           <div className="home-text">
           <div className={darkTheme?"welcomeTextDark":"welcomeText"}>Welcome to</div>{/* ADD CONDITIONAL RENDERING */}

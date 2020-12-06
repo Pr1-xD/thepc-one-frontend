@@ -1,0 +1,9 @@
+.reg-alert{
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    width: 100%;
+    background-color: var(--main);
+    text-align: center;
+}
