@@ -15,6 +15,7 @@ function Admin(props){
     function CardsToggle(){
         setEventData()
         setEventPage('Cards')
+        window.scrollTo(0, 0)
     }
 
     function eventStart(val){
@@ -36,7 +37,7 @@ function Admin(props){
         <>
         {(eventsSetter=='Cards')&&(eventsList)?<h1 className="event-headers-dark">Requests</h1>:<></>} {/* ADD CONDITIONAL RENDERING */}
         {(eventsList)&&(eventsSetter=='Cards')? eventsList.map(AdminCardsMap):<></>}
-        {(eventsList)&&(eventsSetter=='Cards')? <EventsCard  eventsList={eventsList} setEventsList={setEventsList} eventStart={eventStart} buttonText='Details' userType={1}/> :(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>:<></> }
+        {(eventsList)&&(eventsSetter=='Cards')? <EventsCard  eventsList={eventsList} setEventsList={setEventsList} eventStart={eventStart} buttonText='Details' userType={1}/> :(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme} token={token}/>:<></> }
         </>
     )
 }

@@ -16,6 +16,7 @@ function Member(props){
     function CardsToggle(){
         setEventData()
         setEventPage('Cards')
+        window.scrollTo(0, 0)
     }
 
     function eventStart(val){
@@ -30,7 +31,7 @@ function Member(props){
     return(
         <>
         {/* <button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button> */}
-         {((EventsState=='cards')&&(eventsSetter=='Cards')) ? <EventsCard  eventsList={eventsList} userType={0} buttonText='Details' handleEventState={handleEventState} eventStart={eventStart} userID={userID} darkTheme={darkTheme}/>:((EventsState=='Create'))?<CreateEvent token={token} handleEventState={handleEventState} eventsRefresh={eventsRefresh} darkTheme={darkTheme}/>:(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>:<></>}
+         {((EventsState=='cards')&&(eventsSetter=='Cards')) ? <EventsCard  eventsList={eventsList} userType={0} buttonText='Details' handleEventState={handleEventState} eventStart={eventStart} userID={userID} darkTheme={darkTheme}/>:((EventsState=='Create'))?<CreateEvent token={token} handleEventState={handleEventState} eventsRefresh={eventsRefresh} darkTheme={darkTheme}/>:(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme} token={token}/>:<></>}
         </>
     )
 }
