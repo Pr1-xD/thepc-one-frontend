@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Ccs from "../Ccs"
 
 function StartEvent(props){
     const numTextBoxes=props.eventData.numTextBoxes
@@ -17,6 +18,7 @@ function StartEvent(props){
     return(
         eventData?<div>
             <h1 className="events-header">{eventData.eventName}</h1>
+            <Ccs/>
             {Array.from(Array(props.numTextBoxes).keys()).map(TextField)}
             {eventData.eventLink?<button className="registerButton registerButtonColor btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Go to Event</span></button>:<></>}
             <button onClick={CardsToggle} className="registerButton registerButtonColor btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Back</span></button>
