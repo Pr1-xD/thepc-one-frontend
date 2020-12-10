@@ -5,6 +5,7 @@ function CardButton(props) {
   let buttonText=props.buttonText
    const [btnText,setBtnText]=useState(props.buttonText)
    const userID=props.userID
+   function handleEventsState(){props.handleEventState('Submissions')}
 
    function eventsRegister(){
      if(userID)
@@ -22,6 +23,7 @@ function CardButton(props) {
         {(buttonText=='Start')?<button onClick={eventStart} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
         {buttonText=='Registered'?<button type="button" className={darkTheme?"registerButton registerButtonColorDark float-right btn my-2 my-sm-0 mr-auto card_button_disabled":"registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto card_button_disabled"}>{buttonText}</button>:<></>}
         {buttonText=='Pending'?<button type="button" className={darkTheme?"registerButton registerButtonColorDark float-right btn my-2 my-sm-0 mr-auto card_button_disabled":"registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto card_button_disabled"}>{buttonText}</button>:<></>}
+        {(buttonText=='View Submissions')?<button onClick={handleEventsState} class="registerButton registerButtonColor float-right btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">{buttonText}</span></button>:<></>}
   </>)
 };
 
