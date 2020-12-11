@@ -47,8 +47,8 @@ function Ccs(props) {
             <Textarea placeholder="What are your strengths (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} tag='strengths' required />
             <Textarea placeholder="What are your weaknesses (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} tag='weaknesses' required />
             <Textarea placeholder="Why do you want to join THEPC (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} tag='whyDoYouJoin' required />
-            <FileUpload placeholder="Upload File" type="file" returnData={returnData} tag='file' required/>
-            <button onClick={console.log(ccsData)}>Check</button>
+            {/* <FileUpload placeholder="Upload File" type="file" returnData={returnData} tag='file' required/> */}
+            {/* <button onClick={console.log(ccsData)}>Check</button> */}
             <div className="create-form-btn">
                 <button className=" btn btn-lg submitButton m-1" type="button" onClick={handleSubmit}>Submit</button>
                 <button className=" btn btn-lg submitButton m-1" type="button" onClick={CardsToggle}>Back</button>

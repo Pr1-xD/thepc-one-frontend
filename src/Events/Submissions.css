@@ -1,0 +1,39 @@
+.subtable{
+    width: 80%;
+    margin: auto;
+    font-family: 'Poppins';
+}
+
+.backbtn{
+    margin: 3rem 40%;
+    text-align: center;
+}
+.textWhite{
+    color: white;
+}
+
+.dropbtn{
+    margin: 0 0 1rem 80%;
+}
+
+.view-more{
+    color: var(--main);
+}
+
+.subcards{
+    border-radius: 8px;
+    width: 90%;
+    font-family: 'Poppins';
+}
+
+@media  screen and (min-width: 300px) and (max-width: 600px){
+    .dropbtn{
+        margin: 0 0 1rem 50%;
+    }
+    .subcards{
+        border-radius: 8px;
+        width: 180%;
+        margin-top: 2rem;
+        font-family: 'Poppins';
+    }
+}

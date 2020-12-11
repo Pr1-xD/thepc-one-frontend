@@ -11,7 +11,6 @@ function StartEvent(props){
         props.CardsToggle()
     }
 
-
     function TextField(i){
         return(
             <input type="text" className="form-control" placeholder="Event" required /> 
@@ -19,7 +18,7 @@ function StartEvent(props){
     }
     return(
         eventData?<div>
-            <h1 className="events-header">{eventData.eventName}</h1>
+            <h1 className="events-header mx-auto">{eventData.eventName}</h1>
             <Ccs CardsToggle={CardsToggle} token={token}/>
             {/* {Array.from(Array(props.numTextBoxes).keys()).map(TextField)} */}
             {/* {eventData.eventLink?<button className="registerButton registerButtonColor btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Go to Event</span></button>:<></>}

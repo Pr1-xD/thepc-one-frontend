@@ -38,7 +38,7 @@ function Admin(props){
         <>
         {(eventsSetter=='Cards')&&(eventsList)?<h1 className={darkTheme?"event-headers-dark":"event-headers"}>Requests</h1>:<></>} {/* ADD CONDITIONAL RENDERING */}
         {(eventsList)&&(eventsSetter=='Cards')? eventsList.map(AdminCardsMap):<></>}
-        {(eventsList)&&(eventsSetter=='Cards')? <EventsCard  eventsList={eventsList} setEventsList={setEventsList} handleEventState={handleEventState} eventStart={eventStart} buttonText='Details' userType={1}/> :(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme} token={token}/>:(eventsSetter=='Submissions')?<ViewSubmissions handleEventState={handleEventState} CardsToggle={CardsToggle} token={token}/>:<></> }
+        {(eventsList)&&(eventsSetter=='Cards')? <EventsCard  eventsList={eventsList} setEventsList={setEventsList} handleEventState={handleEventState} eventStart={eventStart} buttonText='Details' userType={1}/> :(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme} token={token}/>:(eventsSetter=='Submissions')?<ViewSubmissions handleEventState={handleEventState} CardsToggle={CardsToggle} token={token} darkTheme={darkTheme}/>:<></> }
         </>
     )
 }
