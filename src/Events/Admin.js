@@ -4,6 +4,7 @@ import EventsCard from './EventsCard'
 import AdminCard from '../Card/AdminCard'
 import StartEvent from './StartEvent'
 import Loader from '../Loader'
+import ViewSubmissions from './ViewSubmissions'
 
 function Admin(props){
     const darkTheme=props.darkTheme
@@ -15,6 +16,7 @@ function Admin(props){
     function CardsToggle(){
         setEventData()
         setEventPage('Cards')
+        window.scrollTo(0, 0)
     }
 
     function eventStart(val){
@@ -22,7 +24,7 @@ function Admin(props){
         setEventPage('Event')
         setEventData(val)
     }
-
+    function handleEventState(val){setEventPage(val)}
     function setEventsList(val){props.setEventsList(val)}
     function eventsRefresh(){props.eventsRefresh()}
     function AdminCardsMap(obj)
@@ -34,9 +36,9 @@ function Admin(props){
 
     return(
         <>
-        {(eventsSetter=='Cards')&&(eventsList)?<h1 className="event-headers-dark">Requests</h1>:<></>} {/* ADD CONDITIONAL RENDERING */}
+        {(eventsSetter=='Cards')&&(eventsList)?<h1 className={darkTheme?"event-headers-dark":"event-headers"}>Requests</h1>:<></>} {/* ADD CONDITIONAL RENDERING */}
         {(eventsList)&&(eventsSetter=='Cards')? eventsList.map(AdminCardsMap):<></>}
-        {(eventsList)&&(eventsSetter=='Cards')? <EventsCard  eventsList={eventsList} setEventsList={setEventsList} eventStart={eventStart} buttonText='Details' userType={1}/> :(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>:<></> }
+        {(eventsList)&&(eventsSetter=='Cards')? <EventsCard  eventsList={eventsList} setEventsList={setEventsList} handleEventState={handleEventState} eventStart={eventStart} buttonText='Details' userType={1}/> :(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme} token={token}/>:(eventsSetter=='Submissions')?<ViewSubmissions handleEventState={handleEventState} CardsToggle={CardsToggle} token={token} darkTheme={darkTheme}/>:<></> }
         </>
     )
 }

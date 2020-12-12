@@ -11,6 +11,7 @@ function Card(props) {
     const darkTheme=props.darkTheme
     const userID=props.userID
     let buttonText=props.buttonText
+    let buttonTextTwo=props.buttonTextTwo
     const date=props.startDate
     const newDate = date.toString().substring(0,10)
     
@@ -27,7 +28,7 @@ function Card(props) {
     if(props.textTime){
         textTime=props.textTime
     }
-    
+    function handleEventState(val){props.handleEventState(val)}
     function eventStart(){props.eventStart(eventData)}
 
     if(buttonText=='Start')
@@ -67,6 +68,7 @@ function Card(props) {
                             <div class="d-flex justify-content-between align-items-center custom_footer">
                                 <h5 className="card_footerColor">Date : <span className="card_footerColor">{newDate}</span></h5>
                                 <h5 className="card_footerColor">Time : <span className="card_footerColor">{textTime}</span></h5>
+                                <div>
                                 {(buttonText=='Register')?<CardButton eventsRegister={eventsRegister} buttonText={buttonText} userID={userID}  />:
                                 (buttonText=='Start')?<CardButton eventStart={eventStart} buttonText={buttonText} userID={userID}/>:
                                 (buttonText=='Registered')?<CardButton buttonText={buttonText} eventsRegister={eventsRegister} userID={userID} darkTheme={darkTheme}/>:
@@ -75,7 +77,8 @@ function Card(props) {
                                     <span className={darkTheme?"customTextDark":"customText"}>Registered</span>
                                     {/* ADD CONDITIONAL RENDERING */}
                                 </>}
-
+                            {buttonTextTwo=='View Submissions'?<CardButton handleEventState={handleEventState} buttonText={buttonTextTwo}/>:<></>}
+                            </div>
                             </div>
                          </div>
                 </div>

@@ -4,6 +4,7 @@ import StartEvent from './StartEvent'
 
 function NonMember(props){
     const darkTheme=props.darkTheme
+    const token=props.token
     const [startEventData,setEventData]=useState()
     const [eventsSetter,setEventPage]=useState('Cards')
     const userID=props.userID
@@ -14,6 +15,7 @@ function NonMember(props){
     function CardsToggle(){
         setEventData()
         setEventPage('Cards')
+        window.scrollTo(0, 0)
     }
 
     function eventStart(val){
@@ -24,7 +26,7 @@ function NonMember(props){
 
     return(
         <>
-            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} darkTheme={darkTheme} />:<StartEvent eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>}
+            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} darkTheme={darkTheme} />:<StartEvent token={token} eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>}
         </>
     )
 }
