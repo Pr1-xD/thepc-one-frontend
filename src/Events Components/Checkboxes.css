@@ -2,7 +2,7 @@
     --background: #fff;
     --border: #D1D6EE;
     --border-hover: #BBC1E1;
-    --border-active: #1E2235;
+    --border-active: var(--main);
     --tick: #fff;
     position: relative;
     margin: 0 0.5rem;
@@ -81,6 +81,10 @@
   }
   .checkbox.bounce svg {
     --scale: 0;
+  }
+
+  .textWhite{
+    color:white;
   }
   
   @-webkit-keyframes bounce {
