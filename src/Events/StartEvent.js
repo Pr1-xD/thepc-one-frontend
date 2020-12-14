@@ -19,12 +19,9 @@ function StartEvent(props){
         )
     }
     return(
-        eventData?<div>
+        eventData?<div className="start-event">
             <div className={darkTheme?"event-headers-dark m-auto text_header text-center":"event-headers m-auto text_header text-center"}>{eventData.eventName}</div>
-            <Ccs CardsToggle={CardsToggle} token={token}/>
-            {/* {Array.from(Array(props.numTextBoxes).keys()).map(TextField)} */}
-            {/* {eventData.eventLink?<button className="registerButton registerButtonColor btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Go to Event</span></button>:<></>}
-            <button onClick={CardsToggle} className="registerButton registerButtonColor btn my-2 my-sm-0 mr-auto" type="submit" > <span class="registerText">Back</span></button> */}
+            <Ccs CardsToggle={CardsToggle} token={token} darkTheme={darkTheme}/>
             </div>
             :<></>    
     )

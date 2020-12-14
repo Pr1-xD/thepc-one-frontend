@@ -10,6 +10,10 @@ function EventsCard(props){
     const eventsList=props.eventsList
     function handleEventState(val){props.handleEventState(val)}
     function eventStart(val){props.eventStart(val)}
+    let liveEventsList=[]
+    let reqEventsList=[]
+    let pastEventsList=[]
+    
 
     function MemberCards(data){
         let liveEventsList=LiveEventsCheck(data)
@@ -28,7 +32,7 @@ function EventsCard(props){
     }
 
     function LiveEventsCheck(data){
-        let liveEventsList=[]
+        
         if(userType==-1){
         data.map((obj)=>{
             const d1=new Date(obj.eventStart)
@@ -63,7 +67,7 @@ function EventsCard(props){
     }
     
     function ReqEventsCheck(data){
-        let reqEventsList=[]
+        
         if(userType==0){
         data.map((obj)=>{
             if(obj.createdBy.length!=0){
@@ -76,7 +80,7 @@ function EventsCard(props){
     }
 
     function PastEventsCheck(data){
-        let pastEventsList=[]
+        
         if(userType==-1){
         data.map((obj)=>{
             const d1=new Date(obj.eventStart)
@@ -105,6 +109,7 @@ function EventsCard(props){
     }
 
     function LiveCardsRender(obj){
+        
         if(userType==-1){
             return(
                 <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} darkTheme={darkTheme} />
@@ -122,11 +127,13 @@ function EventsCard(props){
         }  
     }
     function PastCardsRender(obj){
+        
             return(
                 <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} darkTheme={darkTheme}/>
             ) 
     }
     function ReqCardsRender(obj){
+        
         if(userType==0){
             return(
                 <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText='Pending' darkTheme={darkTheme} />
@@ -136,11 +143,12 @@ function EventsCard(props){
 
     return(
         <>
-        {userType==0?<button className="btn btn-lg btn-block create-event-dark" type="button" onClick={()=>handleEventState('Create')}>Create Event {/* ADD CONDITIONAL RENDERING */}
+        {userType==0&&eventsList?<button className="btn btn-lg btn-block create-event-dark" type="button" onClick={()=>handleEventState('Create')}>Create Event {/* ADD CONDITIONAL RENDERING */}
         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus create-event-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
         </svg>
         </button>:<></>}
+        {/* {(eventsList&&evntcnt==0)?<div className="container text-center mx-auto no-events-text"><p><b>No Events Registered</b></p></div>:<></>} */}
         {eventsList?MemberCards(eventsList):<></>}
         </>
     )

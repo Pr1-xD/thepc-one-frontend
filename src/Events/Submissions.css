@@ -5,7 +5,7 @@
 }
 
 .backbtn{
-    margin: 3rem 40%;
+    margin:auto;
     text-align: center;
 }
 .textWhite{
@@ -14,16 +14,47 @@
 
 .dropbtn{
     margin: 0 0 1rem 80%;
+    border: none;
+    font-family: 'Poppins';
+}
+
+.dropdown-item:hover{
+    background-color: var(--main);
+}
+.dropdown-item:active{
+    background-color: var(--main);
 }
 
 .view-more{
     color: var(--main);
+    margin-left:1rem ;
 }
+
+.view-more:active{
+    color: var(--dark);
+    text-decoration: none;
+}
+.view-more:hover{
+    color: var(--dark);
+    text-decoration: none;
+}
+
 
 .subcards{
     border-radius: 8px;
-    width: 90%;
+    border: hidden;
+    width: auto;
     font-family: 'Poppins';
+    margin-bottom: 2rem;
+}
+
+.subcards-dark{
+    border-radius: 8px;
+    border: hidden;
+    width: auto;
+    font-family: 'Poppins';
+    margin-bottom: 2rem;
+    background-color: var(--bgdark);
 }
 
 @media  screen and (min-width: 300px) and (max-width: 600px){
@@ -35,5 +66,12 @@
         width: 180%;
         margin-top: 2rem;
         font-family: 'Poppins';
+    }
+    .subcards-dark{
+        border-radius: 8px;
+        width: 180%;
+        margin-top: 2rem;
+        font-family: 'Poppins';
+        background-color: var(--bgdark);
     }
 }

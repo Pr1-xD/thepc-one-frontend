@@ -12,6 +12,12 @@
     text-align: center;
 }
 
+.no-events-text{
+    font-family: 'Poppins';
+    font-size: 2rem;
+    margin: 10rem auto;
+}
+
 .create-event{
     width: 11rem;
     margin-left: 85%;
@@ -73,6 +79,15 @@
         margin: auto ;
         margin-top: 3rem;
         margin-bottom: -6rem;
-        
+    }
+    .create-event-dark{ 
+        margin: auto ;
+        margin-top: 3rem;
+        margin-bottom: -6rem;
+    }
+    .no-events-text{
+        font-family: 'Poppins';
+        font-size: 1.5rem;
+        margin: 4rem auto;
     }
 }

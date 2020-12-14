@@ -1,16 +1,15 @@
-.input-custom:focus{
+.textarea-custom:focus{
     border:2px solid var(--main);
     box-shadow: none;
 }
-
-.input-custom-dark{
+.textarea-custom-dark:focus{
+    border:2px solid var(--main);
+    box-shadow: none;
+    background-color: var(--dark);
+    color: white;
+}
+.textarea-custom-dark{
     background-color: var(--dark);
     color: white;
     border: none;
-}
-.input-custom-dark:focus{
-    background-color: var(--dark);
-    color: white;
-    border:2px solid var(--main);
-    box-shadow: none;
 }

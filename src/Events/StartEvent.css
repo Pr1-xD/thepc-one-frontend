@@ -2,3 +2,12 @@
     font-size: 2rem;
     font-weight: 700;
 }
+
+.start-event{
+    font-family: 'Poppins';
+}
+
+.alert-danger{
+    color: #E04050;
+    margin-top: 1rem;
+}
