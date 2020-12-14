@@ -26,7 +26,7 @@ function NonMember(props){
 
     return(
         <>
-            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} darkTheme={darkTheme} />:<StartEvent token={token} eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>}
+            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} darkTheme={darkTheme} />:<StartEvent token={token} data={data} eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>}
         </>
     )
 }

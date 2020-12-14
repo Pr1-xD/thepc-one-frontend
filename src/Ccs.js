@@ -10,6 +10,10 @@ import "./Ccs.css"
 
 function Ccs(props) {
     window.scrollTo(0,0)
+    // if(props.data){
+    //     const data=props.data
+    //     console.log(data.ccsSub)
+    // }
     const[errorMessage,setErrorMessage]=useState()
     const[deptsErrorMessage,setDeptErrorMessage]=useState()
     const [formData,setFormData]=useState()
@@ -34,7 +38,6 @@ function Ccs(props) {
         // deptsValidator(ccsData)
         console.log(ccsData)
         if(formValidator(ccsData)&&deptsValidator(ccsData)){
-        //    console.log("OK")
             let link='https://thepc-one.herokuapp.com/api/ccs/submit'
             console.log(header)
             console.log(ccsData)
@@ -50,8 +53,6 @@ function Ccs(props) {
             });
             CardsToggle()
         }
-        
-        
     }
 
     function formValidator(obj){
@@ -70,19 +71,19 @@ function Ccs(props) {
     return (
         <div>
             <Input placeholder="John Doe" label="Name" type="text" returnData={returnData} tag='name' darkTheme={darkTheme} required/>
-            <Input placeholder="12abc0123" label="Registration Number" type="text" returnData={returnData} tag='regNum' darkTheme={darkTheme} required />
+            <Input placeholder="20abc0123" label="Registration Number" type="text" returnData={returnData} tag='regNum' darkTheme={darkTheme} required />
             <Input placeholder="7432384223" label="Whatsapp Number" type="number" returnData={returnData} tag='whatsapp' darkTheme={darkTheme} required />
             <Input placeholder="7432384223" label="Contact Number" type="number" returnData={returnData} tag='phNum' darkTheme={darkTheme} required />
-            <Input placeholder="john@domain.com" label="Email ID" type="email" returnData={returnData} tag='email' darkTheme={darkTheme} required />
+            <Input placeholder="johndoe@domain.com" label="Email ID" type="email" returnData={returnData} tag='email' darkTheme={darkTheme} required />
             <div className={darkTheme?"textWhite container mt-4 qcustom":"container mt-4 qcustom"}><p><b>Choose the departments you wish to apply for:</b></p></div>
             <Checkboxes label ="Design" returnDepts={returnDepts} darkTheme={darkTheme} tag='Design' />
             <Checkboxes label ="Editorial" returnDepts={returnDepts} darkTheme={darkTheme} tag='Editorial' />
             <Checkboxes label ="Media" returnDepts={returnDepts} darkTheme={darkTheme} tag='Media' />
             <Checkboxes label ="Tech" returnDepts={returnDepts} darkTheme={darkTheme} tag='Tech'/>
             <Checkboxes label ="Finance" returnDepts={returnDepts} darkTheme={darkTheme} tag='Finance' />
-            <Textarea placeholder="What are your strengths (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='strengths' required />
-            <Textarea placeholder="What are your weaknesses (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='weaknesses' required />
-            <Textarea placeholder="Why do you want to join THEPC (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='whyDoYouJoin' required />
+            <Textarea placeholder="Writing skills, sticking to deadlines, attention to detail" label="What are your strengths (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='strengths' required />
+            <Textarea placeholder="No patience, being too hones" label="What are your weaknesses (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='weaknesses' required />
+            <Textarea placeholder="I like writing" label="Why do you want to join THEPC (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='whyDoYouJoin' required />
             {/* <FileUpload placeholder="Upload File" type="file" returnData={returnData} tag='file' required/> */}
             {/* <button onClick={console.log(ccsData)}>Check</button> */}
             {/* {errorMessage?<div className="container"><div class="alert alert-danger" role="alert">{errorMessage}</div></div>:<></>}
