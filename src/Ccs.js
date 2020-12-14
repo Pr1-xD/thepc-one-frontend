@@ -10,10 +10,12 @@ import "./Ccs.css"
 
 function Ccs(props) {
     window.scrollTo(0,0)
-    // if(props.data){
-    //     const data=props.data
-    //     console.log(data.ccsSub)
-    // }
+    let submissionChecker=false
+    if(props.data){
+        const data=props.data
+        console.log(data.ccsSub)
+        submissionChecker=data.ccsSub
+    }
     const[errorMessage,setErrorMessage]=useState()
     const[deptsErrorMessage,setDeptErrorMessage]=useState()
     const [formData,setFormData]=useState()
@@ -36,6 +38,7 @@ function Ccs(props) {
         e.preventDefault()
         // formValidator(ccsData)
         // deptsValidator(ccsData)
+        if(!submissionChecker){
         console.log(ccsData)
         if(formValidator(ccsData)&&deptsValidator(ccsData)){
             let link='https://thepc-one.herokuapp.com/api/ccs/submit'
@@ -51,6 +54,13 @@ function Ccs(props) {
                 button:false,
                 timer:2000,
             });
+            CardsToggle()
+        }}
+        else{console.log("Already Submitted")
+            swal("Form Already Submitted!", "Successfully!", "success",{
+                button:false,
+                timer:2000,
+            })
             CardsToggle()
         }
     }
