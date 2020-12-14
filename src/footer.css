@@ -13,6 +13,8 @@ section .section-title {
 }
 #footer {
     background: #007b5e !important;
+    width: 100vw;
+    overflow-x: hidden;
 }
 .logo{
     width: 12rem;

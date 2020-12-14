@@ -109,7 +109,7 @@ function ViewSubmissions(props) {
             {(submissionsData)&&(filterData!="Departments")?submissionsData.map(FilterCardMap):<></>}
             </tbody>
           </table>
-          <div className="mx-auto"><button className=" btn btn-lg submitButton backbtn" type="button" onClick={CardsToggle}>Back</button></div>
+          <div className="container"><div className="mx-auto text-center mt-2"><button className=" btn btn-lg submitButton backbtn" type="button" onClick={CardsToggle}>Back</button></div></div>
         </div>
     );
 }
