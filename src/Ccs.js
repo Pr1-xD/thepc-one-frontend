@@ -6,6 +6,7 @@ import FileUpload from "./Events Components/FileUpload"
 import ErrorComp from "./ErrorComp"
 import swal from '@sweetalert/with-react'
 import axios from 'axios'
+import "./Ccs.css"
 
 function Ccs(props) {
     window.scrollTo(0,0)
@@ -68,12 +69,12 @@ function Ccs(props) {
 
     return (
         <div>
-            <Input placeholder="Enter your Name" type="text" returnData={returnData} tag='name' darkTheme={darkTheme} required/>
-            <Input placeholder="Registration Number" type="text" returnData={returnData} tag='regNum' darkTheme={darkTheme} required />
-            <Input placeholder="Whatsapp Number" type="number" returnData={returnData} tag='whatsapp' darkTheme={darkTheme} required />
-            <Input placeholder="Contact Number" type="number" returnData={returnData} tag='phNum' darkTheme={darkTheme} required />
-            <Input placeholder="Enter your Email ID" type="email" returnData={returnData} tag='email' darkTheme={darkTheme} required />
-            <div className={darkTheme?"textWhite container mt-4":"container mt-4"}><p><b>Choose the departments you wish to apply for:</b></p></div>
+            <Input placeholder="John Doe" label="Name" type="text" returnData={returnData} tag='name' darkTheme={darkTheme} required/>
+            <Input placeholder="12abc0123" label="Registration Number" type="text" returnData={returnData} tag='regNum' darkTheme={darkTheme} required />
+            <Input placeholder="7432384223" label="Whatsapp Number" type="number" returnData={returnData} tag='whatsapp' darkTheme={darkTheme} required />
+            <Input placeholder="7432384223" label="Contact Number" type="number" returnData={returnData} tag='phNum' darkTheme={darkTheme} required />
+            <Input placeholder="john@domain.com" label="Email ID" type="email" returnData={returnData} tag='email' darkTheme={darkTheme} required />
+            <div className={darkTheme?"textWhite container mt-4 qcustom":"container mt-4 qcustom"}><p><b>Choose the departments you wish to apply for:</b></p></div>
             <Checkboxes label ="Design" returnDepts={returnDepts} darkTheme={darkTheme} tag='Design' />
             <Checkboxes label ="Editorial" returnDepts={returnDepts} darkTheme={darkTheme} tag='Editorial' />
             <Checkboxes label ="Media" returnDepts={returnDepts} darkTheme={darkTheme} tag='Media' />
