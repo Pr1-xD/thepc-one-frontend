@@ -13,3 +13,15 @@
     color: white;
     border: none;
 }
+
+.custom-text{
+    width: 60%;
+    margin:auto;     
+}
+
+@media only screen and (max-width: 600px){
+    .custom-text{
+        width: 100%;
+        margin:auto;     
+    } 
+}

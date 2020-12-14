@@ -1,4 +1,4 @@
-.input-custom:focus{
+    .input-custom:focus{
     border:2px solid var(--main);
     box-shadow: none;
 }
@@ -13,4 +13,25 @@
     color: white;
     border:2px solid var(--main);
     box-shadow: none;
+}
+
+.custom-text label{
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.custom-text{
+    width: 60%;
+    margin:auto;     
+}
+
+.textWhite{
+    color: white;
+}
+
+@media only screen and (max-width: 600px){
+    .custom-text{
+        width: 100%;
+        margin:auto;     
+    } 
 }

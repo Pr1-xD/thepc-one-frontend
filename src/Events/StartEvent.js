@@ -20,6 +20,7 @@ function StartEvent(props){
     }
     return(
         eventData?<div className="start-event">
+            
             <div className={darkTheme?"event-headers-dark m-auto text_header text-center":"event-headers m-auto text_header text-center"}>{eventData.eventName}</div>
             <Ccs CardsToggle={CardsToggle} token={token} darkTheme={darkTheme}/>
             </div>

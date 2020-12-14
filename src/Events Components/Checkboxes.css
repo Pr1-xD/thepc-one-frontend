@@ -1,3 +1,16 @@
+.custom-center{
+  width: 60%;
+    margin:auto; 
+}
+
+@media only screen and (max-width: 600px){
+  .custom-center{
+      width: 100%;
+      margin:auto;     
+  } 
+}
+
+
 .checkbox {
     --background: #fff;
     --border: #D1D6EE;

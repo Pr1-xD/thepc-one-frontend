@@ -7,8 +7,8 @@ function Input(props) {
         props.returnData(tag,val)
     }
     return (
-        <div className="container">
-            <label for="exampleFormControlInput1">{props.label}</label>
+        <div className={darkTheme?"container custom-text textWhite":"container custom-text"}>
+            <label for="exampleFormControlInput1"><b>{props.label}</b></label>
             <input type={props.type} class={darkTheme?"form-control input-custom-dark":"form-control input-custom"} id="exampleFormControlInput1" placeholder={props.placeholder} onChange={e=>returnData(props.tag,e.target.value)} name={props.name}></input>
         </div>
         // <div className="container">
