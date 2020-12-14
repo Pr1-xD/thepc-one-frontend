@@ -6,3 +6,8 @@
 .start-event{
     font-family: 'Poppins';
 }
+
+.alert-danger{
+    color: #E04050;
+    margin-top: 1rem;
+}
