@@ -54,6 +54,7 @@ function Ccs(props) {
                 button:false,
                 timer:2000,
             });
+            submissionChecker=true
             CardsToggle()
         }}
         else{console.log("Already Submitted")
