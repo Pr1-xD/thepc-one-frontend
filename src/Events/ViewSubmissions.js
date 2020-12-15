@@ -35,22 +35,7 @@ function ViewSubmissions(props) {
               <td>
               <a class="view-more" data-toggle="modal" data-target={"#exampleModalCenter"+idControl}  role="button" aria-expanded="false" aria-controls={idControl}>View More</a>
               </td>
-              {/* href={"#"+idControl} */}
           </tr>
-          {/* <div>
-          <div class={darkTheme?"card collapse multi-collapse subcards-dark":"card collapse multi-collapse subcards"} id={idControl}>
-            <div class="card-body subcards">
-            <h5 class="card-title">{obj.name}</h5>
-                 <p class="card-text"><b>Registration Number: </b>{obj.regNum}</p>
-                 <p class="card-text"><b>Phone Number: </b> {obj.phNum}</p>
-                 <p class="card-text"><b>Email: </b>{obj.email}</p>
-                 <p class="card-text"><b>Whatsapp: </b>{obj.whatsapp}</p>
-                 <p class="card-text"><b>Strengths: </b>{obj.strengths}</p>
-                 <p class="card-text"><b>Weaknesses: </b>{obj.weaknesses}</p>
-                 <p class="card-text"><b>Why do you want to join THEPC?: </b>{obj.whyDoYouJoin}</p>
-            </div>
-            </div>
-            </div> */}
 
             <div class="modal fade modal-dark" id={"exampleModalCenter"+idControl} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -70,13 +55,8 @@ function ViewSubmissions(props) {
                  <p class="card-text"><b>Strengths: </b>{obj.strengths}</p>
                  <p class="card-text"><b>Weaknesses: </b>{obj.weaknesses}</p>
                  <p class="card-text"><b>Why do you want to join THEPC?: </b>{obj.whyDoYouJoin}</p>
+                </div>         
                 </div>
-                  
-                </div>
-                {/* <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div> */}
               </div>
             </div>
           </>
@@ -92,11 +72,19 @@ function ViewSubmissions(props) {
       <td>{obj.name}</td>
         <td>{obj.phNum}</td>
         <td>
-              <a class="view-more" data-toggle="collapse" href={"#"+idControl} role="button" aria-expanded="false" aria-controls={idControl}>View More</a>
+        <a class="view-more" data-toggle="modal" data-target={"#exampleModalCenter"+idControl}  role="button" aria-expanded="false" aria-controls={idControl}>View More</a>
               </td>
           </tr>
-          <div class={darkTheme?"card collapse multi-collapse subcards-dark":"card collapse multi-collapse subcards"} id={idControl}>
-            <div class="card-body subcards">
+          <div class="modal fade modal-dark" id={"exampleModalCenter"+idControl} tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Form Details</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
                 <h5 class="card-title">{obj.name}</h5>
                  <p class="card-text"><b>Registration Number: </b>{obj.regNum}</p>
                  <p class="card-text"><b>Phone Number: </b> {obj.phNum}</p>
@@ -105,7 +93,9 @@ function ViewSubmissions(props) {
                  <p class="card-text"><b>Strengths: </b>{obj.strengths}</p>
                  <p class="card-text"><b>Weaknesses: </b>{obj.weaknesses}</p>
                  <p class="card-text"><b>Why do you want to join THEPC?: </b>{obj.whyDoYouJoin}</p>
-            </div>
+                </div>         
+                </div>
+              </div>
             </div></>:<></>
         )
     }
