@@ -5,6 +5,7 @@ import StartEvent from './StartEvent'
 function NonMember(props){
     const darkTheme=props.darkTheme
     const token=props.token
+    const formFilled=props.formFilled
     const [startEventData,setEventData]=useState()
     const [eventsSetter,setEventPage]=useState('Cards')
     const userID=props.userID
@@ -24,9 +25,11 @@ function NonMember(props){
         setEventData(val)
     }
 
+    function formSubmitted(){props.formSubmitted()}
+
     return(
         <>
-            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" userType={-1} eventStart={eventStart} darkTheme={darkTheme} />:<StartEvent token={token} eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme}/>}
+            {eventsSetter=='Cards'? <EventsCard eventsList={eventsList} data={data} userID={userID} buttonText="Start" formFilled={formFilled} userType={-1} eventStart={eventStart} darkTheme={darkTheme} />:<StartEvent token={token} data={data} eventData={startEventData} CardsToggle={CardsToggle} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted}/>}
         </>
     )
 }

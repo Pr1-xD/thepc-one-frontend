@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios'
 import swal from '@sweetalert/with-react'
+import LoginGoogle from './Events/LoginGoogle'
 
 function SignUp(props){
     function loginStateHandler(val,data){
@@ -67,9 +68,10 @@ function SignUp(props){
                     <input type="password" id="signUpCnfPassword" className="form-control custom-control custom-controlFour borderRadius" placeholder="Confirm Password" onChange={e=>setCnfPass(e.target.value)} required/>
                     <p>{warning}</p>
                     <button className="btn btn-lg btn-primary btn-block login-button" type="submit" onClick={handleSignIn}>Sign in</button>
-
+                    <div className="googleText">OR</div>
                     <div className="home_google">
                     {/* <img src={google} alt="google-login" onClick={()=>oauthSignIn()}  /> */}
+                    <LoginGoogle loginStateHandler={loginStateHandler}/>
                     </div>
                 </form>
                 </div>

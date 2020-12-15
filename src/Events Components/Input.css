@@ -1,18 +1,40 @@
     .input-custom:focus{
-    border:2px solid var(--main);
+    transition: ease-in 0.5s;    
+    border:none;
+    border-bottom: 2.2px solid var(--main);
+    border-radius: 0;
+    box-shadow: none;
+}
+    .input-custom-dark:focus{
+    transition: ease-in 0.5s;    
+    border:none;
+    border-bottom: 2.2px solid var(--main);
+    border-radius: 0;
     box-shadow: none;
 }
 
 .input-custom-dark{
-    background-color: var(--dark);
+    background-color: var(--bgdark);
     color: white;
     border: none;
+    border-radius: 0;
+    border-bottom: 2px solid white;
 }
+
+.input-custom{
+    border:none;
+    border-bottom: 2px solid var(--dark);
+    border-radius: 0;
+}
+
 .input-custom-dark:focus{
-    background-color: var(--dark);
+    background-color: var(--bgdark);
     color: white;
-    border:2px solid var(--main);
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid var(--main);
     box-shadow: none;
+    
 }
 
 .custom-text label{

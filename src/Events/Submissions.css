@@ -4,6 +4,10 @@
     font-family: 'Poppins';
 }
 
+.modal-dark{
+    color:var(--bgdark) !important ;
+}
+
 .backbtn{
     margin:auto;
     text-align: center;
