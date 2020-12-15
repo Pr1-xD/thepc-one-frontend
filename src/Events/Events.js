@@ -15,6 +15,9 @@ function Events(props){
         const eventsList=props.eventsList
         const token=props.userData.tokens.pop()
         let userID=props.userData._id
+        const [formFilled,setFormFilled]=useState(data.ccsSub)
+        // console.log(formFilled)
+        function formSubmitted(){setFormFilled(true)}
         function pageSetter(val){props.pageSetter(val)}
         function logoutHandler(val){props.logoutHandler(val)}
         function setEventsList(val){props.setEventsList(val)}
@@ -48,7 +51,7 @@ function Events(props){
               <br/>
               <br/>
               {eventsList?<></>:<Loader />}
-              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} token={token} userData={data} userID={userID} darkTheme={darkTheme} />:props.userData.memberType ===0?<Member eventsList={eventsList} userData={data} token={token} userID={userID} eventsRefresh={eventsRefresh} darkTheme={darkTheme}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} eventsRefresh={eventsRefresh} setEventsList={setEventsList}  userData={data} token={token} userID={userID} darkTheme={darkTheme}/>:<br/>}
+              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} token={token} userData={data} userID={userID} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted} />:props.userData.memberType ===0?<Member eventsList={eventsList} userData={data} token={token} userID={userID} eventsRefresh={eventsRefresh} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} eventsRefresh={eventsRefresh} setEventsList={setEventsList}  userData={data} token={token} userID={userID} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted}/>:<br/>}
             </>
         ) 
 }

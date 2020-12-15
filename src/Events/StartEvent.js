@@ -13,6 +13,7 @@ function StartEvent(props){
     function CardsToggle(){
         props.CardsToggle()
     }
+    function formSubmitted(){props.formSubmitted()}
 
     function TextField(i){
         return(
@@ -23,7 +24,7 @@ function StartEvent(props){
         eventData?<div className="start-event">
             
             <div className={darkTheme?"event-headers-dark m-auto text_header text-center":"event-headers m-auto text_header text-center"}>{eventData.eventName}</div>
-            <Ccs CardsToggle={CardsToggle} token={token} darkTheme={darkTheme} data={data}/>
+            <Ccs CardsToggle={CardsToggle} token={token} darkTheme={darkTheme} data={data} formSubmitted={formSubmitted}/>
             </div>
             :<></>    
     )

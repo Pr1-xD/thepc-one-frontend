@@ -21,9 +21,11 @@ function Ccs(props) {
     const [formData,setFormData]=useState()
     let darkTheme=props.darkTheme
     let header='Bearer '+(props.token.token)
-    function CardsToggle(){props.CardsToggle()}
     let ccsData={depts:[]}
-
+    
+    function CardsToggle(){props.CardsToggle()}
+    function formSubmitted(){props.formSubmitted()}
+    
     function returnData(tag,val){
         ccsData[tag]=val}
     function returnDepts(tag,val){
@@ -42,8 +44,6 @@ function Ccs(props) {
         console.log(ccsData)
         if(formValidator(ccsData)&&deptsValidator(ccsData)){
             let link='https://thepc-one.herokuapp.com/api/ccs/submit'
-            console.log(header)
-            console.log(ccsData)
             axios.post(link,ccsData,{headers: {
                 authorization:header}})
                     .then(res => {console.log(res.data)}
@@ -56,6 +56,7 @@ function Ccs(props) {
             });
             submissionChecker=true
             CardsToggle()
+            formSubmitted()
         }}
         else{console.log("Already Submitted")
             swal("Form Already Submitted!", "Successfully!", "success",{
@@ -63,6 +64,7 @@ function Ccs(props) {
                 timer:2000,
             })
             CardsToggle()
+            
         }
     }
 
@@ -93,7 +95,7 @@ function Ccs(props) {
             <Checkboxes label ="Tech" returnDepts={returnDepts} darkTheme={darkTheme} tag='Tech'/>
             <Checkboxes label ="Finance" returnDepts={returnDepts} darkTheme={darkTheme} tag='Finance' />
             <Textarea placeholder="Writing skills, sticking to deadlines, attention to detail" label="What are your strengths (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='strengths' required />
-            <Textarea placeholder="No patience, being too hones" label="What are your weaknesses (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='weaknesses' required />
+            <Textarea placeholder="No patience, being too honest" label="What are your weaknesses (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='weaknesses' required />
             <Textarea placeholder="I like writing" label="Why do you want to join THEPC (2-3 lines)" type="textarea" rows="3" cols="100" returnData={returnData} darkTheme={darkTheme} tag='whyDoYouJoin' required />
             {/* <FileUpload placeholder="Upload File" type="file" returnData={returnData} tag='file' required/> */}
             {/* <button onClick={console.log(ccsData)}>Check</button> */}

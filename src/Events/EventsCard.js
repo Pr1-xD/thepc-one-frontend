@@ -3,9 +3,10 @@ import Card from '../Card/Card'
 
 function EventsCard(props){
     const darkTheme=props.darkTheme
+    const formFilled=props.formFilled
     const userID=props.userID
     const mDate=props.mDate
-    const buttonText=props.buttonText
+    let buttonText=props.buttonText
     const userType=props.userType
     const eventsList=props.eventsList
     function handleEventState(val){props.handleEventState(val)}
@@ -112,12 +113,12 @@ function EventsCard(props){
         
         if(userType==-1){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} eventStart={eventStart} event={obj} darkTheme={darkTheme} />
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={formFilled?'':'Start'} eventStart={eventStart} event={obj} darkTheme={darkTheme} />
             )
         }
         if(userType==0){
             return(
-                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={'Start'} buttonTextTwo={'View Submissions'} eventStart={eventStart} handleEventState={handleEventState} event={obj} darkTheme={darkTheme}/>
+                <Card name={obj.eventName} image={obj.eventImg} desc={obj.eventDesc} startDate={obj.eventStart} id={obj._id} textTime={obj.textTime} mDate={mDate} buttonText={formFilled?'':'Start'} buttonTextTwo={'View Submissions'} eventStart={eventStart} handleEventState={handleEventState} event={obj} darkTheme={darkTheme}/>
             )
         }
         if(userType==1){
