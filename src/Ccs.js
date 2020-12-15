@@ -16,6 +16,7 @@ function Ccs(props) {
         console.log(data.ccsSub)
         submissionChecker=data.ccsSub
     }
+    function ccsUserData(){props.ccsUserData()}
     const[errorMessage,setErrorMessage]=useState()
     const[deptsErrorMessage,setDeptErrorMessage]=useState()
     const [formData,setFormData]=useState()
@@ -57,6 +58,7 @@ function Ccs(props) {
             submissionChecker=true
             CardsToggle()
             formSubmitted()
+            ccsUserData()
         }}
         else{console.log("Already Submitted")
             swal("Form Already Submitted!", "Successfully!", "success",{

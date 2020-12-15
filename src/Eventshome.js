@@ -23,9 +23,9 @@ function Eventshome(props){
         console.log(header)
           axios.patch(link,{},{headers: {authorization:header}})
                   .then(res => {setData(res.data)})
-        swal("Event Registered", "Successfully", "success",{
+        swal("Event Registered", "Go to 'My Events' and click on Start button to start filling the Event Form.", "success",{
             button:false,
-            timer:2000,  
+            timer:5000,  
         });
         setTimeout(eventsRefresh,2000)                 
     }
