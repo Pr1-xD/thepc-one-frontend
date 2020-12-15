@@ -16,6 +16,15 @@ function App() {
   const [eventsList, setEventsList] = useState(null)
   const [darkTheme,setDarkTheme]=useState(false)
   
+  let tempData=data
+
+  function ccsUserData(){
+    tempData.ccsSub=true
+    setData(tempData)
+    sessionStorage.setItem('data',JSON.stringify(data))
+  }
+
+  
 
   function dataSetter(val){
     sessionStorage.setItem('data',JSON.stringify(val))
@@ -42,10 +51,12 @@ function App() {
     setData({eventsRegistered:[]})
     setToken({})
     sessionStorage.clear()
+    tempData=null
   }
 
   function loginStateHandler(val,data){
-    const login=val 
+    const login=val
+    tempData=data 
     setLoggedIn(login) 
     setData(data) 
     setToken(data.tokens[data.tokens.length-1])
@@ -65,7 +76,7 @@ function App() {
     <div className={darkTheme?"app-dark":"app"} onLoad={refreshLogin}>
       
       {(page=='Home')?<Home pageSetter={pageSetter} darkTheme={darkTheme} setDarkTheme={setDarkTheme}  data={data} setData={dataSetter} eventsList={eventsList} setEventsList={setEventsList} token={token} loggedin={loggedin} loginStateHandler={loginStateHandler} logoutHandler={logoutHandler} />:<></>}
-      {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} darkTheme={darkTheme} setDarkTheme={setDarkTheme} userData={data} logoutHandler={logoutHandler} eventsList={eventsList} setEventsList={setEventsList} eventsRefresh={eventsRefresh}/>:<></>}
+      {(page=='Events')&&(loggedin)?<Events pageSetter={pageSetter} darkTheme={darkTheme} setDarkTheme={setDarkTheme} userData={data} logoutHandler={logoutHandler} eventsList={eventsList} setEventsList={setEventsList} eventsRefresh={eventsRefresh} ccsUserData={ccsUserData}/>:<></>}
       {(eventsList)?<Footer />:<></>}
     </div>
   );

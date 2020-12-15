@@ -23,6 +23,7 @@ function Events(props){
         function setEventsList(val){props.setEventsList(val)}
         function eventsRefresh(){props.eventsRefresh()} 
         function setDarkTheme(val){props.setDarkTheme(val)}
+        function ccsUserData(){props.ccsUserData()}
 
         const todayDate = new Date()
 
@@ -51,7 +52,7 @@ function Events(props){
               <br/>
               <br/>
               {eventsList?<></>:<Loader />}
-              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} token={token} userData={data} userID={userID} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted} />:props.userData.memberType ===0?<Member eventsList={eventsList} userData={data} token={token} userID={userID} eventsRefresh={eventsRefresh} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} eventsRefresh={eventsRefresh} setEventsList={setEventsList}  userData={data} token={token} userID={userID} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted}/>:<br/>}
+              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} token={token} userData={data} userID={userID} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted} ccsUserData={ccsUserData}/>:props.userData.memberType ===0?<Member eventsList={eventsList} userData={data} token={token} userID={userID} eventsRefresh={eventsRefresh} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted} ccsUserData={ccsUserData}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} eventsRefresh={eventsRefresh} setEventsList={setEventsList}  userData={data} token={token} userID={userID} darkTheme={darkTheme} formFilled={formFilled} formSubmitted={formSubmitted}/>:<br/>}
             </>
         ) 
 }

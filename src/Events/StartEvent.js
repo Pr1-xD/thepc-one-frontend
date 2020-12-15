@@ -9,6 +9,7 @@ function StartEvent(props){
     const numTextBoxes=props.eventData.numTextBoxes
     const eventData=props.eventData
     console.log(eventData)
+    function ccsUserData(){props.ccsUserData()}
 
     function CardsToggle(){
         props.CardsToggle()
@@ -24,7 +25,7 @@ function StartEvent(props){
         eventData?<div className="start-event">
             
             <div className={darkTheme?"event-headers-dark m-auto text_header text-center":"event-headers m-auto text_header text-center"}>{eventData.eventName}</div>
-            <Ccs CardsToggle={CardsToggle} token={token} darkTheme={darkTheme} data={data} formSubmitted={formSubmitted}/>
+            <Ccs CardsToggle={CardsToggle} token={token} darkTheme={darkTheme} data={data} formSubmitted={formSubmitted} ccsUserData={ccsUserData} />
             </div>
             :<></>    
     )
