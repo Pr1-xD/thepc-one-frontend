@@ -24,3 +24,12 @@
 .swal-icon.swal-success {
     border-color: #f27474 !important;
   }
+
+  @media only screen and (max-width: 600px){
+    .instructions{
+        font-size: 1.5rem!important;
+    }
+    .inst-cont{
+        width: 80%;
+    }
+  }
